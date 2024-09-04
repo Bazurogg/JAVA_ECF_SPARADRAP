@@ -1,11 +1,16 @@
 package fr.pompey.dev.afpa.model;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Customer extends Person {
 
     private String socialSecurityNumber;
 
     private LocalDate birthDate;
+
+    /** The list of specialists a customers can have */
+    private List<Specialist> specialists;
 
     /**
      * Constructor for the Customer class.
@@ -29,7 +34,11 @@ public class Customer extends Person {
 
         // Initialize the specific fields of Customer
         setBirthDate(birthDate);
+
         setSocialSecurityNumber(socialSecurityNumber);
+
+        // Initialize the list of specialists
+        this.specialists = new ArrayList<>();
 
     }
 
@@ -49,6 +58,33 @@ public class Customer extends Person {
 
     public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
+    }
+
+    /**
+     * Gets the list of specialists associated with the customer.
+     *
+     * @return the list of specialists.
+     */
+    public List<Specialist> getSpecialists() {
+        return specialists;
+    }
+
+    /**
+     * Adds a specialist to the customer's list of specialists.
+     *
+     * @param specialist the specialist to add.
+     */
+    public void addSpecialist(Specialist specialist) {
+        this.specialists.add(specialist);
+    }
+
+    /**
+     * Removes a specialist from the customer's list of specialists.
+     *
+     * @param specialist the specialist to remove.
+     */
+    public void removeCustomer(Specialist specialist) {
+        this.specialists.remove(specialists);
     }
 }
 

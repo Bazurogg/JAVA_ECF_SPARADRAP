@@ -122,6 +122,4 @@ public class Doctor extends Person {
         this.purchasesByPrescription.remove(purchaseByPrescription);
     }
 
-
-
 }
