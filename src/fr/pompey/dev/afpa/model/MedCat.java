@@ -27,7 +27,7 @@ public class MedCat {
      * @return the category name
      */
     public String getCategoryName() {
-        
+
         return categoryName;
 
     }
