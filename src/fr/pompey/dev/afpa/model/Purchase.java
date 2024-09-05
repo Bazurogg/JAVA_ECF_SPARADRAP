@@ -110,12 +110,11 @@ public abstract class Purchase {
     }
 
     @Override
+
     public String toString() {
-        return "Purchase{" +
-                "purchaseDate=" + purchaseDate +
-                ", totalPrice=" + totalPrice +
-                ", medicines=" + medicines +
-                ", customer=" + customer +
-                '}';
+
+        return "Purchase{" + "purchaseDate=" + purchaseDate + ", totalPrice=" + totalPrice + ", medicines=" + medicines + ", customer=" + customer + '}';
+
     }
+
 }

@@ -24,9 +24,11 @@ public class DirectPurchase extends Purchase {
     // Here add some futur methods implementation if needed. .
 
     @Override
+
     public String toString() {
 
         return "DirectPurchase{" + "purchaseDate=" + getPurchaseDate() + ", totalPrice=" + getTotalPrice() + ", medicines=" + getMedicines() + ", customer=" + getCustomer() + '}';
+
     }
 
 }
