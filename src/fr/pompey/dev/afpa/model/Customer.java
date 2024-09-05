@@ -3,6 +3,11 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * Represents a customer of the drugstore.
+ * This class extends the Person class to inherit common personal attributes.
+ */
 public class Customer extends Person {
 
     private String socialSecurityNumber;
