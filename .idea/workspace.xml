@@ -6,9 +6,22 @@
   <component name="ChangeListManager">
     <list default="true" id="8c42abba-3d1e-4b84-95b6-6832cb625052" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/model/HealthInsurance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/model/HealthInsurance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/model/Medicine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/model/Medicine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/model/Purchase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/model/Purchase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Conception/Maquette/Logos_/Logo-Pharmacie.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Conception/Maquette/Logos_/Logo-Pharmacie_retail.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Conception/Maquette/Logos_/add-to-cart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Conception/Maquette/Logos_/add-to-cart_02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Conception/Maquette/Logos_/add-to-cart_02.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Conception/Maquette/Logos_/add-to-cart_02_test.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Conception/Maquette/Logos_/home-icon-silhouette.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Conception/Maquette/Logos_/home-icon-silhouette_02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Conception/Maquette/Refs_/1_HkhX6aj_9dKwdBhuLhXFNg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Conception/Maquette/Refs_/1_YKbwwEA84V3st8fIIfU0Hw.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Conception/Maquette/Refs_/s_BF6A1C0144AD5FDE43C5CD123099EEB2FBB77615D772FB1C2C052ABA6956289A_1623159762207_file-853x640.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Conception/Maquette/Sparadra1.0.fig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Conception/UML/ECF_SPARADRAP_UML.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Conception/UML/ECF_SPARADRAP_UML.vpd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/MenuHome.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/MenuHome.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/MenuHome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/MenuHome.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,28 +38,28 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2ldlZRZ0vx1tubHwvTFsFFmAiaa" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Fabulous\GitHub\JAVA_ECF_SPARADRAP\src" />
@@ -68,7 +81,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1725517890523</updated>
-      <workItem from="1725517892266" duration="19595000" />
+      <workItem from="1725517892266" duration="19630000" />
+      <workItem from="1725541900954" duration="6247000" />
     </task>
     <servers />
   </component>

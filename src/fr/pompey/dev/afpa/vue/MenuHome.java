@@ -4,9 +4,8 @@ import javax.swing.*;
 
 public class MenuHome {
     private JPanel SIdeBar;
-    private JButton button1;
-    private JButton button2;
-    private JButton button3;
-    private JButton button4;
-    private JButton button5;
+    private JButton Homebutton;
+    private JButton UserButton;
+    private JButton MedicineButton;
+    private JButton PurchaseButton;
 }
