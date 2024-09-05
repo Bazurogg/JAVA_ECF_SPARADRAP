@@ -41,13 +41,20 @@ public class HealthInsurance {
      */
     public HealthInsurance(String name, String address, String postalCode, String departmentNumber,
                            String phoneNumber, String email, double coverageRate) {
-        this.name = name;
-        this.address = address;
-        this.postalCode = postalCode;
-        this.departmentNumber = departmentNumber;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
-        this.coverageRate = coverageRate;
+        setName(name);
+
+        setAddress(address);
+
+        setPostalCode(postalCode);
+
+        setDepartmentNumber(departmentNumber);
+
+        setPhoneNumber(phoneNumber);
+
+        setEmail(email);
+
+        setCoverageRate(coverageRate);
+
     }
 
     /**

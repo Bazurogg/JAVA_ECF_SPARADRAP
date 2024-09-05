@@ -31,10 +31,10 @@ public abstract class Purchase {
      * @param customer The customer who made the purchase
      */
     public Purchase(LocalDate purchaseDate, double totalPrice, List<Medicine> medicines, Customer customer) {
-        this.purchaseDate = purchaseDate;
-        this.totalPrice = totalPrice;
+        setPurchaseDate(purchaseDate);
+        setTotalPrice(totalPrice);
         this.medicines = medicines;
-        this.customer = customer;
+        setCustomer(customer);
     }
 
     /**

@@ -49,11 +49,11 @@ public class Medicine {
      * @param dateOnSale The date the medicine went on sale.
      */
     public Medicine(String medicineName, MedicineCategory category, double price, int quantity, LocalDate dateOnSale) {
-        this.medicineName = medicineName;
-        this.category = category;
-        this.price = price;
-        this.quantity = quantity;
-        this.dateOnSale = dateOnSale;
+        setMedicineName(medicineName);
+        setCategory(category);
+        setPrice(price);
+        setQuantity(quantity);
+        setDateOnSale(dateOnSale);
     }
 
     // Getters and setters
