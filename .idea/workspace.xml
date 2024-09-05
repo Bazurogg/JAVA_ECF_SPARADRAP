@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8c42abba-3d1e-4b84-95b6-6832cb625052" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Conception/UML/ECF_SPARADRAP_UML.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/Conception/UML/ECF_SPARADRAP_UML.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Conception/UML/ECF_SPARADRAP_UML.vpd" beforeDir="false" afterPath="$PROJECT_DIR$/Conception/UML/ECF_SPARADRAP_UML.vpd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/model/HealthInsurance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/model/HealthInsurance.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +61,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1725517890523</updated>
-      <workItem from="1725517892266" duration="7003000" />
+      <workItem from="1725517892266" duration="8378000" />
     </task>
     <servers />
   </component>
