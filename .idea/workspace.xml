@@ -6,20 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8c42abba-3d1e-4b84-95b6-6832cb625052" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Conception/Maquette/Logos_/Logo-Pharmacie.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Conception/Maquette/Logos_/Logo-Pharmacie_retail.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Conception/Maquette/Logos_/add-to-cart.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Conception/Maquette/Logos_/add-to-cart_02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Conception/Maquette/Logos_/add-to-cart_02.psd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Conception/Maquette/Logos_/add-to-cart_02_test.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Conception/Maquette/Logos_/home-icon-silhouette.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Conception/Maquette/Logos_/home-icon-silhouette_02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Conception/Maquette/Refs_/1_HkhX6aj_9dKwdBhuLhXFNg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Conception/Maquette/Refs_/1_YKbwwEA84V3st8fIIfU0Hw.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Conception/Maquette/Refs_/s_BF6A1C0144AD5FDE43C5CD123099EEB2FBB77615D772FB1C2C052ABA6956289A_1623159762207_file-853x640.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Conception/Maquette/Sparadra1.0.fig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Conception/UML/ECF_SPARADRAP_UML.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Conception/UML/ECF_SPARADRAP_UML.vpd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Conception/Maquette/Logos_/Icone_menuSideBar/medicine.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conception/Maquette/Logos_/Icone_menuSideBar/medicine.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Conception/Maquette/Logos_/Icone_menuSideBar/shopping-cart.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conception/Maquette/Logos_/Icone_menuSideBar/shopping-cart.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Conception/UML/ECF_SPARADRAP_UML.vpd" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conception/UML/ECF_SPARADRAP_UML.vpd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/MenuHome.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/MenuHome.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/MenuHome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/MenuHome.java" afterDir="false" />
     </list>
@@ -82,7 +71,8 @@
       <option name="presentableId" value="Default" />
       <updated>1725517890523</updated>
       <workItem from="1725517892266" duration="19630000" />
-      <workItem from="1725541900954" duration="6247000" />
+      <workItem from="1725541900954" duration="6453000" />
+      <workItem from="1725602999468" duration="1794000" />
     </task>
     <servers />
   </component>
