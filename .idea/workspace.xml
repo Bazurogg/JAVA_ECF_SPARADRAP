@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8c42abba-3d1e-4b84-95b6-6832cb625052" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Conception/Maquette/Logos_/Icone_menuSideBar/drugstore.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conception/Maquette/Logos_/Icone_menuSideBar/drugstore.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Conception/Maquette/Logos_/Icone_menuSideBar/exit.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conception/Maquette/Logos_/Icone_menuSideBar/exit.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/MenuHome.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/MenuHome.form" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,7 +71,9 @@
       <workItem from="1725517892266" duration="19630000" />
       <workItem from="1725541900954" duration="6453000" />
       <workItem from="1725602999468" duration="1833000" />
-      <workItem from="1725604850989" duration="2133000" />
+      <workItem from="1725604850989" duration="3699000" />
+      <workItem from="1725608904348" duration="8000" />
+      <workItem from="1725612471073" duration="71000" />
     </task>
     <servers />
   </component>
