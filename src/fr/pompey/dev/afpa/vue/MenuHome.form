@@ -15,8 +15,7 @@
     </properties>
     <border type="none"/>
     <children>
-      <grid id="3bbad" binding="sideBar" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-        <margin top="0" left="0" bottom="0" right="0"/>
+      <grid id="3bbad" binding="sideBar" layout-manager="BorderLayout" hgap="0" vgap="0">
         <constraints>
           <grid row="0" column="0" row-span="2" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
             <preferred-size width="235" height="44"/>
@@ -29,11 +28,7 @@
         <children>
           <grid id="a13bb" layout-manager="GridLayoutManager" row-count="4" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="30" left="5" bottom="0" right="5"/>
-            <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="218" height="632"/>
-              </grid>
-            </constraints>
+            <constraints border-constraint="Center"/>
             <properties>
               <background color="-11510149"/>
             </properties>
@@ -98,7 +93,7 @@
                       <verticalTextPosition value="3"/>
                     </properties>
                   </component>
-                  <component id="56f9" class="javax.swing.JButton" binding="homebutton">
+                  <component id="56f9" class="javax.swing.JButton" binding="medicProButton">
                     <constraints>
                       <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
                         <minimum-size width="100" height="-1"/>
@@ -253,10 +248,10 @@
           </grid>
         </children>
       </grid>
-      <grid id="53200" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="53200" binding="displayPanel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+          <grid row="0" column="1" row-span="2" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
             <preferred-size width="1200" height="-1"/>
           </grid>
         </constraints>

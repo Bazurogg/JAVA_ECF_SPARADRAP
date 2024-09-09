@@ -7,10 +7,12 @@ public class MenuHome extends JFrame {
     private JPanel sideBar;
     private JButton customersButton;
     private JButton medicinesButton;
+    private JButton medicProButton;
     private JButton purchasesButton;
     private JButton homeButton;
     private JButton exitButton;
     private JPanel mainPanel;
+    private JPanel displayPanel;
 
     // Constructeur pour initialiser la fenêtre
     public MenuHome() {
@@ -21,7 +23,7 @@ public class MenuHome extends JFrame {
         this.setContentPane(mainPanel);
 
         // Définit la taille de la fenêtre
-        this.setSize(800, 600);
+        this.setSize(1480, 900);
 
         // Permet de fermer l'application quand la fenêtre est fermée
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
