@@ -111,7 +111,7 @@
                       <icon value="Conception/Maquette/Logos_/Icone_menuSideBar/doctor.png"/>
                       <label value="doctors"/>
                       <text value="doctors"/>
-                      <toolTipText value="Home"/>
+                      <toolTipText value="Check doctor detail"/>
                       <verticalTextPosition value="3"/>
                     </properties>
                   </component>
@@ -175,10 +175,10 @@
                       <font name="Fira Code"/>
                       <foreground color="-1"/>
                       <horizontalTextPosition value="0"/>
-                      <icon value="Conception/Maquette/Logos_/Icone_menuSideBar/doctor.png"/>
+                      <icon value="Conception/Maquette/Logos_/Icone_menuSideBar/medical-team.png"/>
                       <label value="specialists"/>
                       <text value="specialists"/>
-                      <toolTipText value="Home"/>
+                      <toolTipText value="Check specialists details"/>
                       <verticalTextPosition value="3"/>
                     </properties>
                   </component>
@@ -279,7 +279,16 @@
         </constraints>
         <properties/>
         <border type="none"/>
-        <children/>
+        <children>
+          <component id="2761f" class="javax.swing.JButton" binding="button1" default-binding="true">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Button"/>
+            </properties>
+          </component>
+        </children>
       </grid>
     </children>
   </grid>

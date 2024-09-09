@@ -1,9 +1,13 @@
 package fr.pompey.dev.afpa.vue;
 
+import fr.pompey.dev.afpa.controller.DoctorController;
+import fr.pompey.dev.afpa.model.Doctor;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
 
 public class MenuHome extends JFrame {
 
@@ -17,17 +21,23 @@ public class MenuHome extends JFrame {
     private JPanel mainPanel;
     private JPanel displayPanel;
     private JButton specialistButton;
+    private JButton button1;
 
     // Constructeur pour initialiser la fenêtre
     public MenuHome() {
         // Appelle le constructeur de JFrame pour définir le titre de la fenêtre
         super("Pharmacy Management - Home");
 
-        // Initialise displayPanel si ce n'est pas déjà fait dans le form
-        if (displayPanel == null) {
-            displayPanel = new JPanel();
-            displayPanel.setLayout(new BorderLayout()); // Important d'avoir un layout valide
-        }
+        // Initialisation des composants
+
+//        displayPanel = new JPanel();
+//        displayPanel.setLayout(new BorderLayout());
+
+//        // Initialise displayPanel si ce n'est pas déjà fait dans le form
+//        if (displayPanel == null) {
+//            displayPanel = new JPanel();
+//            displayPanel.setLayout(new BorderLayout()); // Important d'avoir un layout valide
+//        }
 
         // Ajoute le mainPanel (qui contient ton design) à la fenêtre
         this.setContentPane(mainPanel);
@@ -58,7 +68,7 @@ public class MenuHome extends JFrame {
 
             public void actionPerformed(ActionEvent e) {
 
-                showMedicProPanel();
+                showTEST();
 
             }
 
@@ -68,21 +78,43 @@ public class MenuHome extends JFrame {
 
     // Méthodes pour changer le contenu du displayPanel
 
-    private void showMedicProPanel() {
+//    private void showTEST() {
+//
+//        displayPanel.removeAll();
+//
+//        displayPanel.setLayout(new BorderLayout());
+//
+//
+//        // Instancie le DoctorController pour obtenir la liste des docteurs
+//        DoctorController doctorController = new DoctorController();
+//
+//        List<Doctor> doctors = doctorController.getDoctors();
+//
+//        DoctorPanel doctorPanel = new DoctorPanel(doctors);
+//
+//        displayPanel.add(doctorPanel, BorderLayout.CENTER);
+//
+//        displayPanel.revalidate();
+//
+//        displayPanel.repaint();
+//
+//    }
 
+    private void showTEST() {
+
+        System.out.println("showTEST called"); // Pour vérifier si la méthode est appelée
+        displayPanel.removeAll();
+
+        TEST testPanel = new TEST();
         displayPanel.removeAll();
         displayPanel.setLayout(new BorderLayout());
-        displayPanel.add(new JLabel("Doctors and Specialists Management Panel"));
+        displayPanel.add(testPanel, BorderLayout.CENTER);
+
         displayPanel.revalidate();
         displayPanel.repaint();
 
     }
 
-    // Main pour lancer l'application et afficher le menu d'accueil
-    public static void main(String[] args) {
-        // Crée une instance de MenuHome, ce qui affichera la fenêtre
-        new MenuHome();
-    }
-
 }
+
 
