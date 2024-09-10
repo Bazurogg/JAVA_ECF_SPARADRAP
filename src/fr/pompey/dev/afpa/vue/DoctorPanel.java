@@ -6,6 +6,8 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class DoctorPanel extends JPanel {
 
@@ -20,6 +22,10 @@ public class DoctorPanel extends JPanel {
 
     public DoctorPanel(List<Doctor> doctors) {
 
+        // Sort the doctor list by alphabetical order by Lastname
+        Collections.sort(doctors, Comparator.comparing(Doctor::getLastname));
+
+        // make the panel visible
         this.setVisible(true);
 
         add(panelDoctor);

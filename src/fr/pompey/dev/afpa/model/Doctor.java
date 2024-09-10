@@ -122,4 +122,11 @@ public class Doctor extends Person {
         this.purchasesByPrescription.remove(purchaseByPrescription);
     }
 
+    @Override
+    public String toString() {
+
+        return "Dr. " + getLastname() + " " + getFirstname() + " - " + getAgreementId();
+
+    }
+
 }

@@ -81,10 +81,10 @@ public class Person {
     /**
      * Sets lastname.
      *
-     * @param lastname the lastname
+     * @param lastname the lastname to set. It will be stored in uppercase.
      */
     public void setLastname(String lastname) {
-        this.lastname = lastname;
+        this.lastname = lastname != null ? lastname.toUpperCase() : null;
     }
 
     /**

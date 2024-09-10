@@ -31,7 +31,7 @@ public class MenuHome extends JFrame {
         this.setContentPane(mainPanel);
 
         // Définit la taille de la fenêtre
-        this.setSize(1490, 900);
+        this.setSize(1490, 930);
 
         // Permet de fermer l'application quand la fenêtre est fermée
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
