@@ -19,8 +19,17 @@ public class DoctorPanel extends JPanel {
     private JTextField textField2;
     private JTextField textField3;
     private JTextField textField4;
+    private JTextField textField5;
+    private JTextField textField6;
+    private JTextField textField7;
+    private JTextField textField8;
+    private JTextPane textPane1;
+    private JTextArea textArea1;
 
     public DoctorPanel(List<Doctor> doctors) {
+
+        // Initialisation des composants
+        initializeComponents();
 
         // Sort the doctor list by alphabetical order by Lastname
         Collections.sort(doctors, Comparator.comparing(Doctor::getLastname));
@@ -61,12 +70,25 @@ public class DoctorPanel extends JPanel {
 
     }
 
+    private void initializeComponents() {
+        // Suppression des bordures pour les JTextFields
+
+        textField8.setBorder(null);
+
+    }
+
     // Method to update the JTextFields with doctor information
     private void updateDoctorDetails(Doctor doctor) {
         textField1.setText(doctor.getFirstname());
         textField2.setText(doctor.getLastname());
         textField3.setText(doctor.getAddress());
         textField4.setText(doctor.getEmail());
+        textField5.setText(doctor.getCity());
+        textField6.setText(doctor.getPhoneNumber());
+        textField7.setText(doctor.getPostalCode());
+        textField8.setText(doctor.getAgreementId());
     }
+
+
 
 }
