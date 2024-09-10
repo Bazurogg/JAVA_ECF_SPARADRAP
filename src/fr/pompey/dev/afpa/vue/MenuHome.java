@@ -67,12 +67,12 @@ public class MenuHome extends JFrame {
 
             public void actionPerformed(ActionEvent e) {
 
-//                showDoctorPanel();
+                showDoctorPanel();
 
-                displayPanel.removeAll();
-                displayPanel.add(new TEST());
-                displayPanel.revalidate();
-                displayPanel.repaint();
+//                displayPanel.removeAll();
+//                displayPanel.add(new DoctorPanel(doctors));
+//                displayPanel.revalidate();
+//                displayPanel.repaint();
 
             }
 

@@ -9,49 +9,55 @@ import java.util.List;
 
 public class DoctorPanel extends JPanel {
 
-    // Components created by the GUI Designer
-    private JLabel doctorsDataManagementLabel;
-    private JComboBox<Doctor> comboBoxDoctorList;
-    private JButton addANewDoctorButton;
-    private JPanel doctorDetails;
-    private JLabel labelFirstname;
-    private JLabel labelLastname;
-    private JLabel labelEmail;
-    private JLabel labelPhoneNumber;
-    private JLabel labelAgreementId;
+    private JPanel panelDoctor;
+    private JComboBox<Doctor> comboBox1;
+    private JButton addNewDoctorButton;
+    private JLabel panelDoctorInfo;
+    private JTextField textField1;
+    private JTextField textField2;
+    private JTextField textField3;
+    private JTextField textField4;
 
-    // Constructeur
     public DoctorPanel(List<Doctor> doctors) {
-        // Initialise les composants de l'interface
-        initUI(doctors);
-    }
 
-    // Initialisation de l'interface graphique
-    private void initUI(List<Doctor> doctors) {
-        // Remplir la combo box avec la liste des médecins
-        assert comboBoxDoctorList != null;
-        comboBoxDoctorList.setModel(new DefaultComboBoxModel<>(doctors.toArray(new Doctor[0])));
-        comboBoxDoctorList.setSelectedIndex(-1); // Aucun médecin sélectionné par défaut
+        this.setVisible(true);
 
-        // Ajouter un écouteur pour réagir à la sélection d'un médecin
-        comboBoxDoctorList.addActionListener(new ActionListener() {
+        add(panelDoctor);
+
+        // Add doctors to the comboBox
+        for (Doctor doctor : doctors) {
+
+            comboBox1.addItem(doctor);
+
+        }
+
+        // Add an ActionListener to update the fields when a doctor is selected
+        comboBox1.addActionListener(new ActionListener() {
+
             @Override
+
             public void actionPerformed(ActionEvent e) {
-                // Appeler la méthode pour afficher les détails du médecin sélectionné
-                Doctor selectedDoctor = (Doctor) comboBoxDoctorList.getSelectedItem();
+
+                Doctor selectedDoctor = (Doctor) comboBox1.getSelectedItem();
+
                 if (selectedDoctor != null) {
-                    displayDoctorDetails(selectedDoctor);
+
+                    updateDoctorDetails(selectedDoctor);
+
                 }
+
             }
+
         });
+
     }
 
-    // Méthode pour afficher les détails du médecin sélectionné
-    private void displayDoctorDetails(Doctor doctor) {
-        labelFirstname.setText(doctor.getFirstname());
-        labelLastname.setText(doctor.getLastname());
-        labelEmail.setText(doctor.getEmail());
-        labelPhoneNumber.setText(doctor.getPhoneNumber());
-        labelAgreementId.setText(doctor.getAgreementId());
+    // Method to update the JTextFields with doctor information
+    private void updateDoctorDetails(Doctor doctor) {
+        textField1.setText(doctor.getFirstname());
+        textField2.setText(doctor.getLastname());
+        textField3.setText(doctor.getAddress());
+        textField4.setText(doctor.getEmail());
     }
+
 }
