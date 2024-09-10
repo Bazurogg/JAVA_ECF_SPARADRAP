@@ -42,7 +42,7 @@ public class MenuHome extends JFrame {
         this.setContentPane(mainPanel);
 
         // Définit la taille de la fenêtre
-        this.setSize(1480, 900);
+        this.setSize(1490, 900);
 
         // Permet de fermer l'application quand la fenêtre est fermée
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -67,11 +67,12 @@ public class MenuHome extends JFrame {
 
             public void actionPerformed(ActionEvent e) {
 
-                doctorPanel();
+//                showDoctorPanel();
 
-//                displayPanel.add(new TEST());
-//                displayPanel.revalidate();
-//                displayPanel.repaint();
+                displayPanel.removeAll();
+                displayPanel.add(new TEST());
+                displayPanel.revalidate();
+                displayPanel.repaint();
 
             }
 
@@ -80,25 +81,22 @@ public class MenuHome extends JFrame {
     }
 
     // Méthodes pour changer le contenu du displayPanel
-    private void doctorPanel() {
+    private void showDoctorPanel() {
 
         displayPanel.removeAll();
 
-        // Instancie le DoctorController pour obtenir la liste des docteurs
         DoctorController doctorController = new DoctorController();
-
         List<Doctor> doctors = doctorController.getDoctors();
-//
-//        DoctorPanel doctorPanel = new DoctorPanel(doctors);
 
-        displayPanel.setLayout(new BorderLayout());
+        if (doctors.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "No doctors available");
+            return;
+        }
 
-        System.out.println("showTEST called");
-
-        displayPanel.add(new DoctorPanel(doctors));
-
+//        System.out.println("COUCOU ! et OUI SI TU ME VOIS EH BEH çA MARCHE !");
+        DoctorPanel doctorPanel = new DoctorPanel(doctors);
+        displayPanel.add(doctorPanel, BorderLayout.CENTER);
         displayPanel.revalidate();
-
         displayPanel.repaint();
 
     }

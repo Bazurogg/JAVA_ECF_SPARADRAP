@@ -277,7 +277,7 @@
           </grid>
         </constraints>
         <properties/>
-        <border type="line">
+        <border type="none">
           <color color="-4473925"/>
         </border>
         <children/>

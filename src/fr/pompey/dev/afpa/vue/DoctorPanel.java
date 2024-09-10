@@ -7,30 +7,29 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 
-public class DoctorPanel extends JFrame {
+public class DoctorPanel extends JPanel {
 
-    // Composants créés par le designer
+    // Components created by the GUI Designer
+    private JLabel doctorsDataManagementLabel;
     private JComboBox<Doctor> comboBoxDoctorList;
     private JButton addANewDoctorButton;
-    private JLabel doctorsDataManagementLabel;
     private JPanel doctorDetails;
-    private JPanel panelDoctor;
-    private JLabel labelFirstname, labelLastname, labelEmail, labelPhoneNumber, labelAgreementId;
+    private JLabel labelFirstname;
+    private JLabel labelLastname;
+    private JLabel labelEmail;
+    private JLabel labelPhoneNumber;
+    private JLabel labelAgreementId;
 
     // Constructeur
     public DoctorPanel(List<Doctor> doctors) {
         // Initialise les composants de l'interface
         initUI(doctors);
-
-        this.setVisible(true);
-        add(panelDoctor);
-
     }
 
     // Initialisation de l'interface graphique
     private void initUI(List<Doctor> doctors) {
-
         // Remplir la combo box avec la liste des médecins
+        assert comboBoxDoctorList != null;
         comboBoxDoctorList.setModel(new DefaultComboBoxModel<>(doctors.toArray(new Doctor[0])));
         comboBoxDoctorList.setSelectedIndex(-1); // Aucun médecin sélectionné par défaut
 
@@ -43,12 +42,6 @@ public class DoctorPanel extends JFrame {
                 if (selectedDoctor != null) {
                     displayDoctorDetails(selectedDoctor);
                 }
-            }
-        });
-
-        addANewDoctorButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
             }
         });
     }
