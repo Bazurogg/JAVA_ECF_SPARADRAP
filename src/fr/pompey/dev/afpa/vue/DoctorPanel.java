@@ -31,6 +31,9 @@ public class DoctorPanel extends JPanel {
 
         }
 
+        // no doctor selected by default
+        comboBox1.setSelectedIndex(-1);
+
         // Add an ActionListener to update the fields when a doctor is selected
         comboBox1.addActionListener(new ActionListener() {
 

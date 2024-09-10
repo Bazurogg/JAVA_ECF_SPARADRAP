@@ -27,17 +27,6 @@ public class MenuHome extends JFrame {
         // Appelle le constructeur de JFrame pour définir le titre de la fenêtre
         super("Pharmacy Management - Home");
 
-        // Initialisation des composants
-
-//        displayPanel = new JPanel();
-//        displayPanel.setLayout(new BorderLayout());
-
-//        // Initialise displayPanel si ce n'est pas déjà fait dans le form
-//        if (displayPanel == null) {
-//            displayPanel = new JPanel();
-//            displayPanel.setLayout(new BorderLayout()); // Important d'avoir un layout valide
-//        }
-
         // Ajoute le mainPanel (qui contient ton design) à la fenêtre
         this.setContentPane(mainPanel);
 
@@ -57,7 +46,6 @@ public class MenuHome extends JFrame {
     }
 
     // Initialisation des écouteurs s'évènements sur les boutons du menu
-
     // Bouton détails Médecins et spécialistes
     private void initListeners() {
 
@@ -68,11 +56,6 @@ public class MenuHome extends JFrame {
             public void actionPerformed(ActionEvent e) {
 
                 showDoctorPanel();
-
-//                displayPanel.removeAll();
-//                displayPanel.add(new DoctorPanel(doctors));
-//                displayPanel.revalidate();
-//                displayPanel.repaint();
 
             }
 
@@ -93,30 +76,12 @@ public class MenuHome extends JFrame {
             return;
         }
 
-//        System.out.println("COUCOU ! et OUI SI TU ME VOIS EH BEH çA MARCHE !");
         DoctorPanel doctorPanel = new DoctorPanel(doctors);
         displayPanel.add(doctorPanel, BorderLayout.CENTER);
         displayPanel.revalidate();
         displayPanel.repaint();
 
     }
-
-
-    // Methode test d'affichage au clic sur le bouton
-//    private void doctorPanel() {
-//
-//        System.out.println("showTEST called"); // Pour vérifier si la méthode est appelée
-//        displayPanel.removeAll();
-//
-//        TEST testPanel = new TEST();
-//        displayPanel.removeAll();
-//        displayPanel.setLayout(new BorderLayout());
-//        displayPanel.add(testPanel, BorderLayout.CENTER);
-//
-//        displayPanel.revalidate();
-//        displayPanel.repaint();
-//
-//    }
 
 }
 
