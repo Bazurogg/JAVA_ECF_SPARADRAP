@@ -8,25 +8,30 @@ public class TEST extends JPanel {
     private JButton JEButton;
     private JButton SUISButton;
     private JButton SPIDERMANButton;
+    private JPanel panelTest;
 
     public TEST() {
-        // Appelle le constructeur généré automatiquement par IntelliJ pour le designer
-        initComponents();
-    }
+//        // Appelle le constructeur généré automatiquement par IntelliJ pour le designer
+//       initComponents();
 
-    private void initComponents() {
-        // Code généré automatiquement par IntelliJ IDEA pour le designer
-        // Assurez-vous que le code ici est complet et correct
-        setLayout(new GridLayout(1, 3)); // Exemple de mise en page
 
-        JEButton = new JButton("JE");
-        SUISButton = new JButton("SUIS");
-        SPIDERMANButton = new JButton("SPIDERMAN");
-
-        add(JEButton);
-        add(SUISButton);
-        add(SPIDERMANButton);
+        this.setVisible(true);
+        add(panelTest);
 
     }
+
+    private void setContentPane(JPanel panelTest) {
+    }
+
+//    private void initComponents() {
+//        // Code généré automatiquement par IntelliJ IDEA pour le designer
+//        // Assurez-vous que le code ici est complet et correct
+//        setLayout(new GridLayout(3, 1)); // Exemple de mise en page
+//
+//        add(JEButton);
+//        add(SUISButton);
+//        add(SPIDERMANButton);
+//
+//    }
 
 }

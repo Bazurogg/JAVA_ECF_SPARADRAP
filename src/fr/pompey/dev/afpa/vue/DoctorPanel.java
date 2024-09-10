@@ -7,25 +7,28 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 
-public class DoctorPanel extends JPanel {
+public class DoctorPanel extends JFrame {
 
     // Composants créés par le designer
     private JComboBox<Doctor> comboBoxDoctorList;
     private JButton addANewDoctorButton;
     private JLabel doctorsDataManagementLabel;
     private JPanel doctorDetails;
+    private JPanel panelDoctor;
     private JLabel labelFirstname, labelLastname, labelEmail, labelPhoneNumber, labelAgreementId;
 
     // Constructeur
     public DoctorPanel(List<Doctor> doctors) {
         // Initialise les composants de l'interface
         initUI(doctors);
+
+        this.setVisible(true);
+        add(panelDoctor);
+
     }
 
     // Initialisation de l'interface graphique
     private void initUI(List<Doctor> doctors) {
-        // Assurez-vous que les composants créés par le designer sont correctement initialisés
-        // et que vous n'avez pas besoin de les recréer.
 
         // Remplir la combo box avec la liste des médecins
         comboBoxDoctorList.setModel(new DefaultComboBoxModel<>(doctors.toArray(new Doctor[0])));
@@ -43,12 +46,9 @@ public class DoctorPanel extends JPanel {
             }
         });
 
-        // Assurer que le bouton d'ajout a un écouteur, si nécessaire
         addANewDoctorButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Code pour ajouter un nouveau médecin
-                // Vous pouvez définir ce que vous voulez faire lorsque ce bouton est cliqué
             }
         });
     }

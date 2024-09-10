@@ -19,6 +19,8 @@ public class DoctorController {
         initializeDoctors();
     }
 
+
+
     // auto generated list of doctors registered
     private void initializeDoctors() {
         doctors.add(new Doctor("John", "Doe", "123 Elm St.", "75001", "Paris", "0600000001", "john.doe@mail.com", "AG1001"));

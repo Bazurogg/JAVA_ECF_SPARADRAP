@@ -21,7 +21,6 @@ public class MenuHome extends JFrame {
     private JPanel mainPanel;
     private JPanel displayPanel;
     private JButton specialistButton;
-    private JButton button1;
 
     // Constructeur pour initialiser la fenêtre
     public MenuHome() {
@@ -68,7 +67,11 @@ public class MenuHome extends JFrame {
 
             public void actionPerformed(ActionEvent e) {
 
-                showTEST();
+                doctorPanel();
+
+//                displayPanel.add(new TEST());
+//                displayPanel.revalidate();
+//                displayPanel.repaint();
 
             }
 
@@ -77,43 +80,45 @@ public class MenuHome extends JFrame {
     }
 
     // Méthodes pour changer le contenu du displayPanel
+    private void doctorPanel() {
 
-//    private void showTEST() {
-//
-//        displayPanel.removeAll();
-//
-//        displayPanel.setLayout(new BorderLayout());
-//
-//
-//        // Instancie le DoctorController pour obtenir la liste des docteurs
-//        DoctorController doctorController = new DoctorController();
-//
-//        List<Doctor> doctors = doctorController.getDoctors();
+        displayPanel.removeAll();
+
+        // Instancie le DoctorController pour obtenir la liste des docteurs
+        DoctorController doctorController = new DoctorController();
+
+        List<Doctor> doctors = doctorController.getDoctors();
 //
 //        DoctorPanel doctorPanel = new DoctorPanel(doctors);
-//
-//        displayPanel.add(doctorPanel, BorderLayout.CENTER);
-//
-//        displayPanel.revalidate();
-//
-//        displayPanel.repaint();
-//
-//    }
 
-    private void showTEST() {
-
-        System.out.println("showTEST called"); // Pour vérifier si la méthode est appelée
-        displayPanel.removeAll();
-
-        TEST testPanel = new TEST();
-        displayPanel.removeAll();
         displayPanel.setLayout(new BorderLayout());
-        displayPanel.add(testPanel, BorderLayout.CENTER);
+
+        System.out.println("showTEST called");
+
+        displayPanel.add(new DoctorPanel(doctors));
 
         displayPanel.revalidate();
+
         displayPanel.repaint();
 
     }
+
+
+    // Methode test d'affichage au clic sur le bouton
+//    private void doctorPanel() {
+//
+//        System.out.println("showTEST called"); // Pour vérifier si la méthode est appelée
+//        displayPanel.removeAll();
+//
+//        TEST testPanel = new TEST();
+//        displayPanel.removeAll();
+//        displayPanel.setLayout(new BorderLayout());
+//        displayPanel.add(testPanel, BorderLayout.CENTER);
+//
+//        displayPanel.revalidate();
+//        displayPanel.repaint();
+//
+//    }
 
 }
 
