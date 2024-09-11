@@ -65,6 +65,11 @@ public class Customer extends Person {
         this.birthDate = birthDate;
     }
 
+    @Override
+    public String toString() {
+        return getLastname() + " " + getFirstname() + " / " + socialSecurityNumber;
+    }
+
     /**
      * Gets the list of specialists associated with the customer.
      *

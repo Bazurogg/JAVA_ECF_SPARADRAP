@@ -6,11 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="8c42abba-3d1e-4b84-95b6-6832cb625052" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/ClientPanel.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/ClientPanel.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/ClientPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/ClientPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/controller/DoctorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/controller/DoctorController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/vue/ClientPanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/controller/DoctorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/controller/DoctorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/model/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/ClientPanel.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/CustomerPanel.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/ClientPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/CustomerPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/DoctorPanel.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/DoctorPanel.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/MenuHome.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/MenuHome.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/MenuHome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/MenuHome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/TEST02.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/TEST02.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/TEST02.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/TEST02.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +108,7 @@
       <workItem from="1725865652020" duration="25948000" />
       <workItem from="1725947641910" duration="30177000" />
       <workItem from="1726034382036" duration="6168000" />
-      <workItem from="1726043282526" duration="2524000" />
+      <workItem from="1726043282526" duration="13839000" />
     </task>
     <servers />
   </component>

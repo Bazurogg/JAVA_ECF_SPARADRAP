@@ -1,6 +1,8 @@
 package fr.pompey.dev.afpa.vue;
 
+import fr.pompey.dev.afpa.controller.CustomerController;
 import fr.pompey.dev.afpa.controller.DoctorController;
+import fr.pompey.dev.afpa.model.Customer;
 import fr.pompey.dev.afpa.model.Doctor;
 
 import javax.swing.*;
@@ -31,7 +33,7 @@ public class MenuHome extends JFrame {
         this.setContentPane(mainPanel);
 
         // Définit la taille de la fenêtre
-        this.setSize(1490, 930);
+        this.setSize(1490, 960);
 
         // Permet de fermer l'application quand la fenêtre est fermée
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -46,7 +48,7 @@ public class MenuHome extends JFrame {
     }
 
     // Initialisation des écouteurs s'évènements sur les boutons du menu
-    // Bouton détails Médecins et spécialistes
+    // Bouton détails Médecins
     private void initListeners() {
 
         doctorsButton.addActionListener(new ActionListener() {
@@ -61,9 +63,22 @@ public class MenuHome extends JFrame {
 
         });
 
+        customersButton.addActionListener(new ActionListener() {
+
+            @Override
+
+            public void actionPerformed(ActionEvent e) {
+
+                showCustomerPanel();
+
+            }
+
+        });
+
     }
 
-    // Méthodes pour changer le contenu du displayPanel
+    // Méthods to swipe the displayPanel with another  swing GUI panel class
+    // Doctor Panel
     private void showDoctorPanel() {
 
         displayPanel.removeAll();
@@ -82,6 +97,29 @@ public class MenuHome extends JFrame {
         displayPanel.repaint();
 
     }
+
+    // Customer Panel
+    private void showCustomerPanel() {
+
+        displayPanel.removeAll();
+
+        CustomerController customerController = new CustomerController();
+        List<Customer> customers = customerController.getCustomers();
+
+        if (customers.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "No customers available");
+            return;
+        }
+
+        CustomerPanel customerPanel = new CustomerPanel(customers);
+        displayPanel.add(customerPanel, BorderLayout.CENTER);
+        displayPanel.revalidate();
+        displayPanel.repaint();
+
+    }
+
+
+
 
 }
 

@@ -1,6 +1,8 @@
 package fr.pompey.dev.afpa.controller;
 
 import fr.pompey.dev.afpa.model.Customer;
+
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -70,14 +72,23 @@ public class CustomerController {
      * Prints the list of customers to the console.
      */
     public void displayCustomers() {
+
         if (customers.isEmpty()) {
+
             System.out.println("No customers registered.");
+
         } else {
+
             System.out.println("List of customers:");
+
             for (Customer customer : customers) {
+
                 System.out.println(customer.getFirstname() + " " + customer.getLastname() + " - Social Security Number: " + customer.getSocialSecurityNumber());
+
             }
+
         }
+
     }
 
 }
