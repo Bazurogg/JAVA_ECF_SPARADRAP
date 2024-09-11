@@ -28,10 +28,10 @@ public class DoctorPanel extends JPanel {
 
     public DoctorPanel(List<Doctor> doctors) {
 
-        // Initialisation des composants
+        // Initialisation of the components
         initializeComponents();
 
-        // Sort the doctor list by alphabetical order by Lastname
+        // Sort the doctor list by alphabetical order base on the Lastname
         Collections.sort(doctors, Comparator.comparing(Doctor::getLastname));
 
         // make the panel visible
@@ -88,7 +88,5 @@ public class DoctorPanel extends JPanel {
         textField7.setText(doctor.getPostalCode());
         textField8.setText(doctor.getAgreementId());
     }
-
-
 
 }

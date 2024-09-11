@@ -3,7 +3,7 @@
   <grid id="27dc6" binding="panelDoctor" layout-manager="GridLayoutManager" row-count="5" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="10" bottom="30" right="10"/>
     <constraints>
-      <xy x="20" y="20" width="825" height="510"/>
+      <xy x="20" y="20" width="1044" height="640"/>
     </constraints>
     <properties/>
     <border type="none"/>
@@ -229,7 +229,8 @@
               <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Label"/>
+              <icon value="Conception/Maquette/Logos_/Icone_menuSideBar/idDoctor_icon.png"/>
+              <text value="z"/>
             </properties>
           </component>
           <component id="6593f" class="javax.swing.JTextField" binding="textField8" default-binding="true">
