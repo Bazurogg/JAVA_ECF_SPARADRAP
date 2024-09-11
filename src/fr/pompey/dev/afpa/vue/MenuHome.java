@@ -14,7 +14,7 @@ public class MenuHome extends JFrame {
     private JPanel sideBar;
     private JButton customersButton;
     private JButton medicinesButton;
-    private JButton doctorButton;
+    private JButton doctorsButton;
     private JButton purchasesButton;
     private JButton homeButton;
     private JButton exitButton;
@@ -49,7 +49,7 @@ public class MenuHome extends JFrame {
     // Bouton détails Médecins et spécialistes
     private void initListeners() {
 
-        doctorButton.addActionListener(new ActionListener() {
+        doctorsButton.addActionListener(new ActionListener() {
 
             @Override
 
