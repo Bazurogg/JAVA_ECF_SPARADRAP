@@ -69,7 +69,7 @@
             <properties>
               <background color="-3801134"/>
               <editable value="false"/>
-              <font name="Lucida Sans Typewriter" size="18" style="1"/>
+              <font name="Source Code Pro" size="18" style="0"/>
             </properties>
           </component>
           <component id="6e6e2" class="javax.swing.JLabel">
@@ -97,7 +97,7 @@
             <properties>
               <background color="-3801134"/>
               <editable value="false"/>
-              <font name="Lucida Sans Typewriter" size="15" style="1"/>
+              <font name="Source Code Pro" size="15" style="1"/>
               <horizontalAlignment value="2"/>
             </properties>
           </component>
@@ -110,7 +110,7 @@
             <properties>
               <background color="-3801134"/>
               <editable value="false"/>
-              <font name="Lucida Sans Typewriter" size="18" style="1"/>
+              <font name="Source Code Pro" size="18" style="0"/>
             </properties>
           </component>
           <component id="254d9" class="javax.swing.JLabel">
@@ -130,7 +130,7 @@
             <properties>
               <background color="-3801134"/>
               <editable value="false"/>
-              <font name="Lucida Sans Typewriter" size="18" style="1"/>
+              <font name="Source Code Pro" size="18" style="0"/>
             </properties>
           </component>
           <component id="d0ce9" class="javax.swing.JLabel">
@@ -151,7 +151,7 @@
             <properties>
               <background color="-3801134"/>
               <editable value="false"/>
-              <font name="Lucida Sans Typewriter" size="18" style="1"/>
+              <font name="Source Code Pro" size="18" style="0"/>
             </properties>
           </component>
           <component id="405ab" class="javax.swing.JLabel">
@@ -183,7 +183,7 @@
             <properties>
               <background color="-3801134"/>
               <editable value="false"/>
-              <font name="Lucida Sans Typewriter" size="18" style="1"/>
+              <font name="Source Code Pro" size="18" style="0"/>
             </properties>
           </component>
           <component id="5f338" class="javax.swing.JLabel">
@@ -212,7 +212,7 @@
             <properties>
               <background color="-3801134"/>
               <editable value="false"/>
-              <font name="Lucida Sans Typewriter" size="18" style="1"/>
+              <font name="Source Code Pro" size="18" style="0"/>
             </properties>
           </component>
           <component id="ebf0b" class="javax.swing.JSeparator">
@@ -248,7 +248,7 @@
               <background color="-1118482"/>
               <editable value="false"/>
               <focusable value="false"/>
-              <font name="Source Code Pro" size="36" style="0"/>
+              <font name="Source Code Pro" size="36" style="2"/>
               <foreground color="-16777216"/>
               <text value=""/>
             </properties>
