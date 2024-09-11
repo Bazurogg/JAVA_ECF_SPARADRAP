@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8c42abba-3d1e-4b84-95b6-6832cb625052" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Conception/Maquette/Logos_/Icone_menuSideBar/idDoctor_icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/Conception/Maquette/Logos_/Icone_menuSideBar/idDoctor_icon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/DoctorPanel.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/DoctorPanel.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/DoctorPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/DoctorPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +98,7 @@
       <workItem from="1725612471073" duration="4326000" />
       <workItem from="1725865652020" duration="25948000" />
       <workItem from="1725947641910" duration="30177000" />
-      <workItem from="1726034382036" duration="3031000" />
+      <workItem from="1726034382036" duration="4102000" />
     </task>
     <servers />
   </component>
