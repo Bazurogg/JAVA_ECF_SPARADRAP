@@ -278,6 +278,7 @@
         </constraints>
         <properties>
           <background color="-1"/>
+          <editable value="false"/>
         </properties>
       </component>
       <vspacer id="61a02">

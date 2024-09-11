@@ -1,8 +1,8 @@
 package fr.pompey.dev.afpa.model;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-
 
 /**
  * Represents a customer of the drugstore.
@@ -96,5 +96,6 @@ public class Customer extends Person {
     public void removeCustomer(Specialist specialist) {
         this.specialists.remove(specialists);
     }
+
 }
 
