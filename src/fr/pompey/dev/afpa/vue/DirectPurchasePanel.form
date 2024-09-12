@@ -15,7 +15,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <grid id="a712c" binding="panelCustomer" layout-manager="GridLayoutManager" row-count="5" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="a712c" binding="panelDirectPurchase" layout-manager="GridLayoutManager" row-count="5" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="10" bottom="30" right="10"/>
             <constraints border-constraint="Center"/>
             <properties/>
@@ -259,7 +259,7 @@
                   </grid>
                 </constraints>
               </vspacer>
-              <component id="38eb" class="javax.swing.JButton" binding="addNewCustomerButton">
+              <component id="38eb" class="javax.swing.JButton" binding="createNewDirectPurchaseButton">
                 <constraints>
                   <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="50" height="-1"/>
@@ -278,7 +278,7 @@
                 </constraints>
                 <properties/>
               </component>
-              <component id="7c8d9" class="javax.swing.JButton">
+              <component id="7c8d9" class="javax.swing.JButton" binding="cancelButton">
                 <constraints>
                   <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
                     <preferred-size width="50" height="-1"/>
