@@ -1,6 +1,7 @@
 package fr.pompey.dev.afpa.model;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -33,7 +34,7 @@ public abstract class Purchase {
     public Purchase(LocalDate purchaseDate, double totalPrice, List<Medicine> medicines, Customer customer) {
         setPurchaseDate(purchaseDate);
         setTotalPrice(totalPrice);
-        this.medicines = medicines;
+        this.medicines = medicines != null ? new ArrayList<>(medicines) : new ArrayList<>(); // Prevent null pointer
         setCustomer(customer);
     }
 
@@ -88,7 +89,47 @@ public abstract class Purchase {
      * @param medicines The list of medicines
      */
     public void setMedicines(List<Medicine> medicines) {
-        this.medicines = medicines;
+        this.medicines = new ArrayList<>(medicines); // Prevent external modifications
+    }
+
+    /**
+     * Adds a medicine to the list of medicines for this purchase.
+     *
+     * @param medicine The medicine to add
+     */
+    public void addMedicine(Medicine medicine) {
+        if (medicine != null) {
+            this.medicines.add(medicine);
+            updateTotalPrice();
+        }
+    }
+
+    /**
+     * Removes a medicine from the list of medicines for this purchase.
+     *
+     * @param medicine The medicine to remove
+     */
+    public void removeMedicine(Medicine medicine) {
+        if (medicine != null && this.medicines.contains(medicine)) {
+            this.medicines.remove(medicine);
+            updateTotalPrice();
+        }
+    }
+
+    /**
+     * Clears all medicines from the purchase.
+     */
+    public void clearMedicines() {
+        this.medicines.clear();
+        updateTotalPrice();
+    }
+
+    /**
+     * Updates the total price of the purchase based on the medicines in the list.
+     * The total price is calculated as the sum of the prices of all medicines.
+     */
+    private void updateTotalPrice() {
+        this.totalPrice = medicines.stream().mapToDouble(Medicine::getPrice).sum();
     }
 
     /**
@@ -110,11 +151,12 @@ public abstract class Purchase {
     }
 
     @Override
-
     public String toString() {
-
-        return "Purchase{" + "purchaseDate=" + purchaseDate + ", totalPrice=" + totalPrice + ", medicines=" + medicines + ", customer=" + customer + '}';
-
+        return "Purchase{" +
+                "purchaseDate=" + purchaseDate +
+                ", totalPrice=" + totalPrice +
+                ", medicines=" + medicines +
+                ", customer=" + customer +
+                '}';
     }
-
 }
