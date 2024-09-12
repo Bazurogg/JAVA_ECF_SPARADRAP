@@ -47,10 +47,11 @@ public class MenuHome extends JFrame {
 
     }
 
-    // Initialisation des écouteurs s'évènements sur les boutons du menu
-    // Bouton détails Médecins
+    // Initializing Event Listeners on Menu Buttons
+
     private void initListeners() {
 
+        // Button to doctor's details
         doctorsButton.addActionListener(new ActionListener() {
 
             @Override
@@ -63,6 +64,7 @@ public class MenuHome extends JFrame {
 
         });
 
+        // Button to customer's details
         customersButton.addActionListener(new ActionListener() {
 
             @Override
@@ -70,6 +72,19 @@ public class MenuHome extends JFrame {
             public void actionPerformed(ActionEvent e) {
 
                 showCustomerPanel();
+
+            }
+
+        });
+
+        // button to the purchase choice window
+        purchasesButton.addActionListener(new ActionListener() {
+
+            @Override
+
+            public void actionPerformed(ActionEvent e) {
+
+                showPurchaseChoicePanel();
 
             }
 
@@ -117,6 +132,19 @@ public class MenuHome extends JFrame {
         displayPanel.repaint();
 
     }
+
+    // Purchase choice panel
+    private void showPurchaseChoicePanel() {
+
+        displayPanel.removeAll();
+
+        PurchaseChoicePanel purchaseChoicePanel = new PurchaseChoicePanel();
+        displayPanel.add(purchaseChoicePanel, BorderLayout.CENTER);
+        displayPanel.revalidate();
+        displayPanel.repaint();
+
+    }
+
 
 
 
