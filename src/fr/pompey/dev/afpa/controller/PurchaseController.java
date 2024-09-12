@@ -7,71 +7,65 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * PurchaseController is a class dedicated to managing the list of medicines purchased.
+ * PurchaseController is a class dedicated to managing the list of purchases.
+ * Each purchase can contain multiple medicines.
  */
 public class PurchaseController {
 
-    /** The list of medicines */
-    private List<Medicine> medicines;
+    /** The list of purchases (each purchase contains a list of medicines) */
+    private List<List<Medicine>> purchases;
 
-    /** Constructor to initialize the medicine list */
+    /** Constructor to initialize the purchase list */
     public PurchaseController() {
-        this.medicines = new ArrayList<>();
-        initializeMedicines();
-    }
-
-    // Automatically generated list of medicines
-    private void initializeMedicines() {
-        medicines.add(new Medicine("Doliprane", Medicine.MedicineCategory.ANALGESIC, 2.50, 10, LocalDate.of(2023, 1, 12)));
-        medicines.add(new Medicine("Amoxicilline", Medicine.MedicineCategory.ANTIBIOTIC, 8.99, 5, LocalDate.of(2023, 2, 5)));
-        medicines.add(new Medicine("Betadine", Medicine.MedicineCategory.ANTISEPTIC, 4.75, 12, LocalDate.of(2022, 11, 20)));
-        medicines.add(new Medicine("Berocca", Medicine.MedicineCategory.VITAMINS, 6.20, 20, LocalDate.of(2023, 3, 15)));
-        medicines.add(new Medicine("Ibuprofène", Medicine.MedicineCategory.ANTIINFLAMMATORY, 3.50, 15, LocalDate.of(2023, 4, 10)));
-        medicines.add(new Medicine("Zovirax", Medicine.MedicineCategory.ANTIVIRAL, 9.30, 8, LocalDate.of(2023, 5, 7)));
-        medicines.add(new Medicine("Paracétamol", Medicine.MedicineCategory.ANALGESIC, 1.99, 25, LocalDate.of(2022, 12, 1)));
-        medicines.add(new Medicine("Augmentin", Medicine.MedicineCategory.ANTIBIOTIC, 12.50, 4, LocalDate.of(2023, 6, 18)));
-        medicines.add(new Medicine("Mercurochrome", Medicine.MedicineCategory.ANTISEPTIC, 3.80, 7, LocalDate.of(2023, 7, 21)));
-        medicines.add(new Medicine("Supradyn", Medicine.MedicineCategory.VITAMINS, 10.00, 18, LocalDate.of(2023, 8, 9)));
+        this.purchases = new ArrayList<>();
     }
 
     /**
-     * Adds a medicine to the list of medicines.
+     * Adds a purchase to the list of purchases.
+     * Each purchase is a list of medicines.
      *
-     * @param medicine the medicine to add.
+     * @param purchase the list of medicines representing a purchase.
      */
-    public void addMedicine(Medicine medicine) {
-        this.medicines.add(medicine);
+    public void addPurchase(List<Medicine> purchase) {
+        this.purchases.add(purchase);
     }
 
     /**
-     * Removes a medicine from the list of medicines.
+     * Removes a purchase from the list of purchases.
      *
-     * @param medicine the medicine to remove.
+     * @param purchase the purchase (list of medicines) to remove.
      */
-    public void removeMedicine(Medicine medicine) {
-        this.medicines.remove(medicine);
+    public void removePurchase(List<Medicine> purchase) {
+        this.purchases.remove(purchase);
     }
 
     /**
-     * Returns the list of medicines.
+     * Returns the list of purchases.
+     * Each purchase is a list of medicines.
      *
-     * @return the list of medicines.
+     * @return the list of purchases.
      */
-    public List<Medicine> getMedicines() {
-        return medicines;
+    public List<List<Medicine>> getPurchases() {
+        return purchases;
     }
 
     /**
-     * Prints the list of medicines to the console.
+     * Prints the list of purchases to the console.
+     * Each purchase and its associated medicines are displayed.
      */
-    public void displayMedicines() {
-        if (medicines.isEmpty()) {
-            System.out.println("No medicines available.");
+    public void displayPurchases() {
+        if (purchases.isEmpty()) {
+            System.out.println("No purchases have been made.");
         } else {
-            System.out.println("List of medicines:");
-            for (Medicine medicine : medicines) {
-                System.out.println(medicine.getMedicineName() + " - Category: " + medicine.getCategory() +
-                        " - Price: €" + medicine.getPrice() + " - Quantity: " + medicine.getQuantity());
+            System.out.println("List of purchases:");
+            int purchaseNumber = 1;
+            for (List<Medicine> purchase : purchases) {
+                System.out.println("Purchase " + purchaseNumber + ":");
+                for (Medicine medicine : purchase) {
+                    System.out.println("- " + medicine.getMedicineName() + " (Category: " + medicine.getCategory() +
+                            ", Price: €" + medicine.getPrice() + ", Quantity: " + medicine.getQuantity() + ")");
+                }
+                purchaseNumber++;
             }
         }
     }
