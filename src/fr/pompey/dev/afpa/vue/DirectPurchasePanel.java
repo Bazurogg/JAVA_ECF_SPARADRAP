@@ -15,7 +15,6 @@ public class DirectPurchasePanel extends JPanel {
     private JButton createNewDirectPurchaseButton;
     private JButton cancelButton;
 
-
     public DirectPurchasePanel() {
 
         this.setVisible(true);
