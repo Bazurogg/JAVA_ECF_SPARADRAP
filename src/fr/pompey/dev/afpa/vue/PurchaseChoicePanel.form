@@ -25,7 +25,9 @@
               </grid>
             </constraints>
             <properties/>
-            <border type="line" title="">
+            <border type="empty" title="">
+              <font/>
+              <title-color color="-4473925"/>
               <color color="-11510149"/>
             </border>
             <children>
@@ -108,7 +110,7 @@
             </constraints>
             <properties>
               <font name="Lucida Sans Typewriter" size="20" style="0"/>
-              <text value="Purchase"/>
+              <text value=""/>
             </properties>
           </component>
           <vspacer id="aa7c">

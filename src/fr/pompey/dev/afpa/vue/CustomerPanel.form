@@ -2,7 +2,7 @@
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="fr.pompey.dev.afpa.vue.CustomerPanel">
   <grid id="27dc6" layout-manager="BorderLayout" hgap="0" vgap="0">
     <constraints>
-      <xy x="20" y="20" width="907" height="691"/>
+      <xy x="20" y="20" width="673" height="672"/>
     </constraints>
     <properties/>
     <border type="none"/>
