@@ -1,7 +1,6 @@
 package fr.pompey.dev.afpa.vue;
 
-import fr.pompey.dev.afpa.model.DirectPurchase;
-
+import fr.pompey.dev.afpa.controller.MedicineController;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -10,24 +9,24 @@ import java.awt.event.ActionListener;
 public class PurchaseChoicePanel extends JPanel {
 
     private JPanel panelPurchaseChoice;
+    private MedicineController medicineController;
     private JButton directPurchaseButton;
     private JButton byPrescriptionPurchaseButton;
 
-    public PurchaseChoicePanel() {
+    public PurchaseChoicePanel(MedicineController medicineController) {
 
+        this.medicineController = medicineController; // Initialise medicineController dans le constructeur
         this.setVisible(true);
+        this.add(panelPurchaseChoice);
 
-        add(panelPurchaseChoice);
-
+        // Ajout des écouteurs d'événements sur les boutons
         initListeners();
 
     }
 
     private void initListeners() {
 
-
         directPurchaseButton.addActionListener(new ActionListener() {
-
             @Override
 
             public void actionPerformed(ActionEvent e) {
@@ -42,15 +41,14 @@ public class PurchaseChoicePanel extends JPanel {
 
     private void showDirectPurchasePanel() {
 
-        DirectPurchasePanel directPurchasePanel = new DirectPurchasePanel();
+        DirectPurchasePanel directPurchasePanel = new DirectPurchasePanel(medicineController.getMedicineManager());
 
         panelPurchaseChoice.removeAll();
-
+        panelPurchaseChoice.add(directPurchasePanel);
         panelPurchaseChoice.add(directPurchasePanel, BorderLayout.CENTER);
         panelPurchaseChoice.revalidate();
         panelPurchaseChoice.repaint();
 
-    };
-
+    }
 
 }

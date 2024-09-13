@@ -5,6 +5,7 @@ import fr.pompey.dev.afpa.model.Medicine;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * MedicineController is a class dedicated to managing the list of medicines available in the drugstore.
@@ -14,10 +15,16 @@ public class MedicineController {
     /** The list of medicines */
     private List<Medicine> medicines;
 
-    /** Constructor to initialize the medicine list */
+    /** Instance of MedicineManager */
+    private MedicineManager medicineManager;
+
+    /**
+     * Constructor to initialize the medicine list and MedicineManager
+     */
     public MedicineController() {
         this.medicines = new ArrayList<>();
         initializeMedicines();
+        this.medicineManager = new MedicineManager(this.medicines);
     }
 
     // Automatically generated list of medicines
@@ -62,6 +69,15 @@ public class MedicineController {
     }
 
     /**
+     * Returns the MedicineManager instance.
+     *
+     * @return the MedicineManager
+     */
+    public MedicineManager getMedicineManager() {
+        return this.medicineManager;
+    }
+
+    /**
      * Prints the list of medicines to the console.
      */
     public void displayMedicines() {
@@ -83,6 +99,34 @@ public class MedicineController {
 
         }
 
+    }
+
+    /**
+     * The type Medicine manager.
+     */
+    public static class MedicineManager {
+        private List<Medicine> allMedicines;
+
+        /**
+         * Instantiates a new Medicine manager.
+         *
+         * @param allMedicines the all medicines
+         */
+        public MedicineManager(List<Medicine> allMedicines) {
+            this.allMedicines = allMedicines;
+        }
+
+        /**
+         * Gets medicines by category.
+         *
+         * @param category the category
+         * @return the medicines by category
+         */
+        public List<Medicine> getMedicinesByCategory(Medicine.MedicineCategory category) {
+            return allMedicines.stream()
+                    .filter(medicine -> medicine.getCategory() == category)
+                    .collect(Collectors.toList());
+        }
     }
 
 }

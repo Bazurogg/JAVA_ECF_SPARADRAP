@@ -2,6 +2,7 @@ package fr.pompey.dev.afpa.vue;
 
 import fr.pompey.dev.afpa.controller.CustomerController;
 import fr.pompey.dev.afpa.controller.DoctorController;
+import fr.pompey.dev.afpa.controller.MedicineController;
 import fr.pompey.dev.afpa.model.Customer;
 import fr.pompey.dev.afpa.model.Doctor;
 
@@ -137,17 +138,13 @@ public class MenuHome extends JFrame {
     private void showPurchaseChoicePanel() {
 
         displayPanel.removeAll();
-
-        PurchaseChoicePanel purchaseChoicePanel = new PurchaseChoicePanel();
+        MedicineController medicineController = new MedicineController();
+        PurchaseChoicePanel purchaseChoicePanel = new PurchaseChoicePanel(medicineController);
         displayPanel.add(purchaseChoicePanel, BorderLayout.CENTER);
         displayPanel.revalidate();
         displayPanel.repaint();
 
     }
-
-
-
-
 
 }
 

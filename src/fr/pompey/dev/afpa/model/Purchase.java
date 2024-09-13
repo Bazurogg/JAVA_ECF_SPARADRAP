@@ -39,6 +39,20 @@ public abstract class Purchase {
     }
 
     /**
+     * Constructor for a general purchase without a customer.
+     *
+     * @param purchaseDate The date the purchase was made
+     * @param totalPrice The total price of the purchase
+     * @param medicines The list of medicines in this purchase
+     */
+    public Purchase(LocalDate purchaseDate, double totalPrice, List<Medicine> medicines) {
+        setPurchaseDate(purchaseDate);
+        setTotalPrice(totalPrice);
+        this.medicines = medicines != null ? new ArrayList<>(medicines) : new ArrayList<>(); // Prevent null pointer
+        this.customer = null; // No customer for this constructor
+    }
+
+    /**
      * Gets the date the purchase was made.
      *
      * @return the date of the purchase
@@ -156,7 +170,7 @@ public abstract class Purchase {
                 "purchaseDate=" + purchaseDate +
                 ", totalPrice=" + totalPrice +
                 ", medicines=" + medicines +
-                ", customer=" + customer +
+                ", customer=" + (customer != null ? customer : "No customer") +
                 '}';
     }
 }

@@ -10,7 +10,7 @@ import java.time.LocalDate;
 public class DirectPurchase extends Purchase {
 
     /**
-     * Constructor for a direct purchase.
+     * Constructor for a direct purchase with a customer.
      *
      * @param purchaseDate The date the purchase was made
      * @param totalPrice The total price of the purchase
@@ -21,14 +21,27 @@ public class DirectPurchase extends Purchase {
         super(purchaseDate, totalPrice, medicines, customer);
     }
 
-    // Here add some futur methods implementation if needed. .
+    /**
+     * Constructor for a direct purchase without a customer.
+     *
+     * @param purchaseDate The date the purchase was made
+     * @param totalPrice The total price of the purchase
+     * @param medicines The list of medicines in this purchase
+     */
+    public DirectPurchase(LocalDate purchaseDate, double totalPrice, List<Medicine> medicines) {
+        super(purchaseDate, totalPrice, medicines); // Calls the parent constructor without customer
+    }
+
+    // Here add some future methods implementation if needed.
 
     @Override
-
     public String toString() {
-
-        return "DirectPurchase{" + "purchaseDate=" + getPurchaseDate() + ", totalPrice=" + getTotalPrice() + ", medicines=" + getMedicines() + ", customer=" + getCustomer() + '}';
-
+        return "DirectPurchase{" +
+                "purchaseDate=" + getPurchaseDate() +
+                ", totalPrice=" + getTotalPrice() +
+                ", medicines=" + getMedicines() +
+                ", customer=" + (getCustomer() != null ? getCustomer() : "No customer") +
+                '}';
     }
 
 }
