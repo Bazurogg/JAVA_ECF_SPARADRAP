@@ -6,6 +6,7 @@ import fr.pompey.dev.afpa.model.Medicine;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableColumn;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -98,8 +99,15 @@ public class DirectPurchasePanel extends JPanel {
         table.setModel(model);
 
         // Set custom renderer and editor for the Action column
-        table.getColumn("Action").setCellRenderer(new ButtonRenderer());
-        table.getColumn("Action").setCellEditor(new ButtonEditor(new JCheckBox(), medicines, table));
+//        table.getColumn("Action").setCellRenderer(new ButtonRenderer());
+//        table.getColumn("Action").setCellEditor(new ButtonEditor(new JCheckBox(), medicines, table));
+
+        TableColumn actionColumn = table.getColumn("Action");
+        actionColumn.setCellRenderer(new ButtonRenderer());
+        actionColumn.setCellEditor(new ButtonEditor(new JCheckBox(), medicines, table));
+        actionColumn.setPreferredWidth(80); // Adjust column width to fit the button
+        table.setRowHeight(30);
+
 
     }
 
@@ -109,6 +117,7 @@ public class DirectPurchasePanel extends JPanel {
             setOpaque(true);
             setText("Add");
             setHorizontalAlignment(CENTER);
+            setPreferredSize(new Dimension(30, 80));
         }
 
         @Override
@@ -129,6 +138,7 @@ public class DirectPurchasePanel extends JPanel {
             this.medicines = medicines;
             this.table = table;
             button = new JButton("Add");
+            button.setPreferredSize(new Dimension(30, 80));
             button.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
@@ -160,7 +170,7 @@ public class DirectPurchasePanel extends JPanel {
         public Object getCellEditorValue() {
             return button.getText();
         }
-        
+
     }
 
 }
