@@ -5,7 +5,10 @@ import fr.pompey.dev.afpa.model.Medicine;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellRenderer;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.List;
 
 public class DirectPurchasePanel extends JPanel {
@@ -78,6 +81,7 @@ public class DirectPurchasePanel extends JPanel {
         model.addColumn("Price");
         model.addColumn("Quantity");
         model.addColumn("Date on Sale");
+        model.addColumn("Action"); // Add Action column for buttons
 
         // Populate the table with data
         for (Medicine medicine : medicines) {
@@ -85,13 +89,79 @@ public class DirectPurchasePanel extends JPanel {
                     medicine.getMedicineName(),
                     medicine.getPrice(),
                     medicine.getQuantity(),
-                    medicine.getDateOnSale()
+                    medicine.getDateOnSale(),
+                    "Add" // Text for the button
             });
         }
 
         // Set the model to the table
         table.setModel(model);
 
+        // Set custom renderer and editor for the Action column
+        table.getColumn("Action").setCellRenderer(new ButtonRenderer());
+        table.getColumn("Action").setCellEditor(new ButtonEditor(new JCheckBox(), medicines, table));
+
+    }
+
+    // Custom ButtonRenderer to render buttons in table cells
+    private class ButtonRenderer extends JButton implements TableCellRenderer {
+        public ButtonRenderer() {
+            setOpaque(true);
+            setText("Add");
+            setHorizontalAlignment(CENTER);
+        }
+
+        @Override
+        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+            return this;
+        }
+
+    }
+
+    // Custom ButtonEditor to handle button clicks
+    private class ButtonEditor extends DefaultCellEditor {
+        private JButton button;
+        private List<Medicine> medicines;
+        private JTable table;
+
+        public ButtonEditor(JCheckBox checkBox, List<Medicine> medicines, JTable table) {
+            super(checkBox);
+            this.medicines = medicines;
+            this.table = table;
+            button = new JButton("Add");
+            button.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    int row = table.getSelectedRow();
+                    Medicine selectedMedicine = medicines.get(row);
+
+                    String quantityStr = JOptionPane.showInputDialog("Enter the quantity for " + selectedMedicine.getMedicineName());
+                    try {
+                        int quantity = Integer.parseInt(quantityStr);
+                        if (quantity > 0) {
+                            // Handle adding the medicine here
+                            JOptionPane.showMessageDialog(null, "Added " + quantity + " of " + selectedMedicine.getMedicineName());
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Quantity must be positive.");
+                        }
+                    } catch (NumberFormatException ex) {
+                        JOptionPane.showMessageDialog(null, "Please enter a valid number.");
+                    }
+                }
+            });
+        }
+
+        @Override
+        public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
+            return button;
+        }
+
+        @Override
+        public Object getCellEditorValue() {
+            return button.getText();
+        }
+        
     }
 
 }
+

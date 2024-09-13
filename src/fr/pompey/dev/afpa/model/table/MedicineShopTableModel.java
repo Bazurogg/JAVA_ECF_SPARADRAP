@@ -5,12 +5,12 @@ import fr.pompey.dev.afpa.model.Medicine;
 
 import java.util.List;
 
-public class MedicineTableModel extends AbstractTableModel {
+public class MedicineShopTableModel extends AbstractTableModel {
 
     private final String[] columnNames = {"Name", "Price", "Quantity", "Date on Sale"};
     private final List<Medicine> medicines;
 
-    public MedicineTableModel(List<Medicine> medicines) {
+    public MedicineShopTableModel(List<Medicine> medicines) {
         this.medicines = medicines;
     }
 
