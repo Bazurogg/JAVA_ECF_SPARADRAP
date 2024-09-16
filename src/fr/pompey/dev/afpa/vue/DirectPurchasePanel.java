@@ -24,6 +24,7 @@ public class DirectPurchasePanel extends JPanel {
     private JTable tableAntiviral;
     private JButton createNewDirectPurchaseButton;
     private JButton cancelButton;
+    private JTable table1;
 
     private MedicineController.MedicineManager medicineManager;
 
