@@ -34,15 +34,17 @@ public class MedicineShopTableModel extends AbstractTableModel {
         Medicine medicine = medicines.get(rowIndex);
         switch (columnIndex) {
             case 0:
-                return medicine.getMedicineName();
+                return medicine.getMedicineName();  // Nom du médicament
             case 1:
-                return medicine.getPrice();
+                return medicine.getQuantity();  // Quantité ajoutée à l'achat
             case 2:
-                return medicine.getQuantity();
+                return medicine.getPrice();  // Prix par unité
             case 3:
-                return medicine.getDateOnSale();
+                return medicine.getPrice() * medicine.getQuantity();  // Prix total (quantité * prix unitaire)
             default:
                 return null;
         }
+
     }
+
 }

@@ -17,12 +17,16 @@ public class MedicinePurchaseTableModel extends AbstractTableModel {
 
     @Override
     public int getRowCount() {
+
         return purchaseMedicines.size();
+
     }
 
     @Override
     public int getColumnCount() {
+
         return columnNames.length;
+
     }
 
     @Override

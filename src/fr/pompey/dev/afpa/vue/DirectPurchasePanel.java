@@ -1,7 +1,9 @@
 package fr.pompey.dev.afpa.vue;
 
 import fr.pompey.dev.afpa.controller.MedicineController;
+import fr.pompey.dev.afpa.model.DirectPurchase;
 import fr.pompey.dev.afpa.model.Medicine;
+import fr.pompey.dev.afpa.model.table.MedicinePurchaseTableModel;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -24,11 +26,12 @@ public class DirectPurchasePanel extends JPanel {
     private JTable tableAntiviral;
     private JButton createNewDirectPurchaseButton;
     private JButton cancelButton;
-    private JTable table1;
+    private JScrollPane JScrollTablePurchase;
 
     private MedicineController.MedicineManager medicineManager;
 
     public DirectPurchasePanel(MedicineController.MedicineManager medicineManager) {
+
         this.medicineManager = medicineManager;
 
         this.setVisible(true);
@@ -37,6 +40,7 @@ public class DirectPurchasePanel extends JPanel {
         // Initialize the UI and tables
         initializeUI();
         populateTables();
+
     }
 
     private void initializeUI() {
