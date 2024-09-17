@@ -12,10 +12,13 @@ import javax.swing.table.TableColumn;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.List;
 
 public class DirectPurchasePanel extends JPanel {
 
+    private JTable purchaseTable;
+    private List<Medicine> selectedMedicines = new ArrayList<>();
     private JPanel panelDirectPurchase;
     private JTabbedPane tabbedPane1;
     private JTable tableAnalgesic;
@@ -91,13 +94,21 @@ public class DirectPurchasePanel extends JPanel {
 
         // Populate the table with data
         for (Medicine medicine : medicines) {
+
             model.addRow(new Object[]{
+
                     medicine.getMedicineName(),
+
                     medicine.getPrice(),
+
                     medicine.getQuantity(),
+
                     medicine.getDateOnSale(),
+
                     "Add" // Text for the button
+
             });
+
         }
 
         // Set the model to the table
@@ -118,6 +129,7 @@ public class DirectPurchasePanel extends JPanel {
 
     // Custom ButtonRenderer to render buttons in table cells
     private class ButtonRenderer extends JButton implements TableCellRenderer {
+
         public ButtonRenderer() {
             setOpaque(true);
             setText("Add");
@@ -139,31 +151,46 @@ public class DirectPurchasePanel extends JPanel {
         private JTable table;
 
         public ButtonEditor(JCheckBox checkBox, List<Medicine> medicines, JTable table) {
+
             super(checkBox);
             this.medicines = medicines;
             this.table = table;
             button = new JButton("Add");
             button.setPreferredSize(new Dimension(30, 80));
             button.addActionListener(new ActionListener() {
+
                 @Override
+
                 public void actionPerformed(ActionEvent e) {
+
                     int row = table.getSelectedRow();
+
                     Medicine selectedMedicine = medicines.get(row);
 
                     String quantityStr = JOptionPane.showInputDialog("Enter the quantity for " + selectedMedicine.getMedicineName());
+
                     try {
+
                         int quantity = Integer.parseInt(quantityStr);
+
                         if (quantity > 0) {
                             // Handle adding the medicine here
                             JOptionPane.showMessageDialog(null, "Added " + quantity + " of " + selectedMedicine.getMedicineName());
                         } else {
                             JOptionPane.showMessageDialog(null, "Quantity must be positive.");
+
                         }
+
                     } catch (NumberFormatException ex) {
+
                         JOptionPane.showMessageDialog(null, "Please enter a valid number.");
+
                     }
+
                 }
+
             });
+
         }
 
         @Override
