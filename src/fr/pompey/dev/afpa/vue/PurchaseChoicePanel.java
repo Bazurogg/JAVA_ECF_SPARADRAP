@@ -1,5 +1,6 @@
 package fr.pompey.dev.afpa.vue;
 
+import fr.pompey.dev.afpa.controller.CustomerController;
 import fr.pompey.dev.afpa.controller.MedicineController;
 import javax.swing.*;
 import java.awt.*;
@@ -10,6 +11,7 @@ public class PurchaseChoicePanel extends JPanel {
 
     private JPanel panelPurchaseChoice;
     private MedicineController medicineController;
+    private CustomerController customerController;
     private JButton directPurchaseButton;
     private JButton byPrescriptionPurchaseButton;
 
@@ -41,7 +43,11 @@ public class PurchaseChoicePanel extends JPanel {
 
     private void showDirectPurchasePanel() {
 
-        DirectPurchasePanel directPurchasePanel = new DirectPurchasePanel(medicineController.getMedicineManager());
+        if (customerController == null) {
+            customerController = new CustomerController();
+        }
+
+        DirectPurchasePanel directPurchasePanel = new DirectPurchasePanel(medicineController.getMedicineManager(), customerController);
 
         panelPurchaseChoice.removeAll();
         panelPurchaseChoice.add(directPurchasePanel);

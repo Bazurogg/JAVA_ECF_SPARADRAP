@@ -1,6 +1,8 @@
 package fr.pompey.dev.afpa.vue;
 
+import fr.pompey.dev.afpa.controller.CustomerController;
 import fr.pompey.dev.afpa.controller.MedicineController;
+import fr.pompey.dev.afpa.model.Customer;
 import fr.pompey.dev.afpa.model.DirectPurchase;
 import fr.pompey.dev.afpa.model.Medicine;
 import fr.pompey.dev.afpa.model.table.MedicinePurchaseTableModel;
@@ -17,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DirectPurchasePanel extends JPanel {
-
+    
     private final DirectPurchase currentPurchase;
     private JTable purchaseTable;
     private final List<Medicine> selectedMedicines = new ArrayList<>();
@@ -32,12 +34,14 @@ public class DirectPurchasePanel extends JPanel {
     private JButton createNewDirectPurchaseButton;
     private JButton cancelButton;
     private JScrollPane JScrollTablePurchase;
-
+    private JComboBox<Customer> comboBoxCustomers;
+    private CustomerController customerController;
     private MedicineController.MedicineManager medicineManager;
 
-    public DirectPurchasePanel(MedicineController.MedicineManager medicineManager) {
+    public DirectPurchasePanel(MedicineController.MedicineManager medicineManager, CustomerController customerController) {
 
         this.medicineManager = medicineManager;
+        this.customerController = customerController;
 
         // Initialise DirectPurchase avec une liste vide de médicaments
         currentPurchase = new DirectPurchase(LocalDate.now(), 0.0, new ArrayList<>(), null);
@@ -48,6 +52,8 @@ public class DirectPurchasePanel extends JPanel {
         // Initialize the UI and tables
         initializeUI();
         populateTables();
+        populateComboBoxCustomer();
+
     }
 
     private void initializeUI() {
@@ -72,6 +78,15 @@ public class DirectPurchasePanel extends JPanel {
         tabbedPane1.addTab("Anti-inflammatories", new JScrollPane(tableAntiInflammatory));
         tabbedPane1.addTab("Antivirals", new JScrollPane(tableAntiviral));
 
+
+        comboBoxCustomers.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Customer selectedCustomer = (Customer) comboBoxCustomers.getSelectedItem();
+                currentPurchase.setCustomer(selectedCustomer);
+            }
+
+        });
     }
 
     private void populateTables() {
@@ -121,6 +136,15 @@ public class DirectPurchasePanel extends JPanel {
         actionColumn.setPreferredWidth(80); // Adjust column width to fit the button
         table.setRowHeight(30);
     }
+
+    private void populateComboBoxCustomer() {
+        List<Customer> customers = customerController.getCustomers();
+        for (Customer customer : customers) {
+            comboBoxCustomers.addItem(customer);
+        }
+    }
+
+
 
     // Custom ButtonRenderer to render buttons in table cells
     private class ButtonRenderer extends JButton implements TableCellRenderer {
