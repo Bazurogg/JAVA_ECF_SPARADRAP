@@ -115,6 +115,29 @@ public class DirectPurchasePanel extends JPanel {
 
         });
 
+        // Configure the action buttons in the purchase table
+        configureActionButtons();
+
+    }
+
+    private void configureActionButtons() {
+        TableColumn removeColumn = purchaseTable.getColumn("Remove");
+        ButtonEditor removeEditor = new ButtonEditor(new JCheckBox(), currentPurchase.getMedicines(), purchaseTable);
+        removeEditor.setAction("Remove");
+        removeColumn.setCellRenderer(new ButtonRenderer("Remove"));
+        removeColumn.setCellEditor(removeEditor);
+
+        TableColumn increaseColumn = purchaseTable.getColumn("Increase");
+        ButtonEditor increaseEditor = new ButtonEditor(new JCheckBox(), currentPurchase.getMedicines(), purchaseTable);
+        increaseEditor.setAction("Increase");
+        increaseColumn.setCellRenderer(new ButtonRenderer("Increase"));
+        increaseColumn.setCellEditor(increaseEditor);
+
+        TableColumn decreaseColumn = purchaseTable.getColumn("Decrease");
+        ButtonEditor decreaseEditor = new ButtonEditor(new JCheckBox(), currentPurchase.getMedicines(), purchaseTable);
+        decreaseEditor.setAction("Decrease");
+        decreaseColumn.setCellRenderer(new ButtonRenderer("Decrease"));
+        decreaseColumn.setCellEditor(decreaseEditor);
     }
 
     private void populateTables() {
@@ -159,7 +182,7 @@ public class DirectPurchasePanel extends JPanel {
 
         // Set custom renderer and editor for the Action column
         TableColumn actionColumn = table.getColumn("Action");
-        actionColumn.setCellRenderer(new ButtonRenderer());
+        actionColumn.setCellRenderer(new ButtonRenderer("Add"));
         actionColumn.setCellEditor(new ButtonEditor(new JCheckBox(), medicines, table));
         actionColumn.setPreferredWidth(80); // Adjust column width to fit the button
         table.setRowHeight(30);
@@ -183,18 +206,23 @@ public class DirectPurchasePanel extends JPanel {
 
     // Custom ButtonRenderer to render buttons in table cells
     private class ButtonRenderer extends JButton implements TableCellRenderer {
-        public ButtonRenderer() {
+
+        public ButtonRenderer(String action) {
+
             setOpaque(true);
-            setText("Add");
+            setText(action);
             setHorizontalAlignment(CENTER);
             setPreferredSize(new Dimension(30, 80));
-
 
         }
 
         @Override
         public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+
+            setText((value == null) ? "" : value.toString());
+
             return this;
+
         }
     }
 
@@ -217,57 +245,68 @@ public class DirectPurchasePanel extends JPanel {
         private JButton button;
         private List<Medicine> medicines;
         private JTable table;
+        private String action;
 
         public ButtonEditor(JCheckBox checkBox, List<Medicine> medicines, JTable table) {
             super(checkBox);
             this.medicines = medicines;
             this.table = table;
-            button = new JButton("Add");
-            button.setPreferredSize(new Dimension(30, 80));
+            this.action = "Add"; // Par défaut, l'action est "Add"
+            button = new JButton(action);
+            button.setPreferredSize(new Dimension(80, 30));
             button.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    int row = table.getSelectedRow();
-                    Medicine selectedMedicine = medicines.get(row);
+                    handleAction();
+                }
+            });
+        }
 
+        public void setAction(String action) {
+            this.action = action;
+            button.setText(action);
+        }
+
+        private void handleAction() {
+            int row = table.getSelectedRow();
+            if (row < 0 || row >= medicines.size()) {
+                return;
+            }
+            Medicine selectedMedicine = medicines.get(row);
+
+            switch (action) {
+                case "Remove":
+                    currentPurchase.getMedicines().remove(selectedMedicine);
+                    selectedMedicines.remove(selectedMedicine);
+                    break;
+                case "Increase":
+                    selectedMedicine.setQuantity(selectedMedicine.getQuantity() + 1);
+                    break;
+                case "Decrease":
+                    int newQuantity = selectedMedicine.getQuantity() - 1;
+                    selectedMedicine.setQuantity(Math.max(newQuantity, 0));
+                    break;
+                case "Add":
                     String quantityStr = JOptionPane.showInputDialog("Enter the quantity for " + selectedMedicine.getMedicineName());
                     try {
-
                         int quantity = Integer.parseInt(quantityStr);
-
                         if (quantity > 0) {
-
-                            // Lorsque le médicament est ajouté
-                            selectedMedicine.setQuantity(quantity);  // Met à jour la quantité
-                            selectedMedicines.add(selectedMedicine);  // Ajoute le médicament à la liste d'achat
-                            currentPurchase.getMedicines().add(selectedMedicine); // Ajoute à l'achat actuel
-
-                            // Mettre à jour le champ TotalPriceField avec le nouveau total
-                            double totalPrice = calculateTotalPrice();
-                            TotalPriceField.setText(String.format("%.2f", totalPrice)); // Affiche le prix total
-                            // avec deux décimales
-
-                            // Mettre à jour le modèle de la table
-                            MedicinePurchaseTableModel model = (MedicinePurchaseTableModel) purchaseTable.getModel();
-                            model.fireTableDataChanged();  // Notifie le tableau d'achat des nouvelles données
-                            JOptionPane.showMessageDialog(null, "Added " + quantity + " of " + selectedMedicine.getMedicineName());
-
+                            selectedMedicine.setQuantity(quantity);
+                            selectedMedicines.add(selectedMedicine);
+                            currentPurchase.getMedicines().add(selectedMedicine);
                         } else {
-
                             JOptionPane.showMessageDialog(null, "Quantity must be positive.");
-
                         }
-
                     } catch (NumberFormatException ex) {
-
                         JOptionPane.showMessageDialog(null, "Please enter a valid number.");
-
                     }
+                    break;
+            }
 
-                }
-
-            });
-
+            // Mettre à jour la table et le prix total
+            ((MedicinePurchaseTableModel) purchaseTable.getModel()).fireTableDataChanged();
+            double totalPrice = calculateTotalPrice();
+            TotalPriceField.setText(String.format("%.2f", totalPrice));
         }
 
         @Override
