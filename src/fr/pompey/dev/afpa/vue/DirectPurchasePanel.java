@@ -12,13 +12,15 @@ import javax.swing.table.TableColumn;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public class DirectPurchasePanel extends JPanel {
 
+    private final DirectPurchase currentPurchase;
     private JTable purchaseTable;
-    private List<Medicine> selectedMedicines = new ArrayList<>();
+    private final List<Medicine> selectedMedicines = new ArrayList<>();
     private JPanel panelDirectPurchase;
     private JTabbedPane tabbedPane1;
     private JTable tableAnalgesic;
@@ -37,17 +39,18 @@ public class DirectPurchasePanel extends JPanel {
 
         this.medicineManager = medicineManager;
 
+        // Initialise DirectPurchase avec une liste vide de médicaments
+        currentPurchase = new DirectPurchase(LocalDate.now(), 0.0, new ArrayList<>(), null);
+
         this.setVisible(true);
         this.add(panelDirectPurchase);
 
         // Initialize the UI and tables
         initializeUI();
         populateTables();
-
     }
 
     private void initializeUI() {
-
         // Create tables for each category
         tableAnalgesic = new JTable();
         tableAntibiotic = new JTable();
@@ -55,6 +58,11 @@ public class DirectPurchasePanel extends JPanel {
         tableVitamins = new JTable();
         tableAntiInflammatory = new JTable();
         tableAntiviral = new JTable();
+
+        // Créer la table d'achat avec le modèle personnalisé
+        purchaseTable = new JTable(new MedicinePurchaseTableModel(currentPurchase));
+
+        JScrollTablePurchase.setViewportView(purchaseTable);
 
         // Add tabs to tabbedPane for each category
         tabbedPane1.addTab("Analgesics", new JScrollPane(tableAnalgesic));
@@ -94,42 +102,28 @@ public class DirectPurchasePanel extends JPanel {
 
         // Populate the table with data
         for (Medicine medicine : medicines) {
-
             model.addRow(new Object[]{
-
                     medicine.getMedicineName(),
-
                     medicine.getPrice(),
-
                     medicine.getQuantity(),
-
                     medicine.getDateOnSale(),
-
                     "Add" // Text for the button
-
             });
-
         }
 
         // Set the model to the table
         table.setModel(model);
 
         // Set custom renderer and editor for the Action column
-//        table.getColumn("Action").setCellRenderer(new ButtonRenderer());
-//        table.getColumn("Action").setCellEditor(new ButtonEditor(new JCheckBox(), medicines, table));
-
         TableColumn actionColumn = table.getColumn("Action");
         actionColumn.setCellRenderer(new ButtonRenderer());
         actionColumn.setCellEditor(new ButtonEditor(new JCheckBox(), medicines, table));
         actionColumn.setPreferredWidth(80); // Adjust column width to fit the button
         table.setRowHeight(30);
-
-
     }
 
     // Custom ButtonRenderer to render buttons in table cells
     private class ButtonRenderer extends JButton implements TableCellRenderer {
-
         public ButtonRenderer() {
             setOpaque(true);
             setText("Add");
@@ -141,7 +135,6 @@ public class DirectPurchasePanel extends JPanel {
         public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
             return this;
         }
-
     }
 
     // Custom ButtonEditor to handle button clicks
@@ -151,46 +144,35 @@ public class DirectPurchasePanel extends JPanel {
         private JTable table;
 
         public ButtonEditor(JCheckBox checkBox, List<Medicine> medicines, JTable table) {
-
             super(checkBox);
             this.medicines = medicines;
             this.table = table;
             button = new JButton("Add");
             button.setPreferredSize(new Dimension(30, 80));
             button.addActionListener(new ActionListener() {
-
                 @Override
-
                 public void actionPerformed(ActionEvent e) {
-
                     int row = table.getSelectedRow();
-
                     Medicine selectedMedicine = medicines.get(row);
 
                     String quantityStr = JOptionPane.showInputDialog("Enter the quantity for " + selectedMedicine.getMedicineName());
-
                     try {
-
                         int quantity = Integer.parseInt(quantityStr);
-
                         if (quantity > 0) {
-                            // Handle adding the medicine here
+                            selectedMedicine.setQuantity(quantity);  // Met à jour la quantité
+                            selectedMedicines.add(selectedMedicine);  // Ajoute le médicament à la liste d'achat
+                            currentPurchase.getMedicines().add(selectedMedicine); // Ajoute à l'achat actuel
+                            MedicinePurchaseTableModel model = (MedicinePurchaseTableModel) purchaseTable.getModel();
+                            model.fireTableDataChanged();  // Notifie le tableau d'achat des nouvelles données
                             JOptionPane.showMessageDialog(null, "Added " + quantity + " of " + selectedMedicine.getMedicineName());
                         } else {
                             JOptionPane.showMessageDialog(null, "Quantity must be positive.");
-
                         }
-
                     } catch (NumberFormatException ex) {
-
                         JOptionPane.showMessageDialog(null, "Please enter a valid number.");
-
                     }
-
                 }
-
             });
-
         }
 
         @Override
@@ -202,8 +184,5 @@ public class DirectPurchasePanel extends JPanel {
         public Object getCellEditorValue() {
             return button.getText();
         }
-
     }
-
 }
-
