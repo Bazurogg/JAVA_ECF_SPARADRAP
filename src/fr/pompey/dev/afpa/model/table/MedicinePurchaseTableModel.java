@@ -8,11 +8,14 @@ import fr.pompey.dev.afpa.model.DirectPurchase;
 public class MedicinePurchaseTableModel extends AbstractTableModel {
 
     private final String[] columnNames = {"Medicine", "Quantity", "Price per unit", "Total price"};
+    
     private List<Medicine> purchaseMedicines;  // Liste de médicaments de l'achat
 
     // Le constructeur prend une instance de DirectPurchase
     public MedicinePurchaseTableModel(DirectPurchase purchase) {
+
         this.purchaseMedicines = purchase.getMedicines();  // Appelle getMedicines() sur l'instance
+
     }
 
     @Override

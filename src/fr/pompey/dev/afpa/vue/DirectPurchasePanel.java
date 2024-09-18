@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DirectPurchasePanel extends JPanel {
-    
+
     private final DirectPurchase currentPurchase;
     private JTable purchaseTable;
     private final List<Medicine> selectedMedicines = new ArrayList<>();
@@ -34,9 +34,11 @@ public class DirectPurchasePanel extends JPanel {
     private JButton createNewDirectPurchaseButton;
     private JButton cancelButton;
     private JScrollPane JScrollTablePurchase;
-    private JComboBox<Customer> comboBoxCustomers;
+    private JComboBox<String> comboBoxCustomers;
+    private JTextField TotalPriceField;
     private CustomerController customerController;
     private MedicineController.MedicineManager medicineManager;
+    private List<Customer> customers;
 
     public DirectPurchasePanel(MedicineController.MedicineManager medicineManager, CustomerController customerController) {
 
@@ -57,6 +59,7 @@ public class DirectPurchasePanel extends JPanel {
     }
 
     private void initializeUI() {
+
         // Create tables for each category
         tableAnalgesic = new JTable();
         tableAntibiotic = new JTable();
@@ -70,6 +73,8 @@ public class DirectPurchasePanel extends JPanel {
 
         JScrollTablePurchase.setViewportView(purchaseTable);
 
+        TotalPriceField.setBorder(null);
+
         // Add tabs to tabbedPane for each category
         tabbedPane1.addTab("Analgesics", new JScrollPane(tableAnalgesic));
         tabbedPane1.addTab("Antibiotics", new JScrollPane(tableAntibiotic));
@@ -80,13 +85,36 @@ public class DirectPurchasePanel extends JPanel {
 
 
         comboBoxCustomers.addActionListener(new ActionListener() {
+
             @Override
             public void actionPerformed(ActionEvent e) {
-                Customer selectedCustomer = (Customer) comboBoxCustomers.getSelectedItem();
-                currentPurchase.setCustomer(selectedCustomer);
+
+                String selectedCustomer = (String) comboBoxCustomers.getSelectedItem();
+
+                if ("Not specified".equals(selectedCustomer)) {
+
+                    currentPurchase.setCustomer(null); // Pas de client associé
+
+                } else {
+
+                    // Si un client est sélectionné, récupérez ses informations
+                    int selectedIndex = comboBoxCustomers.getSelectedIndex() - 1; // -1 car "Non renseigné" est en
+                    // première position
+
+                    if (selectedIndex >= 0) {
+
+                        Customer selectedCustomerObj = customers.get(selectedIndex);
+
+                        currentPurchase.setCustomer(selectedCustomerObj); // Associe le client à l'achat
+
+                    }
+
+                }
+
             }
 
         });
+
     }
 
     private void populateTables() {
@@ -138,10 +166,17 @@ public class DirectPurchasePanel extends JPanel {
     }
 
     private void populateComboBoxCustomer() {
-        List<Customer> customers = customerController.getCustomers();
+
+        comboBoxCustomers.addItem("Customer not specified");
+
+        customers = customerController.getCustomers();
+
         for (Customer customer : customers) {
-            comboBoxCustomers.addItem(customer);
+
+            comboBoxCustomers.addItem(customer.getFirstname() + " " + customer.getLastname());
+
         }
+
     }
 
 
@@ -153,12 +188,28 @@ public class DirectPurchasePanel extends JPanel {
             setText("Add");
             setHorizontalAlignment(CENTER);
             setPreferredSize(new Dimension(30, 80));
+
+
         }
 
         @Override
         public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
             return this;
         }
+    }
+
+    private double calculateTotalPrice() {
+
+        double totalPrice = 0.0;
+
+        for (Medicine medicine : currentPurchase.getMedicines()) {
+
+            totalPrice += medicine.getPrice() * medicine.getQuantity(); // Multiplie le prix par la quantité
+
+        }
+
+        return totalPrice;
+
     }
 
     // Custom ButtonEditor to handle button clicks
@@ -181,22 +232,42 @@ public class DirectPurchasePanel extends JPanel {
 
                     String quantityStr = JOptionPane.showInputDialog("Enter the quantity for " + selectedMedicine.getMedicineName());
                     try {
+
                         int quantity = Integer.parseInt(quantityStr);
+
                         if (quantity > 0) {
+
+                            // Lorsque le médicament est ajouté
                             selectedMedicine.setQuantity(quantity);  // Met à jour la quantité
                             selectedMedicines.add(selectedMedicine);  // Ajoute le médicament à la liste d'achat
                             currentPurchase.getMedicines().add(selectedMedicine); // Ajoute à l'achat actuel
+
+                            // Mettre à jour le champ TotalPriceField avec le nouveau total
+                            double totalPrice = calculateTotalPrice();
+                            TotalPriceField.setText(String.format("%.2f", totalPrice)); // Affiche le prix total
+                            // avec deux décimales
+
+                            // Mettre à jour le modèle de la table
                             MedicinePurchaseTableModel model = (MedicinePurchaseTableModel) purchaseTable.getModel();
                             model.fireTableDataChanged();  // Notifie le tableau d'achat des nouvelles données
                             JOptionPane.showMessageDialog(null, "Added " + quantity + " of " + selectedMedicine.getMedicineName());
+
                         } else {
+
                             JOptionPane.showMessageDialog(null, "Quantity must be positive.");
+
                         }
+
                     } catch (NumberFormatException ex) {
+
                         JOptionPane.showMessageDialog(null, "Please enter a valid number.");
+
                     }
+
                 }
+
             });
+
         }
 
         @Override
