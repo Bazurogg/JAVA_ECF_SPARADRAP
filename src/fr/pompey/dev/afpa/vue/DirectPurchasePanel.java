@@ -2,6 +2,7 @@ package fr.pompey.dev.afpa.vue;
 
 import fr.pompey.dev.afpa.controller.CustomerController;
 import fr.pompey.dev.afpa.controller.MedicineController;
+import fr.pompey.dev.afpa.controller.PurchaseManager;
 import fr.pompey.dev.afpa.model.Customer;
 import fr.pompey.dev.afpa.model.DirectPurchase;
 import fr.pompey.dev.afpa.model.Medicine;
@@ -22,6 +23,7 @@ import java.util.List;
 public class DirectPurchasePanel extends JPanel {
 
     private final DirectPurchase currentPurchase;
+    private PurchaseManager purchaseManager;
     private JTable purchaseTable;
     private final List<Medicine> selectedMedicines = new ArrayList<>();
     private JPanel panelDirectPurchase;
@@ -41,9 +43,11 @@ public class DirectPurchasePanel extends JPanel {
     private MedicineController.MedicineManager medicineManager;
     private List<Customer> customers;
 
-    public DirectPurchasePanel(MedicineController.MedicineManager medicineManager, CustomerController customerController) {
+    public DirectPurchasePanel(MedicineController.MedicineManager medicineManager,
+                               CustomerController customerController, PurchaseManager purchaseManager) {
         this.medicineManager = medicineManager;
         this.customerController = customerController;
+        this.purchaseManager = purchaseManager;
 
         // Initialise DirectPurchase avec une liste vide de médicaments
         currentPurchase = new DirectPurchase(LocalDate.now(), 0.0, new ArrayList<>(), null);
@@ -99,6 +103,13 @@ public class DirectPurchasePanel extends JPanel {
                         currentPurchase.setCustomer(selectedCustomerObj); // Associe le client à l'achat
                     }
                 }
+            }
+        });
+
+        createNewDirectPurchaseButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                handleCreateNewPurchase();
             }
         });
 
@@ -174,6 +185,33 @@ public class DirectPurchasePanel extends JPanel {
         for (Customer customer : customers) {
             comboBoxCustomers.addItem(customer.getFirstname() + " " + customer.getLastname());
         }
+    }
+
+    private void handleCreateNewPurchase() {
+        // Vérifier s'il y a des médicaments dans l'achat
+        if (currentPurchase.getMedicines().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "No medicines selected for purchase!", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        // Associer un client si nécessaire
+        String selectedCustomer = (String) comboBoxCustomers.getSelectedItem();
+        if (!"Customer not specified".equals(selectedCustomer)) {
+            int selectedIndex = comboBoxCustomers.getSelectedIndex() - 1;
+            if (selectedIndex >= 0) {
+                Customer selectedCustomerObj = customers.get(selectedIndex);
+                currentPurchase.setCustomer(selectedCustomerObj);
+            }
+        }
+
+        // Ajouter l'achat au PurchaseManager
+        purchaseManager.addPurchase(currentPurchase);
+
+        // Message de confirmation
+        JOptionPane.showMessageDialog(this, "Purchase has been successfully saved!");
+
+        // Réinitialiser le formulaire
+        resetForm();
     }
 
     // Custom ButtonRenderer to render buttons in table cells
@@ -408,6 +446,13 @@ public class DirectPurchasePanel extends JPanel {
                 .mapToDouble(medicine -> medicine.getPrice() * medicine.getQuantity())
                 .sum();
 
+    }
+
+    private void resetForm() {
+        currentPurchase.getMedicines().clear(); // Vider les médicaments actuels
+        ((MedicinePurchaseTableModel) purchaseTable.getModel()).fireTableDataChanged(); // Mettre à jour la table
+        TotalPriceField.setText("0.00"); // Réinitialiser le prix total
+        comboBoxCustomers.setSelectedIndex(0); // Réinitialiser le client sélectionné
     }
 
 }

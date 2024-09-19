@@ -70,4 +70,5 @@ public class PurchaseManager {
     public int getPurchaseCount() {
         return allPurchases.size();
     }
+
 }
