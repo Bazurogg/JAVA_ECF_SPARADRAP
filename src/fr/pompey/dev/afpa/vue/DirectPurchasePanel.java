@@ -188,6 +188,7 @@ public class DirectPurchasePanel extends JPanel {
     }
 
     private void handleCreateNewPurchase() {
+
         // Vérifier s'il y a des médicaments dans l'achat
         if (currentPurchase.getMedicines().isEmpty()) {
             JOptionPane.showMessageDialog(this, "No medicines selected for purchase!", "Error", JOptionPane.ERROR_MESSAGE);
@@ -212,6 +213,7 @@ public class DirectPurchasePanel extends JPanel {
 
         // Réinitialiser le formulaire
         resetForm();
+
     }
 
     // Custom ButtonRenderer to render buttons in table cells
@@ -449,10 +451,12 @@ public class DirectPurchasePanel extends JPanel {
     }
 
     private void resetForm() {
+
         currentPurchase.getMedicines().clear(); // Vider les médicaments actuels
         ((MedicinePurchaseTableModel) purchaseTable.getModel()).fireTableDataChanged(); // Mettre à jour la table
         TotalPriceField.setText("0.00"); // Réinitialiser le prix total
         comboBoxCustomers.setSelectedIndex(0); // Réinitialiser le client sélectionné
+
     }
 
 }

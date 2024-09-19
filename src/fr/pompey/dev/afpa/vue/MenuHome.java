@@ -3,8 +3,10 @@ package fr.pompey.dev.afpa.vue;
 import fr.pompey.dev.afpa.controller.CustomerController;
 import fr.pompey.dev.afpa.controller.DoctorController;
 import fr.pompey.dev.afpa.controller.MedicineController;
+import fr.pompey.dev.afpa.controller.PurchaseManager;
 import fr.pompey.dev.afpa.model.Customer;
 import fr.pompey.dev.afpa.model.Doctor;
+import fr.pompey.dev.afpa.model.Purchase;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,7 +15,7 @@ import java.awt.event.ActionListener;
 import java.util.List;
 
 public class MenuHome extends JFrame {
-
+    private PurchaseManager purchaseManager;
     private JPanel sideBar;
     private JButton customersButton;
     private JButton medicinesButton;
@@ -24,11 +26,15 @@ public class MenuHome extends JFrame {
     private JPanel mainPanel;
     private JPanel displayPanel;
     private JButton specialistButton;
+    private JButton allPurchasesButton;
 
     // Constructeur pour initialiser la fenêtre
-    public MenuHome() {
+    public MenuHome(PurchaseManager purchaseManager) {
+
         // Appelle le constructeur de JFrame pour définir le titre de la fenêtre
         super("Pharmacy Management - Home");
+
+        this.purchaseManager = purchaseManager;
 
         // Ajoute le mainPanel (qui contient ton design) à la fenêtre
         this.setContentPane(mainPanel);
@@ -46,7 +52,10 @@ public class MenuHome extends JFrame {
         // Ajout des écouteurs d'événements sur les boutons
         initListeners();
 
+
     }
+
+
 
     // Initializing Event Listeners on Menu Buttons
 
@@ -86,6 +95,17 @@ public class MenuHome extends JFrame {
             public void actionPerformed(ActionEvent e) {
 
                 showPurchaseChoicePanel();
+
+            }
+
+        });// button to show the list of purchases
+        allPurchasesButton.addActionListener(new ActionListener() {
+
+            @Override
+
+            public void actionPerformed(ActionEvent e) {
+
+                showPurchaseHistoryPanel();
 
             }
 
@@ -145,6 +165,17 @@ public class MenuHome extends JFrame {
         displayPanel.repaint();
 
     }
+
+    private void showPurchaseHistoryPanel() {
+
+        PurchaseHistoryPanel purchaseHistoryPanel = new PurchaseHistoryPanel(purchaseManager);
+        displayPanel.removeAll();
+        displayPanel.add(purchaseHistoryPanel, BorderLayout.CENTER);
+        displayPanel.revalidate();
+        displayPanel.repaint();
+
+    }
+
 
 }
 
