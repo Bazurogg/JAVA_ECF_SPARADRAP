@@ -41,7 +41,6 @@ public class DirectPurchasePanel extends JPanel {
     private List<Customer> customers;
 
     public DirectPurchasePanel(MedicineController.MedicineManager medicineManager, CustomerController customerController) {
-
         this.medicineManager = medicineManager;
         this.customerController = customerController;
 
@@ -55,11 +54,9 @@ public class DirectPurchasePanel extends JPanel {
         initializeUI();
         populateTables();
         populateComboBoxCustomer();
-
     }
 
     private void initializeUI() {
-
         // Create tables for each category
         tableAnalgesic = new JTable();
         tableAntibiotic = new JTable();
@@ -70,7 +67,6 @@ public class DirectPurchasePanel extends JPanel {
 
         // Créer la table d'achat avec le modèle personnalisé
         purchaseTable = new JTable(new MedicinePurchaseTableModel(currentPurchase));
-
         JScrollTablePurchase.setViewportView(purchaseTable);
 
         TotalPriceField.setBorder(null);
@@ -83,61 +79,39 @@ public class DirectPurchasePanel extends JPanel {
         tabbedPane1.addTab("Anti-inflammatories", new JScrollPane(tableAntiInflammatory));
         tabbedPane1.addTab("Antivirals", new JScrollPane(tableAntiviral));
 
-
         comboBoxCustomers.addActionListener(new ActionListener() {
-
             @Override
             public void actionPerformed(ActionEvent e) {
-
                 String selectedCustomer = (String) comboBoxCustomers.getSelectedItem();
-
                 if ("Not specified".equals(selectedCustomer)) {
-
                     currentPurchase.setCustomer(null); // Pas de client associé
-
                 } else {
-
                     // Si un client est sélectionné, récupérez ses informations
-                    int selectedIndex = comboBoxCustomers.getSelectedIndex() - 1; // -1 car "Non renseigné" est en
-                    // première position
-
+                    int selectedIndex = comboBoxCustomers.getSelectedIndex() - 1; // -1 car "Non renseigné" est en première position
                     if (selectedIndex >= 0) {
-
                         Customer selectedCustomerObj = customers.get(selectedIndex);
-
                         currentPurchase.setCustomer(selectedCustomerObj); // Associe le client à l'achat
-
                     }
-
                 }
-
             }
-
         });
 
         // Configure the action buttons in the purchase table
         configureActionButtons();
-
     }
 
     private void configureActionButtons() {
         TableColumn removeColumn = purchaseTable.getColumn("Remove");
-        ButtonEditor removeEditor = new ButtonEditor(new JCheckBox(), currentPurchase.getMedicines(), purchaseTable);
-        removeEditor.setAction("Remove");
         removeColumn.setCellRenderer(new ButtonRenderer("Remove"));
-        removeColumn.setCellEditor(removeEditor);
+        removeColumn.setCellEditor(new PurchaseButtonEditor(new JCheckBox(), currentPurchase.getMedicines(), purchaseTable, "Remove"));
 
         TableColumn increaseColumn = purchaseTable.getColumn("Increase");
-        ButtonEditor increaseEditor = new ButtonEditor(new JCheckBox(), currentPurchase.getMedicines(), purchaseTable);
-        increaseEditor.setAction("Increase");
         increaseColumn.setCellRenderer(new ButtonRenderer("Increase"));
-        increaseColumn.setCellEditor(increaseEditor);
+        increaseColumn.setCellEditor(new PurchaseButtonEditor(new JCheckBox(), currentPurchase.getMedicines(), purchaseTable, "Increase"));
 
         TableColumn decreaseColumn = purchaseTable.getColumn("Decrease");
-        ButtonEditor decreaseEditor = new ButtonEditor(new JCheckBox(), currentPurchase.getMedicines(), purchaseTable);
-        decreaseEditor.setAction("Decrease");
         decreaseColumn.setCellRenderer(new ButtonRenderer("Decrease"));
-        decreaseColumn.setCellEditor(decreaseEditor);
+        decreaseColumn.setCellEditor(new PurchaseButtonEditor(new JCheckBox(), currentPurchase.getMedicines(), purchaseTable, "Decrease"));
     }
 
     private void populateTables() {
@@ -183,127 +157,76 @@ public class DirectPurchasePanel extends JPanel {
         // Set custom renderer and editor for the Action column
         TableColumn actionColumn = table.getColumn("Action");
         actionColumn.setCellRenderer(new ButtonRenderer("Add"));
-        actionColumn.setCellEditor(new ButtonEditor(new JCheckBox(), medicines, table));
+        actionColumn.setCellEditor(new MedicineButtonEditor(new JCheckBox(), medicines, table));
         actionColumn.setPreferredWidth(80); // Adjust column width to fit the button
         table.setRowHeight(30);
     }
 
     private void populateComboBoxCustomer() {
-
         comboBoxCustomers.addItem("Customer not specified");
-
         customers = customerController.getCustomers();
-
         for (Customer customer : customers) {
-
             comboBoxCustomers.addItem(customer.getFirstname() + " " + customer.getLastname());
-
         }
-
     }
-
-
 
     // Custom ButtonRenderer to render buttons in table cells
     private class ButtonRenderer extends JButton implements TableCellRenderer {
-
         public ButtonRenderer(String action) {
-
-            setOpaque(true);
             setText(action);
             setHorizontalAlignment(CENTER);
             setPreferredSize(new Dimension(30, 80));
-
         }
 
         @Override
         public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
-
-            setText((value == null) ? "" : value.toString());
-
             return this;
-
         }
     }
 
-    private double calculateTotalPrice() {
+    // Custom ButtonEditor for the medicine table (Add button)
+    private class MedicineButtonEditor extends DefaultCellEditor {
 
-        double totalPrice = 0.0;
-
-        for (Medicine medicine : currentPurchase.getMedicines()) {
-
-            totalPrice += medicine.getPrice() * medicine.getQuantity(); // Multiplie le prix par la quantité
-
-        }
-
-        return totalPrice;
-
-    }
-
-    // Custom ButtonEditor to handle button clicks
-    private class ButtonEditor extends DefaultCellEditor {
         private JButton button;
         private List<Medicine> medicines;
         private JTable table;
-        private String action;
 
-        public ButtonEditor(JCheckBox checkBox, List<Medicine> medicines, JTable table) {
+        public MedicineButtonEditor(JCheckBox checkBox, List<Medicine> medicines, JTable table) {
             super(checkBox);
             this.medicines = medicines;
             this.table = table;
-            this.action = "Add"; // Par défaut, l'action est "Add"
-            button = new JButton(action);
+            button = new JButton("Add");
             button.setPreferredSize(new Dimension(80, 30));
             button.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    handleAction();
+                    handleAddAction();
                 }
             });
         }
 
-        public void setAction(String action) {
-            this.action = action;
-            button.setText(action);
-        }
-
-        private void handleAction() {
+        private void handleAddAction() {
             int row = table.getSelectedRow();
             if (row < 0 || row >= medicines.size()) {
                 return;
             }
             Medicine selectedMedicine = medicines.get(row);
+            String quantityStr = JOptionPane.showInputDialog("Enter the quantity for " + selectedMedicine.getMedicineName());
 
-            switch (action) {
-                case "Remove":
-                    currentPurchase.getMedicines().remove(selectedMedicine);
-                    selectedMedicines.remove(selectedMedicine);
-                    break;
-                case "Increase":
-                    selectedMedicine.setQuantity(selectedMedicine.getQuantity() + 1);
-                    break;
-                case "Decrease":
-                    int newQuantity = selectedMedicine.getQuantity() - 1;
-                    selectedMedicine.setQuantity(Math.max(newQuantity, 0));
-                    break;
-                case "Add":
-                    String quantityStr = JOptionPane.showInputDialog("Enter the quantity for " + selectedMedicine.getMedicineName());
-                    try {
-                        int quantity = Integer.parseInt(quantityStr);
-                        if (quantity > 0) {
-                            selectedMedicine.setQuantity(quantity);
-                            selectedMedicines.add(selectedMedicine);
-                            currentPurchase.getMedicines().add(selectedMedicine);
-                        } else {
-                            JOptionPane.showMessageDialog(null, "Quantity must be positive.");
-                        }
-                    } catch (NumberFormatException ex) {
-                        JOptionPane.showMessageDialog(null, "Please enter a valid number.");
-                    }
-                    break;
+            try {
+                int quantity = Integer.parseInt(quantityStr);
+                if (quantity > 0) {
+                    selectedMedicine.setQuantity(quantity);
+                    selectedMedicines.add(selectedMedicine);
+                    currentPurchase.getMedicines().add(selectedMedicine);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Quantity must be positive.");
+                }
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(null, "Please enter a valid number.");
             }
 
-            // Mettre à jour la table et le prix total
+            // Mettre à jour la table d'achat et le prix total
             ((MedicinePurchaseTableModel) purchaseTable.getModel()).fireTableDataChanged();
             double totalPrice = calculateTotalPrice();
             TotalPriceField.setText(String.format("%.2f", totalPrice));
@@ -318,5 +241,94 @@ public class DirectPurchasePanel extends JPanel {
         public Object getCellEditorValue() {
             return button.getText();
         }
+    }
+
+    // Custom ButtonEditor for the purchase table (Remove, Increase, Decrease buttons)
+    // Custom ButtonEditor for the purchase table (Remove, Increase, Decrease buttons)
+    private class PurchaseButtonEditor extends DefaultCellEditor {
+
+        private JButton button;
+        private List<Medicine> medicines;
+        private JTable table;
+        private String action;
+        private boolean isPushed = false;
+
+        public PurchaseButtonEditor(JCheckBox checkBox, List<Medicine> medicines, JTable table, String action) {
+            super(checkBox);
+            this.medicines = medicines;
+            this.table = table;
+            this.action = action;
+            button = new JButton(action);
+            button.setPreferredSize(new Dimension(80, 30));
+            button.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    isPushed = true;
+                    handleAction();
+                    // Forcer l'arrêt de l'édition après l'action
+                    fireEditingStopped();
+                }
+            });
+        }
+
+        private void handleAction() {
+            int row = table.getSelectedRow();
+            if (row < 0 || row >= medicines.size()) {
+                return;
+            }
+            Medicine selectedMedicine = medicines.get(row);
+
+            switch (action) {
+                case "Remove":
+                    currentPurchase.getMedicines().remove(selectedMedicine);
+                    ((MedicinePurchaseTableModel) table.getModel()).removeMedicine(row);
+                    break;
+                case "Increase":
+                    selectedMedicine.setQuantity(selectedMedicine.getQuantity() + 1);
+                    ((MedicinePurchaseTableModel) table.getModel()).updateQuantity(row, selectedMedicine.getQuantity());
+                    break;
+                case "Decrease":
+                    int newQuantity = selectedMedicine.getQuantity() - 1;
+                    selectedMedicine.setQuantity(Math.max(newQuantity, 0));
+                    ((MedicinePurchaseTableModel) table.getModel()).updateQuantity(row, selectedMedicine.getQuantity());
+                    break;
+            }
+
+            // Update the table and the total price
+            ((MedicinePurchaseTableModel) purchaseTable.getModel()).fireTableDataChanged();
+            double totalPrice = calculateTotalPrice();
+            TotalPriceField.setText(String.format("%.2f", totalPrice));
+        }
+
+        @Override
+        public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
+            isPushed = false;
+            button.setText(action);
+            return button;
+        }
+
+        @Override
+        public Object getCellEditorValue() {
+            return button.getText();
+        }
+
+        @Override
+        public boolean stopCellEditing() {
+            // Prevent stopping cell editing if the button has been pushed
+            return isPushed && super.stopCellEditing();
+        }
+
+        @Override
+        protected void fireEditingStopped() {
+            // Ensure editing stops after the button is clicked
+            super.fireEditingStopped();
+        }
+    }
+
+
+    private double calculateTotalPrice() {
+        return currentPurchase.getMedicines().stream()
+                .mapToDouble(medicine -> medicine.getPrice() * medicine.getQuantity())
+                .sum();
     }
 }

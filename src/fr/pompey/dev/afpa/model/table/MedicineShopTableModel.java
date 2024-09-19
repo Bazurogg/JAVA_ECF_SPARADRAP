@@ -2,12 +2,12 @@ package fr.pompey.dev.afpa.model.table;
 
 import javax.swing.table.AbstractTableModel;
 import fr.pompey.dev.afpa.model.Medicine;
-
 import java.util.List;
 
 public class MedicineShopTableModel extends AbstractTableModel {
 
     private final String[] columnNames = {"Name", "Price", "Quantity", "Date on Sale"};
+
     private final List<Medicine> medicines;
 
     public MedicineShopTableModel(List<Medicine> medicines) {
