@@ -14,6 +14,7 @@ import javax.swing.table.TableColumn;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -67,6 +68,11 @@ public class DirectPurchasePanel extends JPanel {
 
         // Créer la table d'achat avec le modèle personnalisé
         purchaseTable = new JTable(new MedicinePurchaseTableModel(currentPurchase));
+
+        // hauteur des lignes
+        purchaseTable.setRowHeight(30);
+
+        // on injecte notre tableau dans le JscrollPane créer dans le designer
         JScrollTablePurchase.setViewportView(purchaseTable);
 
         TotalPriceField.setBorder(null);
@@ -102,15 +108,15 @@ public class DirectPurchasePanel extends JPanel {
 
     private void configureActionButtons() {
         TableColumn removeColumn = purchaseTable.getColumn("Remove");
-        removeColumn.setCellRenderer(new ButtonRenderer("Remove"));
+        removeColumn.setCellRenderer(new ActionButtonRenderer("Remove"));
         removeColumn.setCellEditor(new PurchaseButtonEditor(new JCheckBox(), currentPurchase.getMedicines(), purchaseTable, "Remove"));
 
         TableColumn increaseColumn = purchaseTable.getColumn("Increase");
-        increaseColumn.setCellRenderer(new ButtonRenderer("Increase"));
+        increaseColumn.setCellRenderer(new ActionButtonRenderer("Increase"));
         increaseColumn.setCellEditor(new PurchaseButtonEditor(new JCheckBox(), currentPurchase.getMedicines(), purchaseTable, "Increase"));
 
         TableColumn decreaseColumn = purchaseTable.getColumn("Decrease");
-        decreaseColumn.setCellRenderer(new ButtonRenderer("Decrease"));
+        decreaseColumn.setCellRenderer(new ActionButtonRenderer("Decrease"));
         decreaseColumn.setCellEditor(new PurchaseButtonEditor(new JCheckBox(), currentPurchase.getMedicines(), purchaseTable, "Decrease"));
     }
 
@@ -172,16 +178,70 @@ public class DirectPurchasePanel extends JPanel {
 
     // Custom ButtonRenderer to render buttons in table cells
     private class ButtonRenderer extends JButton implements TableCellRenderer {
+
         public ButtonRenderer(String action) {
+
             setText(action);
+
             setHorizontalAlignment(CENTER);
+
             setPreferredSize(new Dimension(30, 80));
+
+            // Augmenter la taille du texte
+            setFont(new Font("Arial", Font.PLAIN, 14));
+
         }
 
         @Override
         public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
             return this;
         }
+
+    }
+
+    // Custom ButtonRenderer pour les boutons d'action dans le tableau d'achat
+    private static class ActionButtonRenderer extends JButton implements TableCellRenderer {
+
+        private String action;
+
+        public ActionButtonRenderer(String action) {
+
+            this.action = action;
+
+            setIcon(loadIcon(action));
+
+            setHorizontalAlignment(CENTER);
+
+            setPreferredSize(new Dimension(30, 30));
+
+        }
+
+        @Override
+        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+            setIcon(loadIcon(action)); // Assurez-vous de recharger l'icône lors du rendu
+            return this;
+        }
+
+        private Icon loadIcon(String action) {
+            String iconPath;
+
+            switch (action) {
+                case "Increase":
+                    iconPath = "/fr/pompey/dev/afpa/resources/more.png";
+                    break;
+                case "Decrease":
+                    iconPath = "/fr/pompey/dev/afpa/resources/minus.png";
+                    break;
+                case "Remove":
+                    iconPath = "/fr/pompey/dev/afpa/resources/trash.png";
+                    break;
+                default:
+                    return null;
+            }
+
+            return new ImageIcon(getClass().getResource(iconPath));
+        }
+
     }
 
     // Custom ButtonEditor for the medicine table (Add button)
@@ -197,6 +257,7 @@ public class DirectPurchasePanel extends JPanel {
             this.table = table;
             button = new JButton("Add");
             button.setPreferredSize(new Dimension(80, 30));
+            button.setFont(new Font("Arial", Font.PLAIN, 14));
             button.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
@@ -241,12 +302,11 @@ public class DirectPurchasePanel extends JPanel {
         public Object getCellEditorValue() {
             return button.getText();
         }
+
     }
 
     // Custom ButtonEditor for the purchase table (Remove, Increase, Decrease buttons)
-    // Custom ButtonEditor for the purchase table (Remove, Increase, Decrease buttons)
     private class PurchaseButtonEditor extends DefaultCellEditor {
-
         private JButton button;
         private List<Medicine> medicines;
         private JTable table;
@@ -258,17 +318,40 @@ public class DirectPurchasePanel extends JPanel {
             this.medicines = medicines;
             this.table = table;
             this.action = action;
-            button = new JButton(action);
-            button.setPreferredSize(new Dimension(80, 30));
+
+            button = new JButton();
+            button.setPreferredSize(new Dimension(30, 30)); // Ajuste la taille du bouton
+            button.setIcon(loadIcon(action)); // Charge l'icône
+
             button.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     isPushed = true;
                     handleAction();
-                    // Forcer l'arrêt de l'édition après l'action
                     fireEditingStopped();
                 }
             });
+        }
+
+        // Charge l'icône selon l'action
+        private Icon loadIcon(String action) {
+            String iconPath;
+
+            switch (action) {
+                case "Increase":
+                    iconPath = "/fr/pompey/dev/afpa/resources/more.png";
+                    break;
+                case "Decrease":
+                    iconPath = "/fr/pompey/dev/afpa/resources/minus.png";
+                    break;
+                case "Remove":
+                    iconPath = "/fr/pompey/dev/afpa/resources/trash.png";
+                    break;
+                default:
+                    return null;
+            }
+
+            return new ImageIcon(getClass().getResource(iconPath));
         }
 
         private void handleAction() {
@@ -303,32 +386,28 @@ public class DirectPurchasePanel extends JPanel {
         @Override
         public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
             isPushed = false;
-            button.setText(action);
+            button.setIcon(loadIcon(action)); // Change l'icône selon l'action
             return button;
         }
 
         @Override
         public Object getCellEditorValue() {
-            return button.getText();
+            return button.getIcon(); // Retourne l'icône comme valeur de l'éditeur
         }
 
         @Override
         public boolean stopCellEditing() {
-            // Prevent stopping cell editing if the button has been pushed
             return isPushed && super.stopCellEditing();
         }
-
-        @Override
-        protected void fireEditingStopped() {
-            // Ensure editing stops after the button is clicked
-            super.fireEditingStopped();
-        }
     }
-
 
     private double calculateTotalPrice() {
+
         return currentPurchase.getMedicines().stream()
+
                 .mapToDouble(medicine -> medicine.getPrice() * medicine.getQuantity())
                 .sum();
+
     }
+
 }
