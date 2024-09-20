@@ -38,6 +38,7 @@ public class PurchaseTableModel extends AbstractTableModel {
 
         // Renvoyer les données en fonction de la colonne (columnIndex)
         switch (columnIndex) {
+
             case 0:
                 return purchase.getPurchaseDate().toString();  // Date d'achat
             case 1:
@@ -48,6 +49,9 @@ public class PurchaseTableModel extends AbstractTableModel {
                 return String.format("%.2f", purchase.getTotalPrice());  // Prix total de l'achat, formaté avec 2 décimales
             default:
                 return null;
+
         }
+
     }
+
 }

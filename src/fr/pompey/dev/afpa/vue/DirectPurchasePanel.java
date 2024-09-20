@@ -15,14 +15,13 @@ import javax.swing.table.TableColumn;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 public class DirectPurchasePanel extends JPanel {
 
-    private final DirectPurchase currentPurchase;
+    private DirectPurchase currentPurchase = null;
     private PurchaseManager purchaseManager;
     private JTable purchaseTable;
     private final List<Medicine> selectedMedicines = new ArrayList<>();
@@ -34,7 +33,7 @@ public class DirectPurchasePanel extends JPanel {
     private JTable tableVitamins;
     private JTable tableAntiInflammatory;
     private JTable tableAntiviral;
-    private JButton createNewDirectPurchaseButton;
+    private JButton newDirectPurchaseButton;
     private JButton cancelButton;
     private JScrollPane JScrollTablePurchase;
     private JComboBox<String> comboBoxCustomers;
@@ -53,15 +52,32 @@ public class DirectPurchasePanel extends JPanel {
         currentPurchase = new DirectPurchase(LocalDate.now(), 0.0, new ArrayList<>(), null);
 
         this.setVisible(true);
+
         this.add(panelDirectPurchase);
 
         // Initialize the UI and tables
         initializeUI();
         populateTables();
         populateComboBoxCustomer();
+
     }
 
     private void initializeUI() {
+
+        purchaseTable = new JTable(new MedicinePurchaseTableModel(currentPurchase));
+
+        JScrollTablePurchase.setViewportView(purchaseTable);
+
+        if (currentPurchase != null) {
+            MedicinePurchaseTableModel tableModel = new MedicinePurchaseTableModel(currentPurchase);
+            // Ajoutez le tableModel à votre JTable ici
+            // par exemple : myTable.setModel(tableModel);
+        } else {
+            // Gérer le cas où currentPurchase est null
+            JOptionPane.showMessageDialog(this, "No purchase selected.", "Error", JOptionPane.ERROR_MESSAGE);
+            return; // Ou toute autre logique
+        }
+
         // Create tables for each category
         tableAnalgesic = new JTable();
         tableAntibiotic = new JTable();
@@ -101,15 +117,21 @@ public class DirectPurchasePanel extends JPanel {
                     if (selectedIndex >= 0) {
                         Customer selectedCustomerObj = customers.get(selectedIndex);
                         currentPurchase.setCustomer(selectedCustomerObj); // Associe le client à l'achat
+//                        System.out.println("Selected customer: " + selectedCustomerObj.getFirstname() + " " + selectedCustomerObj.getLastname());
+
                     }
                 }
+
             }
         });
 
-        createNewDirectPurchaseButton.addActionListener(new ActionListener() {
+        newDirectPurchaseButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 handleCreateNewPurchase();
+                System.out.println("Customer: " + currentPurchase.getCustomer());
+                System.out.println("Medicines: " + currentPurchase.getMedicines());
+                System.out.println("Total Price: " + currentPurchase.getTotalPrice());
             }
         });
 
@@ -189,30 +211,45 @@ public class DirectPurchasePanel extends JPanel {
 
     private void handleCreateNewPurchase() {
 
+        // LOG DEBUGG TEST
+        System.out.println("Current Purchase before adding: " + currentPurchase);
+
         // Vérifier s'il y a des médicaments dans l'achat
-        if (currentPurchase.getMedicines().isEmpty()) {
+        if (currentPurchase == null || currentPurchase.getMedicines().isEmpty()) {
             JOptionPane.showMessageDialog(this, "No medicines selected for purchase!", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
         // Associer un client si nécessaire
         String selectedCustomer = (String) comboBoxCustomers.getSelectedItem();
+
         if (!"Customer not specified".equals(selectedCustomer)) {
+
             int selectedIndex = comboBoxCustomers.getSelectedIndex() - 1;
+
             if (selectedIndex >= 0) {
+
                 Customer selectedCustomerObj = customers.get(selectedIndex);
+                System.out.println("Selected customer: " + selectedCustomerObj.getFirstname() + " " + selectedCustomerObj.getLastname());
+
                 currentPurchase.setCustomer(selectedCustomerObj);
+
             }
+
         }
+
+        currentPurchase.calculateTotalPrice();
 
         // Ajouter l'achat au PurchaseManager
         purchaseManager.addPurchase(currentPurchase);
+
+        System.out.println("Current Purchase after adding: " + currentPurchase);
 
         // Message de confirmation
         JOptionPane.showMessageDialog(this, "Purchase has been successfully saved!");
 
         // Réinitialiser le formulaire
-        resetForm();
+//        resetForm();
 
     }
 
@@ -266,6 +303,7 @@ public class DirectPurchasePanel extends JPanel {
             String iconPath;
 
             switch (action) {
+
                 case "Increase":
                     iconPath = "/fr/pompey/dev/afpa/resources/more.png";
                     break;
@@ -277,9 +315,11 @@ public class DirectPurchasePanel extends JPanel {
                     break;
                 default:
                     return null;
+
             }
 
             return new ImageIcon(getClass().getResource(iconPath));
+
         }
 
     }
@@ -292,6 +332,7 @@ public class DirectPurchasePanel extends JPanel {
         private JTable table;
 
         public MedicineButtonEditor(JCheckBox checkBox, List<Medicine> medicines, JTable table) {
+
             super(checkBox);
             this.medicines = medicines;
             this.table = table;
@@ -299,19 +340,26 @@ public class DirectPurchasePanel extends JPanel {
             button.setPreferredSize(new Dimension(80, 30));
             button.setFont(new Font("Arial", Font.PLAIN, 14));
             button.addActionListener(new ActionListener() {
+
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     handleAddAction();
                 }
+
             });
+
         }
 
         private void handleAddAction() {
+
             int row = table.getSelectedRow();
+
             if (row < 0 || row >= medicines.size()) {
                 return;
             }
+
             Medicine selectedMedicine = medicines.get(row);
+
             String quantityStr = JOptionPane.showInputDialog("Enter the quantity for " + selectedMedicine.getMedicineName());
 
             try {
@@ -327,10 +375,18 @@ public class DirectPurchasePanel extends JPanel {
                 JOptionPane.showMessageDialog(null, "Please enter a valid number.");
             }
 
+            // LOG DEBUGG
+            System.out.println("Added medicine: " + selectedMedicine.getMedicineName() + " with quantity: " + selectedMedicine.getQuantity());
+
             // Mettre à jour la table d'achat et le prix total
             ((MedicinePurchaseTableModel) purchaseTable.getModel()).fireTableDataChanged();
+
             double totalPrice = calculateTotalPrice();
             TotalPriceField.setText(String.format("%.2f", totalPrice));
+
+            System.out.println("Total price: " + totalPrice);
+            System.out.println("Medicines in currentPurchase after addition: " + currentPurchase.getMedicines());
+
         }
 
         @Override
@@ -364,13 +420,16 @@ public class DirectPurchasePanel extends JPanel {
             button.setIcon(loadIcon(action)); // Charge l'icône
 
             button.addActionListener(new ActionListener() {
+
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     isPushed = true;
                     handleAction();
                     fireEditingStopped();
                 }
+
             });
+
         }
 
         // Charge l'icône selon l'action
@@ -392,13 +451,19 @@ public class DirectPurchasePanel extends JPanel {
             }
 
             return new ImageIcon(getClass().getResource(iconPath));
+
         }
 
         private void handleAction() {
+
             int row = table.getSelectedRow();
+
             if (row < 0 || row >= medicines.size()) {
+
                 return;
+
             }
+
             Medicine selectedMedicine = medicines.get(row);
 
             switch (action) {
