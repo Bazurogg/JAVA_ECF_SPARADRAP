@@ -23,7 +23,7 @@ import java.util.List;
 public class DirectPurchasePanel extends JPanel {
 
     private final DirectPurchase currentPurchase;
-    private PurchaseManager purchaseManager;
+    private final PurchaseManager purchaseManager;
     private JTable purchaseTable;
     private final List<Medicine> selectedMedicines = new ArrayList<>();
     private JPanel panelDirectPurchase;

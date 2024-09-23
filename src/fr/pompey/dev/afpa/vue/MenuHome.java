@@ -3,6 +3,7 @@ package fr.pompey.dev.afpa.vue;
 import fr.pompey.dev.afpa.controller.CustomerController;
 import fr.pompey.dev.afpa.controller.DoctorController;
 import fr.pompey.dev.afpa.controller.MedicineController;
+import fr.pompey.dev.afpa.controller.PurchaseManager;
 import fr.pompey.dev.afpa.model.Customer;
 import fr.pompey.dev.afpa.model.Doctor;
 
@@ -14,6 +15,7 @@ import java.util.List;
 
 public class MenuHome extends JFrame {
 
+    private PurchaseManager purchaseManager;
     private JPanel sideBar;
     private JButton customersButton;
     private JButton medicinesButton;
@@ -24,11 +26,15 @@ public class MenuHome extends JFrame {
     private JPanel mainPanel;
     private JPanel displayPanel;
     private JButton specialistButton;
+    private JButton allPurchasesButton;
 
     // Constructeur pour initialiser la fenêtre
-    public MenuHome() {
+    public MenuHome(PurchaseManager purchaseManager) {
+        
         // Appelle le constructeur de JFrame pour définir le titre de la fenêtre
         super("Pharmacy Management - Home");
+
+        this.purchaseManager = purchaseManager;
 
         // Ajoute le mainPanel (qui contient ton design) à la fenêtre
         this.setContentPane(mainPanel);
@@ -91,6 +97,18 @@ public class MenuHome extends JFrame {
 
         });
 
+        // button to show the list of purchases
+        allPurchasesButton.addActionListener(new ActionListener() {
+
+            @Override
+
+            public void actionPerformed(ActionEvent e) {
+
+                showPurchaseHistoryPanel();
+
+            }
+
+        });
     }
 
     // Méthods to swipe the displayPanel with another  swing GUI panel class
@@ -141,6 +159,16 @@ public class MenuHome extends JFrame {
         MedicineController medicineController = new MedicineController();
         PurchaseChoicePanel purchaseChoicePanel = new PurchaseChoicePanel(medicineController);
         displayPanel.add(purchaseChoicePanel, BorderLayout.CENTER);
+        displayPanel.revalidate();
+        displayPanel.repaint();
+
+    }
+
+    private void showPurchaseHistoryPanel() {
+
+        PurchaseHistoryPanel purchaseHistoryPanel = new PurchaseHistoryPanel(purchaseManager);
+        displayPanel.removeAll();
+        displayPanel.add(purchaseHistoryPanel, BorderLayout.CENTER);
         displayPanel.revalidate();
         displayPanel.repaint();
 
