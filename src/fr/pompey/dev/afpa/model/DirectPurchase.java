@@ -1,5 +1,6 @@
 package fr.pompey.dev.afpa.model;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalDate;
 
@@ -8,6 +9,11 @@ import java.time.LocalDate;
  * Direct purchases inherit from the general Purchase class and do not have additional attributes.
  */
 public class DirectPurchase extends Purchase {
+
+    private LocalDate purchaseDate;
+    private double totalPrice;
+    private List<Medicine> medicines;
+    private Customer customer;
 
     /**
      * Constructor for a direct purchase with a customer.
@@ -33,6 +39,20 @@ public class DirectPurchase extends Purchase {
     }
 
     // Here add some future methods implementation if needed.
+    public void calculateTotalPrice() {
+        totalPrice = 0.0;
+        for (Medicine medicine : medicines) {
+            totalPrice += medicine.getPrice() * medicine.getQuantity(); // Assurez-vous que Medicine a une méthode getQuantity
+        }
+    }
+
+    public double getTotalPrice() {
+        return totalPrice;
+    }
+
+    public List<Medicine> getMedicines() {
+        return medicines != null ? medicines : new ArrayList<>();
+    }
 
     @Override
     public String toString() {

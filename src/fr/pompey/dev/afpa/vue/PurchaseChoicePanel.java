@@ -14,12 +14,16 @@ public class PurchaseChoicePanel extends JPanel {
     private JPanel panelPurchaseChoice;
     private MedicineController medicineController;
     private CustomerController customerController;
+    private PurchaseManager purchaseManager;
     private JButton directPurchaseButton;
     private JButton byPrescriptionPurchaseButton;
 
     public PurchaseChoicePanel(MedicineController medicineController) {
 
         this.medicineController = medicineController; // Initialise medicineController dans le constructeur
+        this.customerController = customerController; // Initialisation dans le constructeur
+        this.purchaseManager = purchaseManager;
+
         this.setVisible(true);
         this.add(panelPurchaseChoice);
 
@@ -49,12 +53,10 @@ public class PurchaseChoicePanel extends JPanel {
             customerController = new CustomerController();
         }
 
-        PurchaseManager purchaseManager = new PurchaseManager();
-
-        DirectPurchasePanel directPurchasePanel = new DirectPurchasePanel(medicineController.getMedicineManager(),
-                customerController, purchaseManager);
+        DirectPurchasePanel directPurchasePanel = new DirectPurchasePanel(medicineController.getMedicineManager(), customerController);
 
         panelPurchaseChoice.removeAll();
+        panelPurchaseChoice.add(directPurchasePanel);
         panelPurchaseChoice.add(directPurchasePanel, BorderLayout.CENTER);
         panelPurchaseChoice.revalidate();
         panelPurchaseChoice.repaint();

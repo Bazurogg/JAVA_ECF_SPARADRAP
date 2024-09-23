@@ -114,7 +114,7 @@ public class Purchase {
     public void addMedicine(Medicine medicine) {
         if (medicine != null) {
             this.medicines.add(medicine);
-            updateTotalPrice();
+            updateTotalPrice(); // Assurez-vous que cette méthode calcule le prix total correctement
         }
     }
 
@@ -173,4 +173,5 @@ public class Purchase {
                 ", customer=" + (customer != null ? customer : "No customer") +
                 '}';
     }
+
 }
