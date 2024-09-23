@@ -9,7 +9,7 @@ import java.util.List;
  * Each purchase has a date, a total price, a list of medicines involved, and the customer who made the purchase.
  * The total price will later consider the customer's health insurance coverage.
  */
-public abstract class Purchase {
+public class Purchase {
 
     /** The date the purchase was made */
     private LocalDate purchaseDate;
