@@ -99,17 +99,17 @@ public class MenuHome extends JFrame {
             }
 
         });// button to show the list of purchases
-        allPurchasesButton.addActionListener(new ActionListener() {
-
-            @Override
-
-            public void actionPerformed(ActionEvent e) {
-
-                showPurchaseHistoryPanel();
-
-            }
-
-        });
+//        allPurchasesButton.addActionListener(new ActionListener() {
+//
+//            @Override
+//
+//            public void actionPerformed(ActionEvent e) {
+//
+//                showPurchaseHistoryPanel();
+//
+//            }
+//
+//        });
 
     }
 
@@ -166,15 +166,15 @@ public class MenuHome extends JFrame {
 
     }
 
-    private void showPurchaseHistoryPanel() {
-
-        PurchaseHistoryPanel purchaseHistoryPanel = new PurchaseHistoryPanel(purchaseManager);
-        displayPanel.removeAll();
-        displayPanel.add(purchaseHistoryPanel, BorderLayout.CENTER);
-        displayPanel.revalidate();
-        displayPanel.repaint();
-
-    }
+//    private void showPurchaseHistoryPanel() {
+//
+//        PurchaseHistoryPanel purchaseHistoryPanel = new PurchaseHistoryPanel(purchaseManager);
+//        displayPanel.removeAll();
+//        displayPanel.add(purchaseHistoryPanel, BorderLayout.CENTER);
+//        displayPanel.revalidate();
+//        displayPanel.repaint();
+//
+//    }
 
 
 }

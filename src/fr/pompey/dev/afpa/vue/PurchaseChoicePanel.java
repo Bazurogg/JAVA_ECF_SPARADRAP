@@ -53,12 +53,10 @@ public class PurchaseChoicePanel extends JPanel {
             customerController = new CustomerController();
         }
 
-        PurchaseManager purchaseManager = new PurchaseManager();
-
-        DirectPurchasePanel directPurchasePanel = new DirectPurchasePanel(medicineController.getMedicineManager(),
-                customerController, purchaseManager);
+        DirectPurchasePanel directPurchasePanel = new DirectPurchasePanel(medicineController.getMedicineManager(), customerController);
 
         panelPurchaseChoice.removeAll();
+        panelPurchaseChoice.add(directPurchasePanel);
         panelPurchaseChoice.add(directPurchasePanel, BorderLayout.CENTER);
         panelPurchaseChoice.revalidate();
         panelPurchaseChoice.repaint();
