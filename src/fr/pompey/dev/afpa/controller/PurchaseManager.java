@@ -11,6 +11,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class PurchaseManager {
+
     private List<Purchase> allPurchases = new ArrayList();
 
     public PurchaseManager() {
@@ -18,8 +19,11 @@ public class PurchaseManager {
     }
 
     public void addPurchase(Purchase purchase) {
+
         if (purchase != null) {
+
             this.allPurchases.add(purchase);
+
         }
 
     }
@@ -48,7 +52,9 @@ public class PurchaseManager {
     }
 
     public int getPurchaseCount() {
+
         return this.allPurchases.size();
+
     }
 
     private void initializeDummyPurchases() {
@@ -58,7 +64,11 @@ public class PurchaseManager {
         Medicine med2 = new Medicine("Ibuprofène", MedicineCategory.ANTIINFLAMMATORY, 3.5, 15, LocalDate.of(2023, 4, 10));
         Purchase purchase1 = new Purchase(LocalDate.now(), 6.25, Arrays.asList(med1), customer1);
         Purchase purchase2 = new Purchase(LocalDate.now(), 2.5, Arrays.asList(med2), customer2);
+
         this.addPurchase(purchase1);
+
         this.addPurchase(purchase2);
+
     }
+
 }

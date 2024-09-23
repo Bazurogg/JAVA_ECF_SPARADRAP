@@ -6,23 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8c42abba-3d1e-4b84-95b6-6832cb625052" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/controller/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/controller/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/controller/PurchaseManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/controller/PurchaseManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/model/Purchase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/model/Purchase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/vue/DirectPurchasePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/vue/DirectPurchasePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/vue/MenuHome$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/vue/MenuHome$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/vue/MenuHome$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/vue/MenuHome$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/vue/MenuHome$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/vue/MenuHome$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/vue/MenuHome.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/vue/MenuHome.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/vue/PurchaseHistoryPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/vue/PurchaseHistoryPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/controller/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/controller/PurchaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/controller/PurchaseManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/model/Purchase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/model/Purchase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/DirectPurchasePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/DirectPurchasePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/MenuHome.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/MenuHome.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/MenuHome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/MenuHome.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/PurchaseHistoryPanel.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/PurchaseHistoryPanel.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/PurchaseHistoryPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/PurchaseHistoryPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +24,18 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Bazurogg"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Bazurogg/JAVA_ECF_SPARADRAP.git",
+    "accountId": "ece93540-6717-4de7-9dcf-4e433a3f460f"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 7
