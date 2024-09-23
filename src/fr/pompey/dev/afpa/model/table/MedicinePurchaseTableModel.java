@@ -1,7 +1,6 @@
 package fr.pompey.dev.afpa.model.table;
 
 import javax.swing.table.AbstractTableModel;
-import java.util.ArrayList;
 import java.util.List;
 import fr.pompey.dev.afpa.model.Medicine;
 import fr.pompey.dev.afpa.model.DirectPurchase;
@@ -12,21 +11,12 @@ public class MedicinePurchaseTableModel extends AbstractTableModel {
     private List<Medicine> purchaseMedicines;  // Liste de médicaments de l'achat
 
     public MedicinePurchaseTableModel(DirectPurchase purchase) {
-
         this.purchaseMedicines = purchase.getMedicines();
-
-//        if (purchase != null) {
-//            this.purchaseMedicines = purchase.getMedicines();
-//        } else {
-//            this.purchaseMedicines = new ArrayList<>(); // Initialiser à une liste vide si purchase est null
-//        }
-
     }
-
 
     @Override
     public int getRowCount() {
-        return purchaseMedicines != null ? purchaseMedicines.size() : 0;
+        return purchaseMedicines.size();
     }
 
     @Override
@@ -76,10 +66,4 @@ public class MedicinePurchaseTableModel extends AbstractTableModel {
             fireTableCellUpdated(rowIndex, 3); // Update total price cell
         }
     }
-
-    public void setMedicines(List<Medicine> medicines) {
-        this.purchaseMedicines = medicines != null ? medicines : new ArrayList<>();
-        fireTableDataChanged(); // Mettez à jour la table
-    }
-
 }

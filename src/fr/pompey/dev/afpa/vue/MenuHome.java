@@ -29,7 +29,7 @@ public class MenuHome extends JFrame {
     private JButton allPurchasesButton;
 
     // Constructeur pour initialiser la fenêtre
-    public MenuHome(PurchaseManager purchaseManager) {
+    public MenuHome() {
 
         // Appelle le constructeur de JFrame pour définir le titre de la fenêtre
         super("Pharmacy Management - Home");

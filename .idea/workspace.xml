@@ -4,7 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c42abba-3d1e-4b84-95b6-6832cb625052" name="Changes" comment="" />
+    <list default="true" id="8c42abba-3d1e-4b84-95b6-6832cb625052" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/controller/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/controller/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/model/table/MedicinePurchaseTableModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/model/table/MedicinePurchaseTableModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/vue/DirectPurchasePanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/vue/DirectPurchasePanel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/vue/DirectPurchasePanel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/vue/DirectPurchasePanel$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/vue/DirectPurchasePanel$ActionButtonRenderer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/vue/DirectPurchasePanel$ActionButtonRenderer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/vue/DirectPurchasePanel$ButtonRenderer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/vue/DirectPurchasePanel$ButtonRenderer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/vue/DirectPurchasePanel$MedicineButtonEditor$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/vue/DirectPurchasePanel$MedicineButtonEditor$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/vue/DirectPurchasePanel$MedicineButtonEditor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/vue/DirectPurchasePanel$MedicineButtonEditor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/vue/DirectPurchasePanel$PurchaseButtonEditor$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/vue/DirectPurchasePanel$PurchaseButtonEditor$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/vue/DirectPurchasePanel$PurchaseButtonEditor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/vue/DirectPurchasePanel$PurchaseButtonEditor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/vue/DirectPurchasePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/vue/DirectPurchasePanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/vue/MenuHome.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/vue/MenuHome.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/controller/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/model/table/MedicinePurchaseTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/model/table/MedicinePurchaseTableModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/DirectPurchasePanel.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/DirectPurchasePanel.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/DirectPurchasePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/DirectPurchasePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/MenuHome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/MenuHome.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,24 +48,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Application.MenuHome.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "true",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "466",
-    "git-widget-placeholder": "9e0ef5bd",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MenuHome.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;466&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Fabulous\GitHub\JAVA_ECF_SPARADRAP\src" />
