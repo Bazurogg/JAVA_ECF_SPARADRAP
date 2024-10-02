@@ -362,12 +362,18 @@ public class DirectPurchasePanel extends JPanel {
             button.setIcon(loadIcon(action)); // Charge l'icône
 
             button.addActionListener(new ActionListener() {
+
                 @Override
                 public void actionPerformed(ActionEvent e) {
+
                     isPushed = true;
+
                     handleAction();
+
                     fireEditingStopped();
+
                 }
+
             });
         }
 
@@ -444,6 +450,7 @@ public class DirectPurchasePanel extends JPanel {
         return currentPurchase.getMedicines().stream()
 
                 .mapToDouble(medicine -> medicine.getPrice() * medicine.getQuantity())
+
                 .sum();
 
     }

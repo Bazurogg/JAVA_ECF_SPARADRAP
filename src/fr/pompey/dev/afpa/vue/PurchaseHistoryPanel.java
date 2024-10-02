@@ -26,6 +26,7 @@ public class PurchaseHistoryPanel extends JPanel {
 
         // Créer la table des achats
         initializeTable();
+
     }
 
     private void initializeTable() {

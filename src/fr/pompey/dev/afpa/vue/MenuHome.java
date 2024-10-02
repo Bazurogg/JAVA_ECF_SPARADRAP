@@ -156,10 +156,15 @@ public class MenuHome extends JFrame {
     private void showPurchaseChoicePanel() {
 
         displayPanel.removeAll();
+
         MedicineController medicineController = new MedicineController();
-        PurchaseChoicePanel purchaseChoicePanel = new PurchaseChoicePanel(medicineController);
+
+        PurchaseChoicePanel purchaseChoicePanel = new PurchaseChoicePanel(medicineController, purchaseManager);
+
         displayPanel.add(purchaseChoicePanel, BorderLayout.CENTER);
+
         displayPanel.revalidate();
+
         displayPanel.repaint();
 
     }

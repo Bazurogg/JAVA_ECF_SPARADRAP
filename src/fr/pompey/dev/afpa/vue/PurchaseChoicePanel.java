@@ -12,14 +12,16 @@ import java.awt.event.ActionListener;
 public class PurchaseChoicePanel extends JPanel {
 
     private JPanel panelPurchaseChoice;
+    private PurchaseManager purchaseManager;
     private MedicineController medicineController;
     private CustomerController customerController;
     private JButton directPurchaseButton;
     private JButton byPrescriptionPurchaseButton;
 
-    public PurchaseChoicePanel(MedicineController medicineController) {
+    public PurchaseChoicePanel(MedicineController medicineController, PurchaseManager purchaseManager) {
 
         this.medicineController = medicineController; // Initialise medicineController dans le constructeur
+        this.purchaseManager = purchaseManager;
         this.setVisible(true);
         this.add(panelPurchaseChoice);
 
@@ -48,8 +50,6 @@ public class PurchaseChoicePanel extends JPanel {
         if (customerController == null) {
             customerController = new CustomerController();
         }
-
-        PurchaseManager purchaseManager = new PurchaseManager();
 
         DirectPurchasePanel directPurchasePanel = new DirectPurchasePanel(medicineController.getMedicineManager(),
                 customerController, purchaseManager);

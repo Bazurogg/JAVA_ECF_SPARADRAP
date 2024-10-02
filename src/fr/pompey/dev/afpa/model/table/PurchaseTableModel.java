@@ -10,7 +10,9 @@ import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
 public class PurchaseTableModel extends AbstractTableModel {
+
     private final String[] columnNames = new String[]{"Date", "Customer", "Medicines", "Total Price"};
+
     private final List<Purchase> purchases;
 
     public PurchaseTableModel(List<Purchase> purchases) {
@@ -30,8 +32,11 @@ public class PurchaseTableModel extends AbstractTableModel {
     }
 
     public Object getValueAt(int rowIndex, int columnIndex) {
+
         Purchase purchase = (Purchase)this.purchases.get(rowIndex);
+
         switch (columnIndex) {
+
             case 0:
                 return purchase.getPurchaseDate().toString();
             case 1:
@@ -43,6 +48,9 @@ public class PurchaseTableModel extends AbstractTableModel {
                 return String.format("%.2f", purchase.getTotalPrice());
             default:
                 return null;
+
         }
+
     }
+
 }
