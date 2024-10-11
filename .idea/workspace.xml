@@ -6,11 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8c42abba-3d1e-4b84-95b6-6832cb625052" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/vue/DirectPurchasePanel$PurchaseButtonEditor$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/vue/DirectPurchasePanel$PurchaseButtonEditor$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/vue/DirectPurchasePanel$PurchaseButtonEditor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/vue/DirectPurchasePanel$PurchaseButtonEditor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/vue/DirectPurchasePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/vue/DirectPurchasePanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/model/DirectPurchase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/model/DirectPurchase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/DirectPurchasePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/DirectPurchasePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/PurchaseHistoryPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/PurchaseHistoryPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +141,8 @@
       <workItem from="1728022388862" duration="369000" />
       <workItem from="1728482632922" duration="274000" />
       <workItem from="1728561243700" duration="7393000" />
-      <workItem from="1728626234316" duration="1193000" />
+      <workItem from="1728626234316" duration="4220000" />
+      <workItem from="1728630870575" duration="4998000" />
     </task>
     <servers />
   </component>

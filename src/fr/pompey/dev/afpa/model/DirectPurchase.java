@@ -32,16 +32,18 @@ public class DirectPurchase extends Purchase {
         super(purchaseDate, totalPrice, medicines); // Calls the parent constructor without customer
     }
 
-    // Here add some future methods implementation if needed.
+
 
     @Override
     public String toString() {
+
         return "DirectPurchase{" +
                 "purchaseDate=" + getPurchaseDate() +
                 ", totalPrice=" + getTotalPrice() +
                 ", medicines=" + getMedicines() +
                 ", customer=" + (getCustomer() != null ? getCustomer() : "No customer") +
                 '}';
+
     }
 
 }

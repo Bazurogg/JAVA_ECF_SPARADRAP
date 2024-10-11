@@ -200,6 +200,7 @@ public class DirectPurchasePanel extends JPanel {
     }
 
     private void handleCreateNewPurchase() {
+
         // Vérifier s'il y a des médicaments dans l'achat
         if (currentPurchase.getMedicines().isEmpty()) {
             JOptionPane.showMessageDialog(this, "No medicines selected for purchase!", "Error", JOptionPane.ERROR_MESSAGE);
@@ -208,22 +209,38 @@ public class DirectPurchasePanel extends JPanel {
 
         // Associer un client si nécessaire
         String selectedCustomer = (String) comboBoxCustomers.getSelectedItem();
+
         if (!"Customer not specified".equals(selectedCustomer)) {
+
             int selectedIndex = comboBoxCustomers.getSelectedIndex() - 1;
+
             if (selectedIndex >= 0) {
+
                 Customer selectedCustomerObj = customers.get(selectedIndex);
+
                 currentPurchase.setCustomer(selectedCustomerObj);
+
             }
+
         }
 
         // Ajouter l'achat au PurchaseManager
         purchaseManager.addPurchase(currentPurchase);
+
+        // Calcul du prix total et affichage dans la console pour les tests
+        double totalPrice = calculateTotalPrice();
+
+        currentPurchase.setTotalPrice(totalPrice);
+
+        System.out.println("Prix total de l'achat: " + totalPrice); // Affichage du prix total dans la console
+
 
         // Message de confirmation
         JOptionPane.showMessageDialog(this, "Purchase has been successfully saved!");
 
         // Réinitialiser le formulaire
         resetForm();
+
     }
 
     // Custom ButtonRenderer to render buttons in table cells
