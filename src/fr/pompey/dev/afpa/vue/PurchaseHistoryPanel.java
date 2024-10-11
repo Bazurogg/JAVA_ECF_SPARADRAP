@@ -4,7 +4,6 @@ import fr.pompey.dev.afpa.controller.PurchaseManager;
 import fr.pompey.dev.afpa.model.Purchase;
 import fr.pompey.dev.afpa.model.table.PurchaseTableModel;
 import javax.swing.*;
-import java.awt.*;
 import java.util.List;
 
 public class PurchaseHistoryPanel extends JPanel {

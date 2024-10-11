@@ -70,13 +70,13 @@ public class DirectPurchasePanel extends JPanel {
         tableAntiInflammatory = new JTable();
         tableAntiviral = new JTable();
 
-        // Créer la table d'achat avec le modèle personnalisé
+        // Create the purchase table with the custom model
         purchaseTable = new JTable(new MedicinePurchaseTableModel(currentPurchase));
 
-        // hauteur des lignes
+        // lines height
         purchaseTable.setRowHeight(30);
 
-        // on injecte notre tableau dans le JscrollPane créer dans le designer
+        // inject the table into the JscrollPane made into the GUI
         JScrollTablePurchase.setViewportView(purchaseTable);
 
         TotalPriceField.setBorder(null);
@@ -90,17 +90,29 @@ public class DirectPurchasePanel extends JPanel {
         tabbedPane1.addTab("Antivirals", new JScrollPane(tableAntiviral));
 
         comboBoxCustomers.addActionListener(new ActionListener() {
+
             @Override
+
             public void actionPerformed(ActionEvent e) {
+
                 String selectedCustomer = (String) comboBoxCustomers.getSelectedItem();
+
                 if ("Not specified".equals(selectedCustomer)) {
-                    currentPurchase.setCustomer(null); // Pas de client associé
+
+                    currentPurchase.setCustomer(null); //no customers associated
+
                 } else {
-                    // Si un client est sélectionné, récupérez ses informations
-                    int selectedIndex = comboBoxCustomers.getSelectedIndex() - 1; // -1 car "Non renseigné" est en première position
+
+                    // If a customer is selected all his details are retrieved
+                    int selectedIndex = comboBoxCustomers.getSelectedIndex() - 1; // -1 because "Non renseigné" is
+                    // placed on the first position
+
                     if (selectedIndex >= 0) {
+
                         Customer selectedCustomerObj = customers.get(selectedIndex);
-                        currentPurchase.setCustomer(selectedCustomerObj); // Associe le client à l'achat
+
+                        currentPurchase.setCustomer(selectedCustomerObj); // binding the customer with the purchase
+
                     }
                 }
             }
