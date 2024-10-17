@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // Crée une instance de MenuHome pour lancer le menu principal
+        // Creating an MenuHome instance when the app launching
         new MenuHome(new PurchaseManager());
 
     }

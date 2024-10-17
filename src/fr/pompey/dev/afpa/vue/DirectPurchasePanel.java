@@ -7,6 +7,7 @@ import fr.pompey.dev.afpa.model.Customer;
 import fr.pompey.dev.afpa.model.DirectPurchase;
 import fr.pompey.dev.afpa.model.Medicine;
 import fr.pompey.dev.afpa.model.table.MedicinePurchaseTableModel;
+import fr.pompey.dev.afpa.model.table.PurchaseTableModel;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -119,10 +120,12 @@ public class DirectPurchasePanel extends JPanel {
         });
 
         createNewDirectPurchaseButton.addActionListener(new ActionListener() {
+
             @Override
             public void actionPerformed(ActionEvent e) {
                 handleCreateNewPurchase();
             }
+
         });
 
         // Configure the action buttons in the purchase table
@@ -153,9 +156,13 @@ public class DirectPurchasePanel extends JPanel {
     }
 
     private void populateTable(Medicine.MedicineCategory category, JTable table) {
+
         if (table == null) {
+
             System.err.println("Error: Table for category " + category + " is null.");
+
             return;
+
         }
 
         // Get the list of medicines by category
@@ -171,6 +178,7 @@ public class DirectPurchasePanel extends JPanel {
 
         // Populate the table with data
         for (Medicine medicine : medicines) {
+
             model.addRow(new Object[]{
                     medicine.getMedicineName(),
                     medicine.getPrice(),
@@ -178,6 +186,7 @@ public class DirectPurchasePanel extends JPanel {
                     medicine.getDateOnSale(),
                     "Add" // Text for the button
             });
+
         }
 
         // Set the model to the table
@@ -234,6 +243,7 @@ public class DirectPurchasePanel extends JPanel {
 
         System.out.println("Prix total de l'achat: " + totalPrice); // Affichage du prix total dans la console
 
+        System.out.println("TEST: " + currentPurchase.getMedicines());
 
         // Message de confirmation
         JOptionPane.showMessageDialog(this, "Purchase has been successfully saved!");
@@ -485,8 +495,10 @@ public class DirectPurchasePanel extends JPanel {
     }
 
     private void resetForm() {
-        currentPurchase.getMedicines().clear(); // Vider les médicaments actuels
-        ((MedicinePurchaseTableModel) purchaseTable.getModel()).fireTableDataChanged(); // Mettre à jour la table
+        purchaseTable.setModel(new PurchaseTableModel(new ArrayList<>()));
+        //purchaseTable.setModel(null);
+        //currentPurchase.getMedicines().clear(); // Vider les médicaments actuels
+        //((MedicinePurchaseTableModel) purchaseTable.getModel()).fireTableDataChanged(); // Mettre à jour la table
         TotalPriceField.setText("0.00"); // Réinitialiser le prix total
         comboBoxCustomers.setSelectedIndex(0); // Réinitialiser le client sélectionné
     }

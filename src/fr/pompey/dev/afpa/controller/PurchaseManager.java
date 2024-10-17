@@ -15,7 +15,9 @@ public class PurchaseManager {
     private List<Purchase> allPurchases = new ArrayList();
 
     public PurchaseManager() {
-        this.initializeDummyPurchases();
+
+//        this.initializeDummyPurchases();
+
     }
 
     public void addPurchase(Purchase purchase) {
@@ -29,7 +31,9 @@ public class PurchaseManager {
     }
 
     public void removePurchase(Purchase purchase) {
+
         this.allPurchases.remove(purchase);
+
     }
 
     public List<Purchase> getAllPurchases() {

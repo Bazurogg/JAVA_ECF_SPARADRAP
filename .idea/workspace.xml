@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8c42abba-3d1e-4b84-95b6-6832cb625052" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/model/DirectPurchase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/model/DirectPurchase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/controller/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/controller/PurchaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/controller/PurchaseManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/DirectPurchasePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/DirectPurchasePanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -37,6 +38,9 @@
     &quot;accountId&quot;: &quot;ece93540-6717-4de7-9dcf-4e433a3f460f&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$USER_HOME$/.jdks/temurin-21.0.4/lib/src.zip!/java.desktop/javax/swing/table/AbstractTableModel.java" root0="SKIP_INSPECTION" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 7
@@ -63,7 +67,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.tabs&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -143,6 +147,7 @@
       <workItem from="1728561243700" duration="7393000" />
       <workItem from="1728626234316" duration="4220000" />
       <workItem from="1728630870575" duration="4998000" />
+      <workItem from="1729150845699" duration="6488000" />
     </task>
     <servers />
   </component>
@@ -162,6 +167,26 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/MenuHome.java</url>
+          <line>104</line>
+          <properties method="actionPerformed">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/DirectPurchasePanel.java</url>
+          <line>236</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/JAVA_ECF_SPARADRAP$Main.ic" NAME="Main Coverage Results" MODIFIED="1725886464402" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
