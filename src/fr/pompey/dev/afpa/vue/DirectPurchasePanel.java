@@ -241,9 +241,14 @@ public class DirectPurchasePanel extends JPanel {
 
         currentPurchase.setTotalPrice(totalPrice);
 
-        System.out.println("Prix total de l'achat: " + totalPrice); // Affichage du prix total dans la console
 
-        System.out.println("TEST: " + currentPurchase.getMedicines());
+
+        // Console log for debugging
+//        System.out.println("Prix total de l'achat: " + totalPrice); // Affichage du prix total dans la console
+//
+//        System.out.println("TEST: " + currentPurchase.getMedicines());
+        // Console log for debugging
+
 
         // Message de confirmation
         JOptionPane.showMessageDialog(this, "Purchase has been successfully saved!");
