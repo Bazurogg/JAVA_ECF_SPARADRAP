@@ -18,3 +18,6 @@ public class TEST02 extends JFrame {
         this.repaint();
     }
 }
+
+
+

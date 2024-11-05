@@ -23,7 +23,7 @@ import java.util.List;
 
 public class DirectPurchasePanel extends JPanel {
 
-    private final DirectPurchase currentPurchase;
+    private DirectPurchase currentPurchase;
     private final PurchaseManager purchaseManager;
     private JTable purchaseTable;
     private final List<Medicine> selectedMedicines = new ArrayList<>();
@@ -500,8 +500,8 @@ public class DirectPurchasePanel extends JPanel {
     }
 
     private void resetForm() {
-        purchaseTable.setModel(new PurchaseTableModel(new ArrayList<>()));
-        //purchaseTable.setModel(null);
+        currentPurchase = new DirectPurchase(LocalDate.now(), 0.0, new ArrayList<>(), null);
+        purchaseTable.setModel(new MedicinePurchaseTableModel(currentPurchase));
         //currentPurchase.getMedicines().clear(); // Vider les médicaments actuels
         //((MedicinePurchaseTableModel) purchaseTable.getModel()).fireTableDataChanged(); // Mettre à jour la table
         TotalPriceField.setText("0.00"); // Réinitialiser le prix total
