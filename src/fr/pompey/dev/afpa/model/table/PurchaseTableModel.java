@@ -42,9 +42,9 @@ public class PurchaseTableModel extends AbstractTableModel {
             case 1:
                 String var10000 = purchase.getCustomer().getFirstname();
                 return var10000 + " " + purchase.getCustomer().getLastname();
+//            case 2:
+//                return purchase.getMedicines().toString();
             case 2:
-                return purchase.getMedicines().toString();
-            case 3:
                 return String.format("%.2f", purchase.getTotalPrice());
             default:
                 return null;

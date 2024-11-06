@@ -491,11 +491,7 @@ public class DirectPurchasePanel extends JPanel {
 
     private double calculateTotalPrice() {
 
-        return currentPurchase.getMedicines().stream()
-
-                .mapToDouble(medicine -> medicine.getPrice() * medicine.getQuantity())
-
-                .sum();
+        return currentPurchase.getMedicines().stream().mapToDouble(medicine -> medicine.getPrice() * medicine.getQuantity()).sum();
 
     }
 

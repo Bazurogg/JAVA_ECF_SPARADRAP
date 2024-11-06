@@ -173,4 +173,5 @@ public class Purchase {
                 ", customer=" + (customer != null ? customer : "No customer") +
                 '}';
     }
+
 }

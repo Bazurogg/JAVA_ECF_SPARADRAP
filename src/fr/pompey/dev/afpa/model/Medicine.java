@@ -100,13 +100,9 @@ public class Medicine {
 
     @Override
     public String toString() {
-        return "Medicine{" +
-                "name='" + medicineName + '\'' +
-                ", category=" + category +
-                ", price=" + price +
-                ", quantity=" + quantity +
-                ", dateOnSale=" + dateOnSale +
-                '}';
+
+        return "Medicine{" + "name='" + medicineName + '\'' + ", category=" + category + ", price=" + price + ", quantity=" + quantity + ", dateOnSale=" + dateOnSale + '}';
+
     }
 
 }

@@ -25,7 +25,7 @@
               </grid>
             </constraints>
             <properties/>
-            <border type="line" title="Purchase Summary">
+            <border type="line" title="Purchases Summary">
               <font name="Source Code Pro" size="20"/>
               <color color="-11510149"/>
             </border>
