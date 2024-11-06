@@ -6,13 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8c42abba-3d1e-4b84-95b6-6832cb625052" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/vue/DirectPurchasePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/vue/DirectPurchasePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/model/Medicine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/model/Medicine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JAVA_ECF_SPARADRAP/fr/pompey/dev/afpa/model/Purchase.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/model/Purchase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/model/Purchase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/model/table/PurchaseTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/model/table/PurchaseTableModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/DirectPurchasePanel.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/DirectPurchasePanel.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/DirectPurchasePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/DirectPurchasePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/PurchaseHistoryPanel.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/fr/pompey/dev/afpa/vue/PurchaseHistoryPanel.form" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +168,7 @@
       <workItem from="1730815288278" duration="431000" />
       <workItem from="1730819215101" duration="1510000" />
       <workItem from="1730821583394" duration="659000" />
-      <workItem from="1730876604218" duration="2520000" />
+      <workItem from="1730876604218" duration="5301000" />
     </task>
     <servers />
   </component>

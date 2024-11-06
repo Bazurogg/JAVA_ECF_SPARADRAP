@@ -3,6 +3,7 @@ package fr.pompey.dev.afpa.model;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * Represents a general purchase (either direct or by prescription) in the pharmacy.
@@ -10,6 +11,9 @@ import java.util.List;
  * The total price will later consider the customer's health insurance coverage.
  */
 public class Purchase {
+
+    /** The unique id of the purchase */
+    private final String purchaseId;
 
     /** The date the purchase was made */
     private LocalDate purchaseDate;
@@ -27,11 +31,12 @@ public class Purchase {
      * Constructor for a general purchase.
      *
      * @param purchaseDate The date the purchase was made
-     * @param totalPrice The total price of the purchase
-     * @param medicines The list of medicines in this purchase
-     * @param customer The customer who made the purchase
+     * @param totalPrice   The total price of the purchase
+     * @param medicines    The list of medicines in this purchase
+     * @param customer     The customer who made the purchase
      */
     public Purchase(LocalDate purchaseDate, double totalPrice, List<Medicine> medicines, Customer customer) {
+        this.purchaseId = generatePurchaseId();
         setPurchaseDate(purchaseDate);
         setTotalPrice(totalPrice);
         this.medicines = medicines != null ? new ArrayList<>(medicines) : new ArrayList<>(); // Prevent null pointer
@@ -42,15 +47,17 @@ public class Purchase {
      * Constructor for a general purchase without a customer.
      *
      * @param purchaseDate The date the purchase was made
-     * @param totalPrice The total price of the purchase
-     * @param medicines The list of medicines in this purchase
+     * @param totalPrice   The total price of the purchase
+     * @param medicines    The list of medicines in this purchase
      */
     public Purchase(LocalDate purchaseDate, double totalPrice, List<Medicine> medicines) {
+        this.purchaseId = generatePurchaseId();
         setPurchaseDate(purchaseDate);
         setTotalPrice(totalPrice);
         this.medicines = medicines != null ? new ArrayList<>(medicines) : new ArrayList<>(); // Prevent null pointer
         this.customer = null; // No customer for this constructor
     }
+
 
     /**
      * Gets the date the purchase was made.
@@ -147,6 +154,29 @@ public class Purchase {
     }
 
     /**
+     * Generate a unique identifier when the purchase is created.
+     *
+     * @return String purchase id
+     */
+    private String generatePurchaseId() {
+        String datePart = LocalDate.now().toString().replace("-", ""); // Exemple : 20231011
+        String uniquePart = UUID.randomUUID().toString().substring(0, 4).toUpperCase(); // Exemple : 4 lettres aléatoires
+        return "ORD-" + datePart + "-" + uniquePart; // Exemple : ORD-20231011-ABCD
+    }
+
+
+    /**
+     * Gets purchase id.
+     *
+     * @return the purchase id
+     */
+    public String getPurchaseId() {
+        return purchaseId;
+    }
+
+
+
+    /**
      * Gets the customer who made the purchase.
      *
      * @return the customer who made the purchase
@@ -167,7 +197,8 @@ public class Purchase {
     @Override
     public String toString() {
         return "Purchase{" +
-                "purchaseDate=" + purchaseDate +
+                "purchaseId='" + purchaseId + '\'' +
+                ", purchaseDate=" + purchaseDate +
                 ", totalPrice=" + totalPrice +
                 ", medicines=" + medicines +
                 ", customer=" + (customer != null ? customer : "No customer") +
