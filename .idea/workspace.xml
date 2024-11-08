@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c42abba-3d1e-4b84-95b6-6832cb625052" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Conception/MCD/Sparadrap_MCD.lo1" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Conception/MCD/Sparadrap_MCD.lo1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Conception/MCD/Sparadrap_MCD.loo" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Conception/MCD/Sparadrap_MCD.loo" afterDir="false" />
-    </list>
+    <list default="true" id="8c42abba-3d1e-4b84-95b6-6832cb625052" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -170,7 +166,7 @@
       <workItem from="1730821583394" duration="659000" />
       <workItem from="1730876604218" duration="5301000" />
       <workItem from="1730982843413" duration="9096000" />
-      <workItem from="1731058181898" duration="1378000" />
+      <workItem from="1731058181898" duration="1940000" />
     </task>
     <servers />
   </component>
