@@ -14,6 +14,9 @@ public class BDDConnectionManager {
 
     private static final Properties prop = new Properties();
     private static Connection connection;
+    /**
+     * The Pathconf.
+     */
     final String PATHCONF = "conf.properties";
 
     /**
@@ -63,6 +66,11 @@ public class BDDConnectionManager {
 
     }
 
+    /**
+     * Gets instance db.
+     *
+     * @return the instance db
+     */
     public static Connection getInstanceDB() {
 
         if (connection == null) {
@@ -84,6 +92,9 @@ public class BDDConnectionManager {
 
     }
 
+    /**
+     * Close connection.
+     */
     public static void closeConnection() {
 
         try{
