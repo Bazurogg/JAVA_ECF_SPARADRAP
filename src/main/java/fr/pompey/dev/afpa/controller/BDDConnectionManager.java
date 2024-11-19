@@ -7,13 +7,19 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
+/**
+ * The type Bdd connection manager.
+ */
 public class BDDConnectionManager {
 
-    public Connection getConnection() {
+    private static final Properties prop = new Properties();
+    private static Connection connection;
+    final String PATHCONF = "conf.properties";
 
-        final String PATHCONF = "conf.properties";
-
-        Properties prop = new Properties();
+    /**
+     * Initialize connection.
+     */
+    public void initializeConnection() {
 
         try (InputStream is = getClass().getClassLoader().getResourceAsStream(PATHCONF)) {
 
@@ -34,18 +40,16 @@ public class BDDConnectionManager {
 
         // connection test procedure
         try {
+
             // Driver loading
             Class.forName(prop.getProperty("jdbc.driver.class"));
 
-
+            // Recovering parameters for the connection
             String url = prop.getProperty("jdbc.url");
             String user = prop.getProperty("jdbc.user");
             String password = prop.getProperty("jdbc.password");
 
-            System.out.println("Connection established");
-
-            return DriverManager.getConnection(url, user, password);
-
+            connection = DriverManager.getConnection(url, user, password);
 
         } catch (ClassNotFoundException e) {
 
@@ -58,5 +62,51 @@ public class BDDConnectionManager {
         }
 
     }
+
+    public static Connection getInstanceDB() {
+
+        if (connection == null) {
+
+            BDDConnectionManager dbManager = new BDDConnectionManager();
+
+            dbManager.initializeConnection();
+
+            System.out.println("Connection established");
+
+        }
+        else  {
+
+            System.out.println("Connection already existing");
+
+        }
+
+        return connection;
+
+    }
+
+    public static void closeConnection() {
+
+        try{
+
+            getConnection().close();
+
+            System.out.println("Connection closed");
+
+        }
+
+        catch (SQLException e) {
+
+            throw new RuntimeException(e);
+
+        }
+
+    }
+
+    private static Connection getConnection(){
+
+        return connection;
+
+    }
+
 
 }
