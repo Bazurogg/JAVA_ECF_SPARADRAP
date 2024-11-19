@@ -7,10 +7,6 @@
     <list default="true" id="8c42abba-3d1e-4b84-95b6-6832cb625052" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAO/DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/DAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/controller/BDDConnectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/controller/BDDConnectionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/controller/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/controller/BDDConnectionManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/controller/BDDConnectionManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/controller/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/controller/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +175,7 @@
       <workItem from="1731058181898" duration="2541000" />
       <workItem from="1731926032272" duration="2264000" />
       <workItem from="1731932801347" duration="12684000" />
-      <workItem from="1731999932709" duration="15121000" />
+      <workItem from="1731999932709" duration="15857000" />
     </task>
     <servers />
   </component>
