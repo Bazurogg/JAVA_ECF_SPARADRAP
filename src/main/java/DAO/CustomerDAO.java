@@ -72,12 +72,48 @@ public class CustomerDAO extends DAO<Customer> {
 
     @Override
     public Customer find(int id) {
-        return null;
+        Customer customer = null; // Initialisation de l'objet Customer
+        StringBuilder selectById = new StringBuilder("SELECT * FROM Customer WHERE customer_id = ?");
+
+        try (PreparedStatement pstmt = connection.prepareStatement(selectById.toString())) {
+
+            pstmt.setInt(1, id); // Bind de l'ID dans la requête
+
+            try (ResultSet rs = pstmt.executeQuery()) { // Exécution de la requête
+
+                if (rs.next()) { // Si un enregistrement est trouvé
+
+                    customer = new Customer(); // Création d'une instance Customer
+
+                    // Hydratation de l'objet Customer
+                    customer.setFirstname(rs.getString("cu_firstname"));
+                    customer.setLastname(rs.getString("cu_lastname"));
+                    customer.setAddress(rs.getString("cu_address"));
+                    customer.setPostalCode(rs.getString("cu_postalCode"));
+                    customer.setCity(rs.getString("cu_city"));
+                    customer.setPhoneNumber(rs.getString("cu_phoneNumber"));
+                    customer.setEmail(rs.getString("cu_email"));
+                    customer.setBirthDate(rs.getDate("cu_birthDate").toLocalDate());
+                    customer.setSocialSecurityNumber(rs.getString("cu_socialSecurityNumber"));
+                }
+            }
+
+        } catch (SQLException e) {
+
+            throw new RuntimeException("Error during find operation: " + e.getMessage(), e);
+
+        }
+
+        return customer; // Return a customer is found or not
+
     }
+
 
     @Override
     public ArrayList<Customer> findAll() {
+
         return null;
+
     }
 
 }

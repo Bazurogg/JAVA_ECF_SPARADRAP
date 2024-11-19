@@ -52,6 +52,12 @@ public class Person {
     }
 
     /**
+     * Constructor for the Person class.
+     * with 0 parameter
+     */
+    public Person() {}
+
+    /**
      * Gets firstname.
      *
      * @return the firstname

@@ -28,7 +28,7 @@ public class Customer extends Person {
      * @param phoneNumber          The phone number of the customer.
      * @param email                The email address of the customer.
      * @param socialSecurityNumber The social security number of the customer.
-     * @param birthDate            The birth date of the customer.
+     * @param birthDate            The birthdate of the customer.
      */
     public Customer(String firstname, String lastname, String address, String postalCode,
                     String city, String phoneNumber, String email,
@@ -47,8 +47,17 @@ public class Customer extends Person {
 
     }
 
-    // Getters and setters for Customer-specific fields
+    /**
+     * Constructor for the Customer class.
+     * with 0 parameter
+     */
+    public Customer() {
 
+        super();
+
+    }
+
+    // Getters and setters for Customer-specific fields
     public String getSocialSecurityNumber() {
         return socialSecurityNumber;
     }
