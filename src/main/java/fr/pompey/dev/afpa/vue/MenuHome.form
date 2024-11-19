@@ -55,7 +55,7 @@
                     <properties>
                       <background color="-11510149"/>
                       <foreground color="-11510149"/>
-                      <icon value="Conception/Maquette/Logos_/Logo-Pharmacie_retail_02.png"/>
+                      <icon value="Conception/Assets/Logos_/Logo-Pharmacie_retail_02.png"/>
                       <text value=""/>
                     </properties>
                   </component>
@@ -86,7 +86,7 @@
                       <font name="Fira Code"/>
                       <foreground color="-1"/>
                       <horizontalTextPosition value="0"/>
-                      <icon value="Conception/Maquette/Logos_/Icone_menuSideBar/doctor.png"/>
+                      <icon value="Conception/Assets/Logos_/Icone_menuSideBar/doctor.png"/>
                       <label value="doctors"/>
                       <text value="doctors"/>
                       <toolTipText value="Check doctor detail"/>
@@ -108,7 +108,7 @@
                       <font name="Fira Code"/>
                       <foreground color="-1"/>
                       <horizontalTextPosition value="0"/>
-                      <icon value="Conception/Maquette/Logos_/Icone_menuSideBar/group.png"/>
+                      <icon value="Conception/Assets/Logos_/Icone_menuSideBar/group.png"/>
                       <label value="customers"/>
                       <text value="customers"/>
                       <toolTipText value="Check customer details."/>
@@ -130,7 +130,7 @@
                       <font name="Fira Code"/>
                       <foreground color="-1"/>
                       <horizontalTextPosition value="0"/>
-                      <icon value="Conception/Maquette/Logos_/Icone_menuSideBar/medical-team.png"/>
+                      <icon value="Conception/Assets/Logos_/Icone_menuSideBar/medical-team.png"/>
                       <label value="specialists"/>
                       <text value="specialists"/>
                       <toolTipText value="Check specialists details"/>
@@ -164,7 +164,7 @@
                       <font name="Fira Code"/>
                       <foreground color="-1"/>
                       <horizontalTextPosition value="0"/>
-                      <icon value="Conception/Maquette/Logos_/Icone_menuSideBar/drugstore.png"/>
+                      <icon value="Conception/Assets/Logos_/Icone_menuSideBar/drugstore.png"/>
                       <label value=""/>
                       <text value=""/>
                       <toolTipText value="Return to Home menu&#10;"/>
@@ -198,7 +198,7 @@
                       <font name="Fira Code"/>
                       <foreground color="-1"/>
                       <horizontalTextPosition value="0"/>
-                      <icon value="Conception/Maquette/Logos_/Icone_menuSideBar/exit.png"/>
+                      <icon value="Conception/Assets/Logos_/Icone_menuSideBar/exit.png"/>
                       <label value=""/>
                       <text value=""/>
                       <toolTipText value="Exit the app."/>
@@ -246,7 +246,7 @@
                       <font name="Fira Code"/>
                       <foreground color="-1"/>
                       <horizontalTextPosition value="0"/>
-                      <icon value="Conception/Maquette/Logos_/Icone_menuSideBar/shopping-cart.png"/>
+                      <icon value="Conception/Assets/Logos_/Icone_menuSideBar/shopping-cart.png"/>
                       <label value="purchases"/>
                       <text value="purchases"/>
                       <toolTipText value="Make a purchase"/>
@@ -269,7 +269,7 @@
                       <font name="Fira Code"/>
                       <foreground color="-1"/>
                       <horizontalTextPosition value="0"/>
-                      <icon value="Conception/Maquette/Logos_/Icone_menuSideBar/medicine.png"/>
+                      <icon value="Conception/Assets/Logos_/Icone_menuSideBar/medicine.png"/>
                       <label value="medicines"/>
                       <text value="medicines"/>
                       <toolTipText value="Check medicines detail or stock."/>
@@ -291,7 +291,7 @@
                       <font name="Fira Code"/>
                       <foreground color="-1"/>
                       <horizontalTextPosition value="0"/>
-                      <icon value="Conception/Maquette/Logos_/Icone_menuSideBar/salesHistoric_icon.png"/>
+                      <icon value="Conception/Assets/Logos_/Icone_menuSideBar/salesHistoric_icon.png"/>
                       <label value="historic"/>
                       <text value="historic"/>
                       <toolTipText value="Check the sales summary"/>

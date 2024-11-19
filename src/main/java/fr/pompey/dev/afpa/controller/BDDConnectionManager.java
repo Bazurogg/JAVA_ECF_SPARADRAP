@@ -9,13 +9,20 @@ import java.util.Properties;
 
 public class BDDConnectionManager {
 
-    private void getConnection() {
+    public Connection getConnection() {
 
         final String PATHCONF = "conf.properties";
 
         Properties prop = new Properties();
 
         try (InputStream is = getClass().getClassLoader().getResourceAsStream(PATHCONF)) {
+
+            //statement if the conf.properties file is not found
+            if (is == null) {
+
+                throw new IOException("Config file not found : " + PATHCONF);
+
+            }
 
             prop.load(is);
 
@@ -25,19 +32,20 @@ public class BDDConnectionManager {
 
         }
 
+        // connection test procedure
         try {
-            // Charger le driver
+            // Driver loading
             Class.forName(prop.getProperty("jdbc.driver.class"));
+
 
             String url = prop.getProperty("jdbc.url");
             String user = prop.getProperty("jdbc.user");
             String password = prop.getProperty("jdbc.password");
 
-            Connection connection = DriverManager.getConnection(url, user, password);
-
             System.out.println("Connection established");
 
-            connection.close();
+            return DriverManager.getConnection(url, user, password);
+
 
         } catch (ClassNotFoundException e) {
 

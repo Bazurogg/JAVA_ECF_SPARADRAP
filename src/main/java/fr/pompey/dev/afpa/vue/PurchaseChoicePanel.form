@@ -69,7 +69,7 @@
                   <foreground color="-16777216"/>
                   <hideActionText value="true"/>
                   <horizontalTextPosition value="0"/>
-                  <icon value="Conception/Maquette/Logos_/Icone_menuSideBar/directPurchase_icon.png"/>
+                  <icon value="Conception/Assets/Logos_/Icone_menuSideBar/directPurchase_icon.png"/>
                   <label value="Direct"/>
                   <text value="Direct"/>
                   <toolTipText value="Make a direct purchase"/>
@@ -92,7 +92,7 @@
                   <foreground color="-16777216"/>
                   <hideActionText value="true"/>
                   <horizontalTextPosition value="0"/>
-                  <icon value="Conception/Maquette/Logos_/Icone_menuSideBar/purchasePrescription_icon.png"/>
+                  <icon value="Conception/Assets/Logos_/Icone_menuSideBar/purchasePrescription_icon.png"/>
                   <label value="By prescription"/>
                   <text value="By prescription"/>
                   <toolTipText value="Make a purchase by prescription"/>

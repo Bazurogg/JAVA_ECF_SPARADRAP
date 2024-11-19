@@ -307,13 +307,13 @@ public class DirectPurchasePanel extends JPanel {
 
             switch (action) {
                 case "Increase":
-                    iconPath = "/Conception/Maquette/Logos_/more.png";
+                    iconPath = "/Conception/Assets/Logos_/more.png";
                     break;
                 case "Decrease":
-                    iconPath = "/Conception/Maquette/Logos_/minus.png";
+                    iconPath = "/Conception/Assets/Logos_/minus.png";
                     break;
                 case "Remove":
-                    iconPath = "/Conception/Maquette/Logos_/trash.png";
+                    iconPath = "/Conception/Assets/Logos_/trash.png";
                     break;
                 default:
                     return null;
@@ -425,13 +425,13 @@ public class DirectPurchasePanel extends JPanel {
 
             switch (action) {
                 case "Increase":
-                    iconPath = "/Conception/Maquette/Logos_/more.png";
+                    iconPath = "/Conception/Assets/Logos_/more.png";
                     break;
                 case "Decrease":
-                    iconPath = "/Conception/Maquette/Logos_/minus.png";
+                    iconPath = "/Conception/Assets/Logos_/minus.png";
                     break;
                 case "Remove":
-                    iconPath = "/Conception/Maquette/Logos_/trash.png";
+                    iconPath = "/Conception/Assets/Logos_/trash.png";
                     break;
                 default:
                     return null;
