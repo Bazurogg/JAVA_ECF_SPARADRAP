@@ -8,6 +8,8 @@ package fr.pompey.dev.afpa.model;
  */
 public class Person {
 
+    private Integer id;
+
     private String firstname;
 
     private String lastname;
@@ -25,6 +27,7 @@ public class Person {
     /**
      * Constructor for the Person class.
      *
+     * @param id          The id of the person.
      * @param firstname   The first name of the person.
      * @param lastname    The last name of the person.
      * @param address     The address of the person.
@@ -33,7 +36,38 @@ public class Person {
      * @param phoneNumber The phone number of the person.
      * @param email       The email address of the person.
      */
-    public Person(String firstname, String lastname, String address, String postalCode, String city, String phoneNumber, String email) {
+    public Person(Integer id, String firstname, String lastname, String address, String postalCode, String city,
+                  String phoneNumber, String email) {
+
+        setFirstname(firstname);
+
+        setLastname(lastname);
+
+        setAddress(address);
+
+        setPostalCode(postalCode);
+
+        setCity(city);
+
+        setPhoneNumber(phoneNumber);
+
+        setEmail(email);
+
+    }
+
+    /**
+     * Instantiates a new Person.
+     *
+     * @param firstname   the firstname
+     * @param lastname    the lastname
+     * @param address     the address
+     * @param postalCode  the postal code
+     * @param city        the city
+     * @param phoneNumber the phone number
+     * @param email       the email
+     */
+    public Person(String firstname, String lastname, String address, String postalCode, String city,
+                  String phoneNumber, String email) {
 
         setFirstname(firstname);
 
@@ -56,6 +90,18 @@ public class Person {
      * with 0 parameter
      */
     public Person() {}
+
+
+    /**
+     * Gets id.
+     *
+     * @return the id
+     */
+    public Integer getId() {
+
+        return id;
+
+    }
 
     /**
      * Gets firstname.
@@ -182,5 +228,13 @@ public class Person {
     public void setEmail(String email) {
         this.email = email;
     }
+
+
+    /**
+     * Sets id.
+     *
+     * @param id the
+     */
+    public void setId(int id) { this.id = id; }
 
 }

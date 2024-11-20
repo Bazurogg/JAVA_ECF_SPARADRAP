@@ -30,12 +30,12 @@ public class Customer extends Person {
      * @param socialSecurityNumber The social security number of the customer.
      * @param birthDate            The birthdate of the customer.
      */
-    public Customer(String firstname, String lastname, String address, String postalCode,
+    public Customer(Integer id, String firstname, String lastname, String address, String postalCode,
                     String city, String phoneNumber, String email,
                     String socialSecurityNumber, LocalDate birthDate) {
 
         // Call the constructor of the superclass "Person" to initialize inherited fields
-        super(firstname, lastname, address, postalCode, city, phoneNumber, email);
+        super(id, firstname, lastname, address, postalCode, city, phoneNumber, email);
 
         // Initialize the specific fields of Customer
         setBirthDate(birthDate);

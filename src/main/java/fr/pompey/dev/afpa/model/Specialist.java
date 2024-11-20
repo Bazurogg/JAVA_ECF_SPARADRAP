@@ -19,10 +19,10 @@ public class Specialist extends Person {
      * @param email       The email address of the specialist.
      * @param speciality  The speciality domain the specialist work in.
      */
-    public Specialist(String firstname, String lastname, String address, String postalCode,
+    public Specialist(Integer id, String firstname, String lastname, String address, String postalCode,
                       String city, String phoneNumber, String email, String speciality) {
 
-        super(firstname, lastname, address, postalCode, city, phoneNumber, email);
+        super(id, firstname, lastname, address, postalCode, city, phoneNumber, email);
 
         setSpeciality(speciality);
 

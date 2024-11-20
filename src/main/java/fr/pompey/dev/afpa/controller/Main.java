@@ -3,8 +3,9 @@ package fr.pompey.dev.afpa.controller;
 import DAO.CustomerDAO;
 import fr.pompey.dev.afpa.model.Customer;
 import fr.pompey.dev.afpa.vue.MenuHome;
-
 import java.sql.*;
+import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Main {
 
@@ -12,37 +13,112 @@ public class Main {
 
         BDDConnectionManager dbManager = new BDDConnectionManager();
 
-        try  {
+        Connection connection = dbManager.getInstanceDB();
 
-            Connection connection = dbManager.getInstanceDB();
-
-            System.out.println("Successfully connected to the database !");
-
-            // --------------------------------------------------- ( TEST JDBC ) ---------------------------------------------------
-            // ------------------------------------------------- ( Customer List ) -------------------------------------------------
-            //Main main = new Main();
-            //main.selectFromCustomer(connection);
-            // --------------------------------------------------- ( TEST JDBC ) ---------------------------------------------------
-            // ------------------------------------------------- ( Customer List ) -------------------------------------------------
+        System.out.println("Successfully connected to the database !");
 
         CustomerDAO customerDAO = new CustomerDAO();
 
-        Customer customer = customerDAO.find(1); // Trouver le client avec l'ID 1
 
-        if (customer != null) {
-            System.out.println("Customer found:");
-            System.out.println("Firstname: " + customer.getFirstname());
-            System.out.println("Lastname: " + customer.getLastname());
-            // Afficher d'autres informations si nécessaire
+        // --------------------------------- ( TEST DAO  ) ---------------------------------------------------
+        // ------------------------------ ( DELETE Customer ) ------------------------------------------------
+        // Recherche du client à supprimer
+        Customer customerToDelete = customerDAO.find(16);  // Remplacez 16 par l'ID que vous voulez supprimer
+
+        if (customerToDelete != null && customerToDelete.getId() != null) {
+            System.out.println("Customer ID before delete: " + customerToDelete.getId());
+
+            boolean success = customerDAO.delete(customerToDelete);
+
+            if (success) {
+                System.out.println("Client supprimé avec succès.");
+            } else {
+                System.out.println("Échec de la suppression. Le client n'existe peut-être pas.");
+            }
         } else {
-            System.out.println("Customer not found.");
+            System.out.println("Client introuvable ou ID invalide !");
         }
+        // --------------------------------- ( TEST DAO  ) ---------------------------------------------------
+        // ------------------------------ ( DELETE Customer ) ------------------------------------------------
 
-        } catch (Exception e) {
 
-            System.err.println("Error : " + e.getMessage());
 
-        }
+
+        // --------------------------------- ( TEST DAO  ) ---------------------------------------------------
+        // ---------------------------- ( FIND BY ID Customer ) ----------------------------------------------
+//        ArrayList<Customer> customers = customerDAO.findAll();
+//
+//        for (Customer customer : customers) {
+//
+//            System.out.println(customer.getFirstname() + " " + customer.getLastname());
+//
+//        }
+        // --------------------------------- ( TEST DAO  ) ---------------------------------------------------
+        // ---------------------------- ( FIND BY ID Customer ) ----------------------------------------------
+
+
+
+
+        // --------------------------------- ( TEST DAO  ) ---------------------------------------------------
+        // ---------------------------- ( CREATE Customer ) ----------------------------------------------
+//        Customer newCustomer = new Customer(
+//                "Paul",
+//                "Dupuis",
+//                "12 Avenue de la République",
+//                "75010",
+//                "Paris",
+//                "0601234567",
+//                "paul.dupuis@mail.com",
+//                "9876543210986",
+//                LocalDate.of(1990, 1, 1)
+//        );
+//
+//        // Appel à la méthode create
+//        int newId = customerDAO.create(newCustomer);
+//
+//        // Affichage du résultat
+//        if (newId > 0) {
+//            System.out.println("Nouveau client créé avec succès, ID : " + newId);
+//        } else {
+//            System.out.println("Erreur lors de la création du client.");
+//        }
+        // --------------------------------- ( TEST DAO  ) ---------------------------------------------------
+        // ---------------------------- ( CREATE Customer ) ----------------------------------------------
+
+
+
+
+//        try  {
+//
+//            Connection connection = dbManager.getInstanceDB();
+//
+//            System.out.println("Successfully connected to the database !");
+//
+//            // --------------------------------------------------- ( TEST JDBC ) ---------------------------------------------------
+//            // ------------------------------------------------- ( Customer List ) -------------------------------------------------
+//            //Main main = new Main();
+//            //main.selectFromCustomer(connection);
+//            // --------------------------------------------------- ( TEST JDBC ) ---------------------------------------------------
+//            // ------------------------------------------------- ( Customer List ) -------------------------------------------------
+//
+//        CustomerDAO customerDAO = new CustomerDAO();
+//
+//        Customer customer = customerDAO.find(1); // test to found a customer with id
+//
+//        if (customer != null) {
+//            System.out.println("Customer found.");
+//            System.out.println("Firstname: " + customer.getFirstname());
+//            System.out.println("Lastname: " + customer.getLastname());
+//
+//        } else {
+//            System.out.println("Customer not found.");
+//        }
+//
+//        } catch (Exception e) {
+//
+//            System.err.println("Error : " + e.getMessage());
+//
+//        }
 
         // Creating an MenuHome instance when the app launching
         new MenuHome(new PurchaseManager());

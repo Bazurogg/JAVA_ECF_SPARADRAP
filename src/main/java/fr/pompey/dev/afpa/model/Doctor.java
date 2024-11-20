@@ -31,11 +31,11 @@ public class Doctor extends Person {
      * @param email       The email address of the doctor.
      * @param agreementId The agreement ID of the doctor.
      */
-    public Doctor(String firstname, String lastname, String address, String postalCode,
+    public Doctor(Integer id, String firstname, String lastname, String address, String postalCode,
                   String city, String phoneNumber, String email, String agreementId) {
 
         // Call the constructor of the superclass (Person) to initialize inherited fields
-        super(firstname, lastname, address, postalCode, city, phoneNumber, email);
+        super(id, firstname, lastname, address, postalCode, city, phoneNumber, email);
 
         // Initialize the specific field of Doctor
         setAgreementId(agreementId);

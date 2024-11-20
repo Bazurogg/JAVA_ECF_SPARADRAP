@@ -62,16 +62,16 @@ public class PurchaseManager {
     }
 
     private void initializeDummyPurchases() {
-        Customer customer1 = new Customer("Olivier", "Renaud", "25 Rue des Pyrénées", "64000", "Pau", "0600000015", "olivier.renaud@mail.com", "9998887776666", LocalDate.of(1987, 6, 25));
-        Customer customer2 = new Customer("Nicolas", "Fabre", "15 Boulevard des Anglais", "06300", "Nice", "0600000014", "nicolas.fabre@mail.com", "2221110009995", LocalDate.of(1992, 5, 30));
+//        Customer customer1 = new Customer("Olivier", "Renaud", "25 Rue des Pyrénées", "64000", "Pau", "0600000015", "olivier.renaud@mail.com", "9998887776666", LocalDate.of(1987, 6, 25));
+//        Customer customer2 = new Customer("Nicolas", "Fabre", "15 Boulevard des Anglais", "06300", "Nice", "0600000014", "nicolas.fabre@mail.com", "2221110009995", LocalDate.of(1992, 5, 30));
         Medicine med1 = new Medicine("Paracétamol", MedicineCategory.ANALGESIC, 1.99, 25, LocalDate.of(2022, 12, 1));
         Medicine med2 = new Medicine("Ibuprofène", MedicineCategory.ANTIINFLAMMATORY, 3.5, 15, LocalDate.of(2023, 4, 10));
-        Purchase purchase1 = new Purchase(LocalDate.now(), 6.25, Arrays.asList(med1), customer1);
-        Purchase purchase2 = new Purchase(LocalDate.now(), 2.5, Arrays.asList(med2), customer2);
+//        Purchase purchase1 = new Purchase(LocalDate.now(), 6.25, Arrays.asList(med1), customer1);
+//        Purchase purchase2 = new Purchase(LocalDate.now(), 2.5, Arrays.asList(med2), customer2);
 
-        this.addPurchase(purchase1);
-
-        this.addPurchase(purchase2);
+//        this.addPurchase(purchase1);
+//
+//        this.addPurchase(purchase2);
 
     }
 

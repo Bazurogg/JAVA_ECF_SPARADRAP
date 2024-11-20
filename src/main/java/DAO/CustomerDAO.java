@@ -1,13 +1,10 @@
 package DAO;
 
 import fr.pompey.dev.afpa.model.Customer;
-
-import javax.swing.*;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 public class CustomerDAO extends DAO<Customer> {
@@ -15,11 +12,12 @@ public class CustomerDAO extends DAO<Customer> {
     @Override
     public int create(Customer obj) {
 
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+
         int newId = 0;
 
         StringBuilder insertSQL = new StringBuilder();
-        insertSQL.append("insert into Customer (customer_id, cu_firstname, cu_lastname, cu_address, " +
+
+        insertSQL.append("insert into Customer (cu_firstname, cu_lastname, cu_address, " +
                 "cu_postalCode, cu_city, cu_phoneNumber, cu_email, cu_birthDate, cu_socialSecurityNumber) ");
 
         insertSQL.append("values (?, ?, ?, ?, ?, ?, ?, ?, ?)");
@@ -36,10 +34,7 @@ public class CustomerDAO extends DAO<Customer> {
             pstmt.setString(5, obj.getCity());
             pstmt.setString(6, obj.getPhoneNumber());
             pstmt.setString(7, obj.getEmail());
-
-            String birthDate = sdf.format(obj.getBirthDate());
-            pstmt.setDate(8, Date.valueOf(birthDate));
-
+            pstmt.setDate(8, Date.valueOf(obj.getBirthDate()));
             pstmt.setString(9, obj.getSocialSecurityNumber());
 
             pstmt.executeUpdate();
@@ -62,17 +57,65 @@ public class CustomerDAO extends DAO<Customer> {
 
     @Override
     public boolean delete(Customer obj) {
-        return false;
+
+        // Vérifiez si l'ID est null
+        if (obj.getId() == null) {
+
+            throw new IllegalArgumentException("Cannot delete a customer without a valid ID");
+
+        }
+
+        StringBuilder deleteSQL = new StringBuilder("DELETE FROM Customer WHERE customer_id = ?");
+
+        try (PreparedStatement pstmt = connection.prepareStatement(deleteSQL.toString())) {
+
+            pstmt.setInt(1, obj.getId());  // Assurez-vous que getId() retourne un entier valide
+
+            int rowAffected = pstmt.executeUpdate();
+
+            return rowAffected > 0;
+
+        } catch (SQLException e) {
+
+            throw new RuntimeException("Error while deleting customer: " + e.getMessage(), e);
+
+        }
     }
 
     @Override
     public boolean update(Customer obj) {
-        return false;
+
+        StringBuilder updateSQL = new StringBuilder("UPDATE Customer SET cu_firstname = ?, cu_lastname = ?, cu_address = ?, " +
+                "cu_postalCode = ?, cu_city = ?, cu_phoneNumber = ?, cu_email = ?, " +
+                "cu_birthDate = ?, cu_socialSecurityNumber = ? WHERE customer_id = ?");
+
+        try (PreparedStatement pstmt = connection.prepareStatement(String.valueOf(updateSQL))) {
+
+            pstmt.setString(1, obj.getFirstname());
+            pstmt.setString(2, obj.getLastname());
+            pstmt.setString(3, obj.getAddress());
+            pstmt.setString(4, obj.getPostalCode());
+            pstmt.setString(5, obj.getCity());
+            pstmt.setString(6, obj.getPhoneNumber());
+            pstmt.setString(7, obj.getEmail());
+            pstmt.setDate(8, Date.valueOf(obj.getBirthDate()));
+            pstmt.setString(9, obj.getSocialSecurityNumber());
+//            pstmt.setInt(10, obj.getId());
+
+            int rowAffected = pstmt.executeUpdate();
+            return rowAffected > 0;
+
+        } catch (SQLException e) {
+            throw new RuntimeException("Error while updating customer" + e.getMessage(), e);
+        }
+
     }
 
     @Override
     public Customer find(int id) {
+
         Customer customer = null; // customer object init
+
         StringBuilder selectById = new StringBuilder("SELECT * FROM Customer WHERE customer_id = ?");
 
         try (PreparedStatement pstmt = connection.prepareStatement(selectById.toString())) {
@@ -86,6 +129,7 @@ public class CustomerDAO extends DAO<Customer> {
                     customer = new Customer();
 
                     // hydrate customer object
+                    customer.setId(rs.getInt("customer_id"));
                     customer.setFirstname(rs.getString("cu_firstname"));
                     customer.setLastname(rs.getString("cu_lastname"));
                     customer.setAddress(rs.getString("cu_address"));
@@ -95,7 +139,9 @@ public class CustomerDAO extends DAO<Customer> {
                     customer.setEmail(rs.getString("cu_email"));
                     customer.setBirthDate(rs.getDate("cu_birthDate").toLocalDate());
                     customer.setSocialSecurityNumber(rs.getString("cu_socialSecurityNumber"));
+
                 }
+
             }
 
         } catch (SQLException e) {
@@ -108,12 +154,37 @@ public class CustomerDAO extends DAO<Customer> {
 
     }
 
-
     @Override
     public ArrayList<Customer> findAll() {
 
-        return null;
+        ArrayList<Customer> customers = new ArrayList<>();
+        String selectAllQuery = "SELECT * FROM Customer";
 
+        try (PreparedStatement pstmt = connection.prepareStatement(selectAllQuery);
+             ResultSet rs = pstmt.executeQuery()) {
+
+            while (rs.next()) {
+                Customer customer = new Customer();
+                customer.setFirstname(rs.getString("cu_firstname"));
+                customer.setLastname(rs.getString("cu_lastname"));
+                customer.setAddress(rs.getString("cu_address"));
+                customer.setPostalCode(rs.getString("cu_postalCode"));
+                customer.setCity(rs.getString("cu_city"));
+                customer.setPhoneNumber(rs.getString("cu_phoneNumber"));
+                customer.setEmail(rs.getString("cu_email"));
+                customer.setBirthDate(rs.getDate("cu_birthDate").toLocalDate());
+                customer.setSocialSecurityNumber(rs.getString("cu_socialSecurityNumber"));
+
+                customers.add(customer);
+            }
+
+        } catch (SQLException e) {
+
+            throw new RuntimeException("Error during findAll operation: " + e.getMessage(), e);
+
+        }
+
+        return customers;
     }
 
 }
