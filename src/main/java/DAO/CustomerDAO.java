@@ -72,20 +72,20 @@ public class CustomerDAO extends DAO<Customer> {
 
     @Override
     public Customer find(int id) {
-        Customer customer = null; // Initialisation de l'objet Customer
+        Customer customer = null; // customer object init
         StringBuilder selectById = new StringBuilder("SELECT * FROM Customer WHERE customer_id = ?");
 
         try (PreparedStatement pstmt = connection.prepareStatement(selectById.toString())) {
 
-            pstmt.setInt(1, id); // Bind de l'ID dans la requête
+            pstmt.setInt(1, id); // biding id to request
 
-            try (ResultSet rs = pstmt.executeQuery()) { // Exécution de la requête
+            try (ResultSet rs = pstmt.executeQuery()) { // query execution
 
-                if (rs.next()) { // Si un enregistrement est trouvé
+                if (rs.next()) { // if a entry was found
 
-                    customer = new Customer(); // Création d'une instance Customer
+                    customer = new Customer();
 
-                    // Hydratation de l'objet Customer
+                    // hydrate customer object
                     customer.setFirstname(rs.getString("cu_firstname"));
                     customer.setLastname(rs.getString("cu_lastname"));
                     customer.setAddress(rs.getString("cu_address"));

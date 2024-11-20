@@ -1,5 +1,7 @@
 package fr.pompey.dev.afpa.controller;
 
+import DAO.CustomerDAO;
+import fr.pompey.dev.afpa.model.Customer;
 import fr.pompey.dev.afpa.vue.MenuHome;
 
 import java.sql.*;
@@ -16,9 +18,25 @@ public class Main {
 
             System.out.println("Successfully connected to the database !");
 
-            Main main = new Main();
+            // --------------------------------------------------- ( TEST JDBC ) ---------------------------------------------------
+            // ------------------------------------------------- ( Customer List ) -------------------------------------------------
+            //Main main = new Main();
+            //main.selectFromCustomer(connection);
+            // --------------------------------------------------- ( TEST JDBC ) ---------------------------------------------------
+            // ------------------------------------------------- ( Customer List ) -------------------------------------------------
 
-            main.selectFromCustomer(connection);
+        CustomerDAO customerDAO = new CustomerDAO();
+
+        Customer customer = customerDAO.find(1); // Trouver le client avec l'ID 1
+
+        if (customer != null) {
+            System.out.println("Customer found:");
+            System.out.println("Firstname: " + customer.getFirstname());
+            System.out.println("Lastname: " + customer.getLastname());
+            // Afficher d'autres informations si nécessaire
+        } else {
+            System.out.println("Customer not found.");
+        }
 
         } catch (Exception e) {
 
@@ -30,6 +48,9 @@ public class Main {
         new MenuHome(new PurchaseManager());
 
     }
+
+    // --------------------------------------------------- ( TEST JDBC ) ---------------------------------------------------
+    // ------------------------------------------------- ( Customer List ) -------------------------------------------------
 
     private void selectFromCustomer(Connection connection) {
 
@@ -56,5 +77,8 @@ public class Main {
         }
 
     }
+
+    // --------------------------------------------------- ( TEST JDBC ) ---------------------------------------------------
+    // ------------------------------------------------- ( Customer List ) -------------------------------------------------
 
 }
