@@ -7,6 +7,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+/**
+ * The type Customer dao.
+ */
 public class CustomerDAO extends DAO<Customer> {
 
     @Override
@@ -69,7 +72,7 @@ public class CustomerDAO extends DAO<Customer> {
 
         try (PreparedStatement pstmt = connection.prepareStatement(deleteSQL.toString())) {
 
-            pstmt.setInt(1, obj.getId());  // Assurez-vous que getId() retourne un entier valide
+            pstmt.setInt(1, obj.getId());
 
             int rowAffected = pstmt.executeUpdate();
 
@@ -100,7 +103,7 @@ public class CustomerDAO extends DAO<Customer> {
             pstmt.setString(7, obj.getEmail());
             pstmt.setDate(8, Date.valueOf(obj.getBirthDate()));
             pstmt.setString(9, obj.getSocialSecurityNumber());
-//            pstmt.setInt(10, obj.getId());
+            pstmt.setInt(10, obj.getId());
 
             int rowAffected = pstmt.executeUpdate();
             return rowAffected > 0;
@@ -165,6 +168,7 @@ public class CustomerDAO extends DAO<Customer> {
 
             while (rs.next()) {
                 Customer customer = new Customer();
+                customer.setId(rs.getInt("customer_id"));
                 customer.setFirstname(rs.getString("cu_firstname"));
                 customer.setLastname(rs.getString("cu_lastname"));
                 customer.setAddress(rs.getString("cu_address"));

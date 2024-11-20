@@ -20,24 +20,41 @@ public class Main {
         CustomerDAO customerDAO = new CustomerDAO();
 
 
+
+        // --------------------------------- ( TEST DAO  ) ---------------------------------------------------
+        // ------------------------------ ( FIND ALL Customer ) ------------------------------------------------
+        ArrayList<Customer> customers = customerDAO.findAll();
+
+        if (!customers.isEmpty()) {
+            System.out.println("Liste des clients :");
+            for (Customer customer : customers) {
+                System.out.println(customer);
+            }
+        } else {
+            System.out.println("Aucun client trouvé dans la base de données.");
+        }
+        // --------------------------------- ( TEST DAO  ) ---------------------------------------------------
+        // ------------------------------ ( FIND ALL Customer ) ------------------------------------------------
+
+
         // --------------------------------- ( TEST DAO  ) ---------------------------------------------------
         // ------------------------------ ( DELETE Customer ) ------------------------------------------------
         // Recherche du client à supprimer
-        Customer customerToDelete = customerDAO.find(16);  // Remplacez 16 par l'ID que vous voulez supprimer
-
-        if (customerToDelete != null && customerToDelete.getId() != null) {
-            System.out.println("Customer ID before delete: " + customerToDelete.getId());
-
-            boolean success = customerDAO.delete(customerToDelete);
-
-            if (success) {
-                System.out.println("Client supprimé avec succès.");
-            } else {
-                System.out.println("Échec de la suppression. Le client n'existe peut-être pas.");
-            }
-        } else {
-            System.out.println("Client introuvable ou ID invalide !");
-        }
+//        Customer customerToDelete = customerDAO.find(16);  // Remplacez 16 par l'ID que vous voulez supprimer
+//
+//        if (customerToDelete != null && customerToDelete.getId() != null) {
+//            System.out.println("Customer ID before delete: " + customerToDelete.getId());
+//
+//            boolean success = customerDAO.delete(customerToDelete);
+//
+//            if (success) {
+//                System.out.println("Client supprimé avec succès.");
+//            } else {
+//                System.out.println("Échec de la suppression. Le client n'existe peut-être pas.");
+//            }
+//        } else {
+//            System.out.println("Client introuvable ou ID invalide !");
+//        }
         // --------------------------------- ( TEST DAO  ) ---------------------------------------------------
         // ------------------------------ ( DELETE Customer ) ------------------------------------------------
 
@@ -119,6 +136,38 @@ public class Main {
 //            System.err.println("Error : " + e.getMessage());
 //
 //        }
+
+        // --------------------------------- ( TEST DAO  ) ---------------------------------------------------
+        // ------------------------------ ( UPDATE Customer ) ------------------------------------------------
+        // Find the customer you want to update
+        Customer customerToUpdate = customerDAO.find(15); // Remplacez 16 par un ID existant
+
+        if (customerToUpdate != null) {
+            System.out.println("Customer before update: " + customerToUpdate.getFirstname() + " " + customerToUpdate.getLastname());
+
+            // Modify some fields of the customer
+            customerToUpdate.setFirstname("Matt");
+            customerToUpdate.setLastname("House");
+            customerToUpdate.setCity("Champigneules");
+
+            // Attempt to update the customer
+            boolean success = customerDAO.update(customerToUpdate);
+
+            if (success) {
+                System.out.println("Customer updated successfully!");
+            } else {
+                System.out.println("Failed to update customer.");
+            }
+
+            // Refetch to verify changes
+            Customer updatedCustomer = customerDAO.find(15);
+            System.out.println("Customer after update: " + updatedCustomer.getFirstname() + " " + updatedCustomer.getLastname());
+        } else {
+            System.out.println("Customer not found!");
+        }
+        // --------------------------------- ( TEST DAO  ) ---------------------------------------------------
+        // ------------------------------ ( UPDATE Customer ) ------------------------------------------------
+
 
         // Creating an MenuHome instance when the app launching
         new MenuHome(new PurchaseManager());
