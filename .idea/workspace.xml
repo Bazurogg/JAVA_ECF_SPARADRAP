@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8c42abba-3d1e-4b84-95b6-6832cb625052" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/controller/BDDConnectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/controller/BDDConnectionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/controller/DoctorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/controller/DoctorController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/controller/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/controller/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -177,7 +179,7 @@
       <workItem from="1731932801347" duration="12684000" />
       <workItem from="1731999932709" duration="26172000" />
       <workItem from="1732086227949" duration="26729000" />
-      <workItem from="1732172465452" duration="3806000" />
+      <workItem from="1732172465452" duration="9276000" />
     </task>
     <servers />
   </component>

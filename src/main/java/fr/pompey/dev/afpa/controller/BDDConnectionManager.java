@@ -79,12 +79,11 @@ public class BDDConnectionManager {
 
             dbManager.initializeConnection();
 
-            System.out.println("Connection established");
+            System.out.println("New connection established");
 
-        }
-        else  {
+        } else {
 
-            System.out.println("Connection already existing");
+            System.out.println("Using existing connection");
 
         }
 
