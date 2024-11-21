@@ -20,19 +20,18 @@ public class Main {
         CustomerDAO customerDAO = new CustomerDAO();
 
 
-
         // --------------------------------- ( TEST DAO  ) ---------------------------------------------------
         // ------------------------------ ( FIND ALL Customer ) ------------------------------------------------
-        ArrayList<Customer> customers = customerDAO.findAll();
-
-        if (!customers.isEmpty()) {
-            System.out.println("Liste des clients :");
-            for (Customer customer : customers) {
-                System.out.println(customer);
-            }
-        } else {
-            System.out.println("Aucun client trouvé dans la base de données.");
-        }
+//        ArrayList<Customer> customers = customerDAO.findAll();
+//
+//        if (!customers.isEmpty()) {
+//            System.out.println("Liste des clients :");
+//            for (Customer customer : customers) {
+//                System.out.println(customer);
+//            }
+//        } else {
+//            System.out.println("Aucun client trouvé dans la base de données.");
+//        }
         // --------------------------------- ( TEST DAO  ) ---------------------------------------------------
         // ------------------------------ ( FIND ALL Customer ) ------------------------------------------------
 
@@ -104,7 +103,6 @@ public class Main {
 
 
 
-
 //        try  {
 //
 //            Connection connection = dbManager.getInstanceDB();
@@ -140,31 +138,31 @@ public class Main {
         // --------------------------------- ( TEST DAO  ) ---------------------------------------------------
         // ------------------------------ ( UPDATE Customer ) ------------------------------------------------
         // Find the customer you want to update
-        Customer customerToUpdate = customerDAO.find(15); // Remplacez 16 par un ID existant
-
-        if (customerToUpdate != null) {
-            System.out.println("Customer before update: " + customerToUpdate.getFirstname() + " " + customerToUpdate.getLastname());
-
-            // Modify some fields of the customer
-            customerToUpdate.setFirstname("Matt");
-            customerToUpdate.setLastname("House");
-            customerToUpdate.setCity("Champigneules");
-
-            // Attempt to update the customer
-            boolean success = customerDAO.update(customerToUpdate);
-
-            if (success) {
-                System.out.println("Customer updated successfully!");
-            } else {
-                System.out.println("Failed to update customer.");
-            }
-
-            // Refetch to verify changes
-            Customer updatedCustomer = customerDAO.find(15);
-            System.out.println("Customer after update: " + updatedCustomer.getFirstname() + " " + updatedCustomer.getLastname());
-        } else {
-            System.out.println("Customer not found!");
-        }
+//        Customer customerToUpdate = customerDAO.find(15); // Remplacez 16 par un ID existant
+//
+//        if (customerToUpdate != null) {
+//            System.out.println("Customer before update: " + customerToUpdate.getFirstname() + " " + customerToUpdate.getLastname());
+//
+//            // Modify some fields of the customer
+//            customerToUpdate.setFirstname("Matt");
+//            customerToUpdate.setLastname("House");
+//            customerToUpdate.setCity("Champigneules");
+//
+//            // Attempt to update the customer
+//            boolean success = customerDAO.update(customerToUpdate);
+//
+//            if (success) {
+//                System.out.println("Customer updated successfully!");
+//            } else {
+//                System.out.println("Failed to update customer.");
+//            }
+//
+//            // Refetch to verify changes
+//            Customer updatedCustomer = customerDAO.find(15);
+//            System.out.println("Customer after update: " + updatedCustomer.getFirstname() + " " + updatedCustomer.getLastname());
+//        } else {
+//            System.out.println("Customer not found!");
+//        }
         // --------------------------------- ( TEST DAO  ) ---------------------------------------------------
         // ------------------------------ ( UPDATE Customer ) ------------------------------------------------
 
@@ -176,7 +174,7 @@ public class Main {
 
     // --------------------------------------------------- ( TEST JDBC ) ---------------------------------------------------
     // ------------------------------------------------- ( Customer List ) -------------------------------------------------
-
+    // Method customers list
     private void selectFromCustomer(Connection connection) {
 
         String selectQuery = "select * from customer";
