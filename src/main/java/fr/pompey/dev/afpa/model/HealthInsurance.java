@@ -7,6 +7,9 @@ package fr.pompey.dev.afpa.model;
  */
 public class HealthInsurance {
 
+    /** The id of the health insurance company */
+    private Integer id;
+
     /** The name of the health insurance company */
     private String name;
 
@@ -28,18 +31,20 @@ public class HealthInsurance {
     /** The rate of coverage offered by the health insurance (in percentage, e.g., 75 for 75%) */
     private double coverageRate;
 
+
     /**
      * Constructor for the HealthInsurance class.
      *
-     * @param name The name of the health insurance company
-     * @param address The address of the health insurance company
-     * @param postalCode The postal code of the health insurance company's location
+     * @param id               The id of the health insurance company
+     * @param name             The name of the health insurance company
+     * @param address          The address of the health insurance company
+     * @param postalCode       The postal code of the health insurance company's location
      * @param departmentNumber The department number of the insurance provider
-     * @param phoneNumber The phone number of the health insurance company
-     * @param email The email address of the health insurance company
-     * @param coverageRate The coverage rate (percentage) of the insurance
+     * @param phoneNumber      The phone number of the health insurance company
+     * @param email            The email address of the health insurance company
+     * @param coverageRate     The coverage rate (percentage) of the insurance
      */
-    public HealthInsurance(String name, String address, String postalCode, String departmentNumber,
+    public HealthInsurance(Integer id, String name, String address, String postalCode, String departmentNumber,
                            String phoneNumber, String email, double coverageRate) {
         setName(name);
 
@@ -55,6 +60,32 @@ public class HealthInsurance {
 
         setCoverageRate(coverageRate);
 
+    }
+
+    /**
+     * Constructor for the HealthInsurance class.
+     * with 0 parameter
+     */
+    public HealthInsurance() {
+
+    }
+
+    /**
+     * Gets id.
+     *
+     * @return the id
+     */
+    public Integer getId() {
+        return id;
+    }
+
+    /**
+     * Sets id.
+     *
+     * @param id the id
+     */
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     /**
