@@ -48,6 +48,17 @@ public class Doctor extends Person {
 
     }
 
+
+    /**
+     * Constructor for the Doctor class.
+     * with 0 parameter
+     */
+    public Doctor() {
+
+        super();
+
+    }
+
     // Getters and setters for Doctor-specific fields
 
     /**
