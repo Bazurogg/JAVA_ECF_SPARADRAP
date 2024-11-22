@@ -61,7 +61,7 @@ public class CustomerDAO extends DAO<Customer> {
     @Override
     public boolean delete(Customer obj) {
 
-        // Vérifiez si l'ID est null
+        // verify if the id is null
         if (obj.getId() == null) {
 
             throw new IllegalArgumentException("Cannot delete a customer without a valid ID");

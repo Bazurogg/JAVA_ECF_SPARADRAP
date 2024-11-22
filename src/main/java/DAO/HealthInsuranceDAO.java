@@ -144,5 +144,6 @@ public class HealthInsuranceDAO extends DAO<HealthInsurance> {
         }
 
         return healthInsurances;
+
     }
 }

@@ -1,5 +1,6 @@
 package fr.pompey.dev.afpa.controller;
 
+import DAO.CustomerDAO;
 import fr.pompey.dev.afpa.model.Customer;
 
 import java.time.LocalDate;
@@ -47,7 +48,11 @@ public class CustomerController {
      * @return the list of customers.
      */
     public List<Customer> getCustomers() {
-        return customers;
+
+        CustomerDAO customerDAO = new CustomerDAO();
+
+        return customerDAO.findAll();
+
     }
 
     /**

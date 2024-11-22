@@ -1,7 +1,8 @@
 package fr.pompey.dev.afpa.vue;
 
+import DAO.CustomerDAO;
+import fr.pompey.dev.afpa.model.AddCustomerDialog;
 import fr.pompey.dev.afpa.model.Customer;
-import fr.pompey.dev.afpa.model.Doctor;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -13,21 +14,31 @@ import java.util.List;
 public class CustomerPanel extends JPanel {
 
     private JPanel panelCustomer;
-    private JTextField textField3;
-    private JTextField textField4;
-    private JTextField textField2;
-    private JTextField textField1;
-    private JTextField textField6;
-    private JTextField textField7;
-    private JTextField textField5;
-    private JTextField textField8;
+    private JTextField textField_CustomerAddress;
+    private JTextField textField_CustomerSocialSecurityNumber;
+    private JTextField textField_CustomerLastname;
+    private JTextField textField_CustomerFirstname;
+    private JTextField textField_CustomerPhone;
+    private JTextField textField_CustomerPostalCode;
+    private JTextField textField_CustomerCity;
+    private JTextField textField_CustomerEmail;
     private JLabel panelCustomerInfo;
     private JComboBox<Customer> comboBox1;
     private JButton addNewCustomerButton;
+    private JButton updateCustomerButton;
+    private JButton deleteCustomerButton;
 
-    public CustomerPanel(List<Customer> customers) {
+    // DAO instance
+    private CustomerDAO customerDAO;
+
+    public CustomerPanel() {
+
+        // initialising customerDAO instance
+        customerDAO = new CustomerDAO();
 
         initializeComponents();
+
+        List<Customer> customers = customerDAO.findAll();
 
         Collections.sort(customers, Comparator.comparing(Customer::getLastname));
 
@@ -35,6 +46,8 @@ public class CustomerPanel extends JPanel {
 
         add(panelCustomer);
 
+
+        // adding customers to the JComboBox
         for (Customer customer : customers) {
 
             comboBox1.addItem(customer);
@@ -43,10 +56,10 @@ public class CustomerPanel extends JPanel {
 
         comboBox1.setSelectedIndex(-1);
 
+        // adding a listener to show selected customer's details
         comboBox1.addActionListener(new ActionListener() {
 
             @Override
-
             public void actionPerformed(ActionEvent e) {
 
                 Customer selectedCustomer = (Customer) comboBox1.getSelectedItem();
@@ -61,25 +74,140 @@ public class CustomerPanel extends JPanel {
 
         });
 
+        addNewCustomerButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFrame parentFrame = (JFrame) SwingUtilities.getWindowAncestor(CustomerPanel.this);
+                AddCustomerDialog dialog = new AddCustomerDialog(parentFrame);
+                dialog.setVisible(true);
+
+                // Reload customers list after adding a new customer
+                reloadCustomers();
+            }
+        });
+
+
+        deleteCustomerButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Récupérer le client sélectionné dans la JComboBox
+                Customer selectedCustomer = (Customer) comboBox1.getSelectedItem();
+
+                if (selectedCustomer != null) {
+                    int confirm = JOptionPane.showConfirmDialog(
+                            CustomerPanel.this,
+                            "Are you sure you want to delete this customer?",
+                            "Confirm Delete",
+                            JOptionPane.YES_NO_OPTION
+                    );
+
+                    if (confirm == JOptionPane.YES_OPTION) {
+                        // Supprimer le client via le DAO
+                        boolean isDeleted = customerDAO.delete(selectedCustomer);
+
+                        if (isDeleted) {
+                            JOptionPane.showMessageDialog(CustomerPanel.this, "Customer deleted successfully!");
+
+                            // Mettre à jour l'interface utilisateur
+                            comboBox1.removeItem(selectedCustomer);
+                            clearCustomerDetails(); // Effacer les champs après suppression
+                        } else {
+                            JOptionPane.showMessageDialog(CustomerPanel.this, "Failed to delete customer.", "Error", JOptionPane.ERROR_MESSAGE);
+                        }
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(CustomerPanel.this, "Please select a customer to delete.", "Warning", JOptionPane.WARNING_MESSAGE);
+                }
+            }
+        });
+
+        updateCustomerButton.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                // Recovering data of the customer selected in the combobox
+                Customer selectedCustomer = (Customer) comboBox1.getSelectedItem();
+
+                if (selectedCustomer != null) {
+
+                    // updating entries of the customer with the new values of the input text fields
+                    selectedCustomer.setFirstname(textField_CustomerFirstname.getText());
+                    selectedCustomer.setLastname(textField_CustomerLastname.getText());
+                    selectedCustomer.setAddress(textField_CustomerAddress.getText());
+                    selectedCustomer.setEmail(textField_CustomerEmail.getText());
+                    selectedCustomer.setCity(textField_CustomerCity.getText());
+                    selectedCustomer.setPhoneNumber(textField_CustomerPhone.getText());
+                    selectedCustomer.setPostalCode(textField_CustomerPostalCode.getText());
+                    selectedCustomer.setSocialSecurityNumber(textField_CustomerSocialSecurityNumber.getText());
+
+                    // calling the DAO update method
+                    boolean isUpdated = customerDAO.update(selectedCustomer);
+
+                    if (isUpdated) {
+
+                        JOptionPane.showMessageDialog(CustomerPanel.this, "Customer updated successfully!");
+
+                    } else {
+
+                        JOptionPane.showMessageDialog(CustomerPanel.this, "Failed to update customer.", "Error", JOptionPane.ERROR_MESSAGE);
+
+                    }
+
+                } else {
+
+                    JOptionPane.showMessageDialog(CustomerPanel.this, "Please select a customer to update.", "Warning", JOptionPane.WARNING_MESSAGE);
+
+                }
+
+            }
+
+        });
+
     }
 
     private void initializeComponents() {
 
-        // Suppression des bordures pour les JTextFields
-        textField8.setBorder(null);
+        // Erase borders for the JTextFields
+        textField_CustomerSocialSecurityNumber.setBorder(null);
 
     }
 
-    // Method to update the JTextFields with customer information
+
+    // Method to update the JTextFields with customer's information
     private void updateCustomerDetails(Customer customer) {
-        textField1.setText(customer.getFirstname());
-        textField2.setText(customer.getLastname());
-        textField3.setText(customer.getAddress());
-        textField4.setText(customer.getEmail());
-        textField5.setText(customer.getCity());
-        textField6.setText(customer.getPhoneNumber());
-        textField7.setText(customer.getPostalCode());
-        textField8.setText(customer.getSocialSecurityNumber());
+
+        textField_CustomerFirstname.setText(customer.getFirstname());
+        textField_CustomerLastname.setText(customer.getLastname());
+        textField_CustomerAddress.setText(customer.getAddress());
+        textField_CustomerEmail.setText(customer.getEmail());
+        textField_CustomerCity.setText(customer.getCity());
+        textField_CustomerPhone.setText(customer.getPhoneNumber());
+        textField_CustomerPostalCode.setText(customer.getPostalCode());
+        textField_CustomerSocialSecurityNumber.setText(customer.getSocialSecurityNumber());
+
     }
+
+    private void clearCustomerDetails() {
+        textField_CustomerFirstname.setText("");
+        textField_CustomerLastname.setText("");
+        textField_CustomerAddress.setText("");
+        textField_CustomerEmail.setText("");
+        textField_CustomerCity.setText("");
+        textField_CustomerPhone.setText("");
+        textField_CustomerPostalCode.setText("");
+        textField_CustomerSocialSecurityNumber.setText("");
+    }
+
+    private void reloadCustomers() {
+        comboBox1.removeAllItems();
+        List<Customer> customers = customerDAO.findAll();
+        Collections.sort(customers, Comparator.comparing(Customer::getLastname));
+        for (Customer customer : customers) {
+            comboBox1.addItem(customer);
+        }
+        comboBox1.setSelectedIndex(-1);
+    }
+
 
 }

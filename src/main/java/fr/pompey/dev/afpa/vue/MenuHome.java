@@ -145,7 +145,7 @@ public class MenuHome extends JFrame {
             return;
         }
 
-        CustomerPanel customerPanel = new CustomerPanel(customers);
+        CustomerPanel customerPanel = new CustomerPanel();
         displayPanel.add(customerPanel, BorderLayout.CENTER);
         displayPanel.revalidate();
         displayPanel.repaint();

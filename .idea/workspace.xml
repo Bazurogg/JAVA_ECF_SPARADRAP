@@ -6,7 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="8c42abba-3d1e-4b84-95b6-6832cb625052" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/model/HealthInsurance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/model/HealthInsurance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/CustomerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/CustomerDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/HealthInsuranceDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/HealthInsuranceDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/CustomerPanel.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/CustomerPanel.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/CustomerPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/CustomerPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/MenuHome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/MenuHome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/controller/CustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/controller/CustomerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/CustomerPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/CustomerPanel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/CustomerPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/CustomerPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/MenuHome.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/MenuHome.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +66,7 @@
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.STATE": "right",
     "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "157",
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.STATE": "left",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "628",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "432",
     "git-widget-placeholder": "maven",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -177,7 +186,8 @@
       <workItem from="1731932801347" duration="12684000" />
       <workItem from="1731999932709" duration="26172000" />
       <workItem from="1732086227949" duration="26729000" />
-      <workItem from="1732172465452" duration="11196000" />
+      <workItem from="1732172465452" duration="23439000" />
+      <workItem from="1732265928376" duration="3069000" />
     </task>
     <servers />
   </component>
