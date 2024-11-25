@@ -95,7 +95,9 @@ public class AddCustomerDialog extends JDialog {
     }
 
     private void saveCustomer() {
+
         try {
+
             Customer customer = new Customer();
             customer.setFirstname(textFieldFirstname.getText());
             customer.setLastname(textFieldLastname.getText());
@@ -115,6 +117,8 @@ public class AddCustomerDialog extends JDialog {
             }
             customer.setSocialSecurityNumber(textFieldSocialSecurityNumber.getText());
 
+            customerDAO.checkEmailExist(customer.getEmail());
+
             int newId = customerDAO.create(customer);
 
             if (newId > 0) {
@@ -125,7 +129,11 @@ public class AddCustomerDialog extends JDialog {
             }
 
         } catch (Exception ex) {
+
             JOptionPane.showMessageDialog(this, "Error: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+
         }
+
     }
+
 }

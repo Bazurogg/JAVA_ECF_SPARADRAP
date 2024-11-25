@@ -6,11 +6,38 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import fr.pompey.dev.afpa.exceptions.EmailAlreadyExistException;
 
 /**
  * The type Customer dao.
  */
 public class CustomerDAO extends DAO<Customer> {
+
+    public void checkEmailExist(String email) throws EmailAlreadyExistException {
+
+        String query = "SELECT COUNT(*) FROM customer WHERE cu_email = ?";
+
+        try (PreparedStatement ps = connection.prepareStatement(query)) {
+
+            ps.setString(1, email);
+
+            try (ResultSet rs = ps.executeQuery()) {
+
+                if (rs.next() && rs.getInt(1) > 0) {
+
+                    throw new EmailAlreadyExistException("The email " + email + " already exists.");
+
+                }
+
+            }
+
+        } catch (SQLException e) {
+
+            throw new RuntimeException("Database error while checking email existence: " + e.getMessage(), e);
+
+        }
+
+    }
 
     @Override
     public int create(Customer obj) {
@@ -190,5 +217,7 @@ public class CustomerDAO extends DAO<Customer> {
 
         return customers;
     }
+
+
 
 }

@@ -1,6 +1,7 @@
 package fr.pompey.dev.afpa.controller;
 
 import DAO.CustomerDAO;
+import fr.pompey.dev.afpa.exceptions.EmailAlreadyExistException;
 import fr.pompey.dev.afpa.model.Customer;
 
 import java.time.LocalDate;
@@ -40,7 +41,9 @@ public class CustomerController {
      * @param customer The customer to add.
      */
     public void addCustomer(Customer customer) {
+
         customers.add(customer);
+
     }
 
     /**
