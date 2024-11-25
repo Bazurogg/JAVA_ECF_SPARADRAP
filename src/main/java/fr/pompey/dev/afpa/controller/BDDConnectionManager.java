@@ -12,8 +12,10 @@ import java.util.Properties;
  */
 public class BDDConnectionManager {
 
+    private static boolean firstConnectionLog = false;
     private static final Properties prop = new Properties();
     private static Connection connection;
+
     /**
      * The Pathconf.
      */
@@ -44,10 +46,10 @@ public class BDDConnectionManager {
         // connection test procedure
         try {
 
-            // Driver loading
+            // driver loading
             Class.forName(prop.getProperty("jdbc.driver.class"));
 
-            // Recovering parameters for the connection
+            // recovering parameters for the connection
             String url = prop.getProperty("jdbc.url");
             String user = prop.getProperty("jdbc.user");
             String password = prop.getProperty("jdbc.password");
@@ -81,9 +83,13 @@ public class BDDConnectionManager {
 
             System.out.println("New connection established");
 
-        } else {
+            // prevents spam connection log when repeated button click
+        } else if (!firstConnectionLog) {
 
             System.out.println("Using existing connection");
+
+
+            firstConnectionLog = true;
 
         }
 

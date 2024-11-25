@@ -3,7 +3,6 @@ package fr.pompey.dev.afpa.vue;
 import DAO.CustomerDAO;
 import fr.pompey.dev.afpa.model.AddCustomerDialog;
 import fr.pompey.dev.afpa.model.Customer;
-
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -75,15 +74,22 @@ public class CustomerPanel extends JPanel {
         });
 
         addNewCustomerButton.addActionListener(new ActionListener() {
+
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 JFrame parentFrame = (JFrame) SwingUtilities.getWindowAncestor(CustomerPanel.this);
+
                 AddCustomerDialog dialog = new AddCustomerDialog(parentFrame);
+
                 dialog.setVisible(true);
 
                 // Reload customers list after adding a new customer
                 reloadCustomers();
+
+                clearCustomerDetails();
             }
+
         });
 
 

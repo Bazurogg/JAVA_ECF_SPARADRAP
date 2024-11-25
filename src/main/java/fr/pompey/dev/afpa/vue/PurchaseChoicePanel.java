@@ -9,7 +9,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class PurchaseChoicePanel extends JPanel {
+public class
+PurchaseChoicePanel extends JPanel {
 
     private JPanel panelPurchaseChoice;
     private PurchaseManager purchaseManager;

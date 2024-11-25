@@ -76,7 +76,8 @@
                 <properties>
                   <background color="-3801134"/>
                   <editable value="true"/>
-                  <font name="Source Code Pro" size="18" style="0"/>
+                  <font name="Source Code Pro" size="17" style="0"/>
+                  <text value=""/>
                 </properties>
               </component>
               <component id="e09" class="javax.swing.JLabel">

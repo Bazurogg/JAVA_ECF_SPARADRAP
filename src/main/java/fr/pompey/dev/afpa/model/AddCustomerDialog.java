@@ -104,8 +104,9 @@ public class AddCustomerDialog extends JDialog {
             customer.setCity(textFieldCity.getText());
             customer.setPhoneNumber(textFieldPhone.getText());
             customer.setEmail(textFieldEmail.getText());
+
             try {
-                String birthDateInput = textFieldBirthday.getText(); // Saisie de l'utilisateur
+                String birthDateInput = textFieldBirthday.getText();
                 LocalDate birthDate = LocalDate.parse(birthDateInput); // Conversion
                 customer.setBirthDate(birthDate); // Setter pour LocalDate
             } catch (DateTimeParseException e) {
@@ -122,6 +123,7 @@ public class AddCustomerDialog extends JDialog {
             } else {
                 JOptionPane.showMessageDialog(this, "Failed to add customer.", "Error", JOptionPane.ERROR_MESSAGE);
             }
+
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, "Error: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
