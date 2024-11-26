@@ -5,15 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c42abba-3d1e-4b84-95b6-6832cb625052" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/AddCustomerForm.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/AddCustomerForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAO/CustomerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/CustomerDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/controller/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/exceptions/EmailAlreadyExistException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/exceptions/EmailAlreadyExistException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/model/AddCustomerDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/model/AddCustomerDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/CustomerPanel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/CustomerPanel$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/CustomerPanel$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/CustomerPanel$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/CustomerPanel$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/CustomerPanel$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/CustomerPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/CustomerPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/model/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/CustomerPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/CustomerPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/CustomerDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/CustomerDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/model/AddCustomerDialog$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/model/AddCustomerDialog$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/model/AddCustomerDialog$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/model/AddCustomerDialog$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/model/AddCustomerDialog.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/model/AddCustomerDialog.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/model/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/model/Person.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +189,8 @@
       <workItem from="1732086227949" duration="26729000" />
       <workItem from="1732172465452" duration="23439000" />
       <workItem from="1732265928376" duration="3908000" />
-      <workItem from="1732521739798" duration="19129000" />
+      <workItem from="1732521739798" duration="19283000" />
+      <workItem from="1732604491852" duration="21779000" />
     </task>
     <servers />
   </component>

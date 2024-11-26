@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
+import java.util.Calendar;
 
 public class AddCustomerDialog extends JDialog {
 
@@ -19,11 +20,12 @@ public class AddCustomerDialog extends JDialog {
     private JTextField textFieldCity;
     private JTextField textFieldPhone;
     private JTextField textFieldEmail;
-    private JTextField textFieldBirthday;
+    private JSpinner spinnerDay;
+    private JSpinner spinnerMonth;
+    private JSpinner spinnerYear;
     private JTextField textFieldSocialSecurityNumber;
     private JButton saveButton;
     private JButton cancelButton;
-
     private CustomerDAO customerDAO;
 
     public AddCustomerDialog(JFrame parent) {
@@ -61,9 +63,21 @@ public class AddCustomerDialog extends JDialog {
         textFieldEmail = new JTextField();
         add(textFieldEmail);
 
-        add(new JLabel("Birthday (YYYY-MM-DD):"));
-        textFieldBirthday = new JTextField();
-        add(textFieldBirthday);
+        // Birthday fields
+        add(new JLabel("Birthday:"));
+
+        JPanel birthdayPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        spinnerDay = new JSpinner(new SpinnerNumberModel(1, 1, 31, 1)); // Day spinner
+        spinnerMonth = new JSpinner(new SpinnerNumberModel(1, 1, 12, 1)); // Month spinner
+        spinnerYear = new JSpinner(new SpinnerNumberModel(Calendar.getInstance().get(Calendar.YEAR) - 18, 1900, Calendar.getInstance().get(Calendar.YEAR), 1)); // Year spinner
+
+        birthdayPanel.add(spinnerDay);
+        birthdayPanel.add(new JLabel("/"));
+        birthdayPanel.add(spinnerMonth);
+        birthdayPanel.add(new JLabel("/"));
+        birthdayPanel.add(spinnerYear);
+
+        add(birthdayPanel);
 
         add(new JLabel("Social Security Number:"));
         textFieldSocialSecurityNumber = new JTextField();
@@ -76,6 +90,7 @@ public class AddCustomerDialog extends JDialog {
         add(cancelButton);
 
         // Add action listeners
+        // Create new customer
         saveButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -83,6 +98,7 @@ public class AddCustomerDialog extends JDialog {
             }
         });
 
+        // cancel and close addCustomer panel
         cancelButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -107,10 +123,14 @@ public class AddCustomerDialog extends JDialog {
             customer.setPhoneNumber(textFieldPhone.getText());
             customer.setEmail(textFieldEmail.getText());
 
+            // Retrieve date values from spinners
+            int day = (int) spinnerDay.getValue();
+            int month = (int) spinnerMonth.getValue();
+            int year = (int) spinnerYear.getValue();
+
             try {
-                String birthDateInput = textFieldBirthday.getText();
-                LocalDate birthDate = LocalDate.parse(birthDateInput); // Conversion
-                customer.setBirthDate(birthDate); // Setter pour LocalDate
+                LocalDate birthDate = LocalDate.of(year, month, day); // conversion
+                customer.setBirthDate(birthDate); // LocalDate Setter
             } catch (DateTimeParseException e) {
                 JOptionPane.showMessageDialog(this, "Invalid date format. Please use YYYY-MM-DD.", "Error", JOptionPane.ERROR_MESSAGE);
                 return;

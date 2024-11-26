@@ -77,20 +77,35 @@ public class CustomerPanel extends JPanel {
 
             @Override
             public void actionPerformed(ActionEvent e) {
-
-                JFrame parentFrame = (JFrame) SwingUtilities.getWindowAncestor(CustomerPanel.this);
-
-                AddCustomerDialog dialog = new AddCustomerDialog(parentFrame);
-
-                dialog.setVisible(true);
+                // Create and display the AddCustomerForm
+                AddCustomerForm addCustomerForm = new AddCustomerForm();
+                addCustomerForm.setVisible(true);
 
                 // Reload customers list after adding a new customer
                 reloadCustomers();
-
                 clearCustomerDetails();
             }
-
         });
+
+        // Methode JDialog
+//        addNewCustomerButton.addActionListener(new ActionListener() {
+//
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//
+//                JFrame parentFrame = (JFrame) SwingUtilities.getWindowAncestor(CustomerPanel.this);
+//
+//                AddCustomerDialog dialog = new AddCustomerDialog(parentFrame);
+//
+//                dialog.setVisible(true);
+//
+//                // Reload customers list after adding a new customer
+//                reloadCustomers();
+//
+//                clearCustomerDetails();
+//            }
+//
+//        });
 
 
         deleteCustomerButton.addActionListener(new ActionListener() {

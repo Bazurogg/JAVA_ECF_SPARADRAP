@@ -13,6 +13,17 @@ import fr.pompey.dev.afpa.exceptions.EmailAlreadyExistException;
  */
 public class CustomerDAO extends DAO<Customer> {
 
+    /**
+     * Checks if an email already exists in the customer database.
+     *
+     * <p>This method executes a SQL query to verify if the given email is already present in the database.
+     * If the email exists, it throws an {@link fr.pompey.dev.afpa.exceptions.EmailAlreadyExistException}.
+     * This prevents adding duplicate email entries.</p>
+     *
+     * @param email the email address to be checked.
+     * @throws EmailAlreadyExistException if the email already exists in the database.
+     * @throws RuntimeException if a database error occurs while executing the query.
+     */
     public void checkEmailExist(String email) throws EmailAlreadyExistException {
 
         String query = "SELECT COUNT(*) FROM customer WHERE cu_email = ?";
