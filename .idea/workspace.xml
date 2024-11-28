@@ -5,13 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c42abba-3d1e-4b84-95b6-6832cb625052" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/exceptions/EmptyFieldException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/exceptions/InvalidPhoneNumberException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAO/CustomerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/CustomerDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/model/AddCustomerDialog.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/AddCustomerForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/AddCustomerForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/AddCustomerForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/AddCustomerForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/DoctorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/DoctorDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/controller/BDDConnectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/controller/BDDConnectionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/exceptions/InvalidEmailFormatException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/exceptions/InvalidEmailFormatException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/model/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/model/Doctor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/model/Doctor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/model/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/model/Specialist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/model/Specialist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/CustomerPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/CustomerPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/CustomerPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/CustomerPanel.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -189,7 +193,7 @@
       <workItem from="1732521739798" duration="19283000" />
       <workItem from="1732604491852" duration="22762000" />
       <workItem from="1732691132304" duration="27662000" />
-      <workItem from="1732779323706" duration="16347000" />
+      <workItem from="1732779323706" duration="25862000" />
     </task>
     <servers />
   </component>
@@ -213,15 +217,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/MenuHome.java</url>
-          <line>104</line>
-          <properties>
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/DirectPurchasePanel.java</url>
           <line>236</line>

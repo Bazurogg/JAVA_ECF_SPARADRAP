@@ -1,5 +1,7 @@
 package DAO;
 
+import fr.pompey.dev.afpa.exceptions.InvalidEmailFormatException;
+import fr.pompey.dev.afpa.exceptions.InvalidPhoneNumberException;
 import fr.pompey.dev.afpa.model.Doctor;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -111,6 +113,8 @@ public class DoctorDAO extends DAO<Doctor> {
                     doctor.setEmail(rs.getString("doc_email"));
                     doctor.setAgreementId(rs.getString("doc_agreementId"));
                 }
+            } catch (InvalidPhoneNumberException | InvalidEmailFormatException e) {
+                throw new RuntimeException(e);
             }
 
         } catch (SQLException e) {
@@ -145,6 +149,10 @@ public class DoctorDAO extends DAO<Doctor> {
 
         } catch (SQLException e) {
             throw new RuntimeException("Error during findAll operation: " + e.getMessage(), e);
+        } catch (InvalidPhoneNumberException e) {
+            throw new RuntimeException(e);
+        } catch (InvalidEmailFormatException e) {
+            throw new RuntimeException(e);
         }
 
         return doctors;

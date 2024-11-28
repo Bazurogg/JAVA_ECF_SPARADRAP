@@ -1,6 +1,11 @@
 package DAO;
 
 import fr.pompey.dev.afpa.controller.BDDConnectionManager;
+import fr.pompey.dev.afpa.exceptions.EmailAlreadyExistException;
+import fr.pompey.dev.afpa.exceptions.EmptyFieldException;
+import fr.pompey.dev.afpa.exceptions.InvalidEmailFormatException;
+import fr.pompey.dev.afpa.exceptions.InvalidPhoneNumberException;
+
 import java.sql.Connection;
 import java.util.ArrayList;
 
@@ -22,7 +27,7 @@ public abstract class DAO<T> {
      * @param obj the type parameter
      * @return validation of the creation
      */
-    public abstract int create(T obj);
+    public abstract int create(T obj) throws EmailAlreadyExistException, InvalidPhoneNumberException, EmptyFieldException, InvalidEmailFormatException;
 
 
     /**
@@ -39,7 +44,7 @@ public abstract class DAO<T> {
      * @param obj the obj
      * @return the boolean
      */
-    public abstract boolean update(T obj);
+    public abstract boolean update(T obj) throws EmailAlreadyExistException, InvalidPhoneNumberException, EmptyFieldException, InvalidEmailFormatException;
 
     /**
      * Find t.

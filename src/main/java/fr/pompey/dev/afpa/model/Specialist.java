@@ -1,5 +1,8 @@
 package fr.pompey.dev.afpa.model;
 
+import fr.pompey.dev.afpa.exceptions.InvalidEmailFormatException;
+import fr.pompey.dev.afpa.exceptions.InvalidPhoneNumberException;
+
 /**
  * The type Specialist.
  */
@@ -20,7 +23,7 @@ public class Specialist extends Person {
      * @param speciality  The speciality domain the specialist work in.
      */
     public Specialist(Integer id, String firstname, String lastname, String address, String postalCode,
-                      String city, String phoneNumber, String email, String speciality) {
+                      String city, String phoneNumber, String email, String speciality) throws InvalidPhoneNumberException, InvalidEmailFormatException {
 
         super(id, firstname, lastname, address, postalCode, city, phoneNumber, email);
 

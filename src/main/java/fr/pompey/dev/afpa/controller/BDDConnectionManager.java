@@ -82,12 +82,16 @@ public class BDDConnectionManager {
             dbManager.initializeConnection();
 
             System.out.println("New connection established");
+        }
 
             // prevents spam connection log when repeated button click
-        } else if (!firstConnectionLog) {
+        else if (!firstConnectionLog) {
 
-            System.out.println("Using existing connection");
+                if (System.getProperty("debug.connection") != null) {
 
+                    System.out.println("Using existing connection");
+
+                }
 
             firstConnectionLog = true;
 

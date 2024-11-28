@@ -1,5 +1,8 @@
 package fr.pompey.dev.afpa.model;
 
+import fr.pompey.dev.afpa.exceptions.InvalidEmailFormatException;
+import fr.pompey.dev.afpa.exceptions.InvalidPhoneNumberException;
+
 import java.util.ArrayList;
 
 import java.util.List;
@@ -32,7 +35,7 @@ public class Doctor extends Person {
      * @param agreementId The agreement ID of the doctor.
      */
     public Doctor(Integer id, String firstname, String lastname, String address, String postalCode,
-                  String city, String phoneNumber, String email, String agreementId) {
+                  String city, String phoneNumber, String email, String agreementId) throws InvalidPhoneNumberException, InvalidEmailFormatException {
 
         // Call the constructor of the superclass (Person) to initialize inherited fields
         super(id, firstname, lastname, address, postalCode, city, phoneNumber, email);

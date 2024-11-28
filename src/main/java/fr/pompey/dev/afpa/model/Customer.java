@@ -1,5 +1,8 @@
 package fr.pompey.dev.afpa.model;
 
+import fr.pompey.dev.afpa.exceptions.InvalidEmailFormatException;
+import fr.pompey.dev.afpa.exceptions.InvalidPhoneNumberException;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +23,7 @@ public class Customer extends Person {
     /**
      * Constructor for the Customer class.
      *
+     * @param id                   the id
      * @param firstname            The first name of the customer.
      * @param lastname             The last name of the customer.
      * @param address              The address of the customer.
@@ -32,7 +36,7 @@ public class Customer extends Person {
      */
     public Customer(Integer id, String firstname, String lastname, String address, String postalCode,
                     String city, String phoneNumber, String email,
-                    String socialSecurityNumber, LocalDate birthDate) {
+                    String socialSecurityNumber, LocalDate birthDate) throws InvalidPhoneNumberException, InvalidEmailFormatException {
 
         // Call the constructor of the superclass "Person" to initialize inherited fields
         super(id, firstname, lastname, address, postalCode, city, phoneNumber, email);
@@ -57,19 +61,39 @@ public class Customer extends Person {
 
     }
 
-    // Getters and setters for Customer-specific fields
+    /**
+     * Gets social security number.
+     *
+     * @return the social security number
+     */
+// Getters and setters for Customer-specific fields
     public String getSocialSecurityNumber() {
         return socialSecurityNumber;
     }
 
+    /**
+     * Sets social security number.
+     *
+     * @param socialSecurityNumber the social security number
+     */
     public void setSocialSecurityNumber(String socialSecurityNumber) {
         this.socialSecurityNumber = socialSecurityNumber;
     }
 
+    /**
+     * Gets birthdate.
+     *
+     * @return the birthdate
+     */
     public LocalDate getBirthDate() {
         return birthDate;
     }
 
+    /**
+     * Sets birth ate.
+     *
+     * @param birthDate the birthdate
+     */
     public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }

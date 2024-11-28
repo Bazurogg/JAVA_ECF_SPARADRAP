@@ -1,5 +1,8 @@
 package fr.pompey.dev.afpa.model;
 
+import fr.pompey.dev.afpa.exceptions.InvalidEmailFormatException;
+import fr.pompey.dev.afpa.exceptions.InvalidPhoneNumberException;
+
 /**
  * Represents a person with basic contact information.
  * This superclass provides common properties such as first name, last name,
@@ -12,6 +15,7 @@ public class Person {
 
     /** The first name of the person. */
     private String firstname;
+
 
     /** The last name of the person. */
     private String lastname;
@@ -42,10 +46,11 @@ public class Person {
      * @param city        The city where the person lives.
      * @param phoneNumber The phone number of the person.
      * @param email       The email address of the person.
-     * @throws IllegalArgumentException If any of the parameters fail validation.
+     * @throws InvalidPhoneNumberException If any of the phone number parameter fail validation.
+     * @throws InvalidEmailFormatException If any of the email parameter fail validation.
      */
     public Person(Integer id, String firstname, String lastname, String address, String postalCode, String city,
-                  String phoneNumber, String email) {
+                  String phoneNumber, String email) throws InvalidPhoneNumberException, InvalidEmailFormatException {
         setFirstname(firstname);
         setLastname(lastname);
         setAddress(address);
@@ -65,10 +70,11 @@ public class Person {
      * @param city        The city where the person lives.
      * @param phoneNumber The phone number of the person.
      * @param email       The email address of the person.
-     * @throws IllegalArgumentException If any of the parameters fail validation.
+     * @throws InvalidPhoneNumberException If any of the phone number parameter fail validation.
+     * @throws InvalidEmailFormatException If any of the email parameter fail validation.
      */
     public Person(String firstname, String lastname, String address, String postalCode, String city,
-                  String phoneNumber, String email) {
+                  String phoneNumber, String email) throws InvalidPhoneNumberException, InvalidEmailFormatException {
         setFirstname(firstname);
         setLastname(lastname);
         setAddress(address);
@@ -224,12 +230,16 @@ public class Person {
      * Sets the phone number of the person.
      *
      * @param phoneNumber The phone number to set. Must be a valid 10-digit number.
-     * @throws IllegalArgumentException If the phone number is not valid.
+     * @throws InvalidPhoneNumberException If the phone number is not valid.
      */
-    public void setPhoneNumber(String phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) throws InvalidPhoneNumberException {
+
         if (phoneNumber == null || !phoneNumber.matches("\\d{10}")) {
-            throw new IllegalArgumentException("Phone number must be a valid 10-digit number.");
+
+            throw new InvalidPhoneNumberException("Phone number must be a valid 10-digit number.");
+
         }
+
         this.phoneNumber = phoneNumber;
     }
 
@@ -246,12 +256,18 @@ public class Person {
      * Sets the email address of the person.
      *
      * @param email The email address to set. Must follow a valid email format.
-     * @throws IllegalArgumentException If the email address is invalid.
+     * @throws InvalidEmailFormatException If the email address is invalid.
      */
-    public void setEmail(String email) {
+    public void setEmail(String email) throws InvalidEmailFormatException {
+
         if (email == null || !email.matches("^[\\w.%+-]+@[\\w.-]+\\.[a-zA-Z]{2,6}$")) {
-            throw new IllegalArgumentException("Invalid email address.");
+
+            throw new InvalidEmailFormatException("Email is not valid.");
+
         }
+
         this.email = email;
+
     }
+
 }

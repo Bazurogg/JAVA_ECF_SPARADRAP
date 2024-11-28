@@ -1,6 +1,10 @@
 package fr.pompey.dev.afpa.vue;
 
 import DAO.CustomerDAO;
+import fr.pompey.dev.afpa.exceptions.EmailAlreadyExistException;
+import fr.pompey.dev.afpa.exceptions.EmptyFieldException;
+import fr.pompey.dev.afpa.exceptions.InvalidEmailFormatException;
+import fr.pompey.dev.afpa.exceptions.InvalidPhoneNumberException;
 import fr.pompey.dev.afpa.model.Customer;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -37,8 +41,8 @@ public class CustomerPanel extends JPanel {
      */
     public CustomerPanel() {
 
-        // initialising customerDAO instance
-        customerDAO = new CustomerDAO();
+        // we're recovering "THE" instance of customerDAO
+        customerDAO = CustomerDAO.getInstance();
 
         initializeComponents();
 
@@ -156,14 +160,72 @@ public class CustomerPanel extends JPanel {
                     selectedCustomer.setFirstname(textField_CustomerFirstname.getText());
                     selectedCustomer.setLastname(textField_CustomerLastname.getText());
                     selectedCustomer.setAddress(textField_CustomerAddress.getText());
-                    selectedCustomer.setEmail(textField_CustomerEmail.getText());
+
+                    try {
+                        selectedCustomer.setEmail(textField_CustomerEmail.getText());
+                    } catch (InvalidEmailFormatException ex) {
+                        JOptionPane.showMessageDialog(
+                                CustomerPanel.this,
+                                ex.getMessage(),
+                                "Invalid Email Format",
+                                JOptionPane.ERROR_MESSAGE
+                        );
+                        return; // Stop further processing
+                    }
+
+
                     selectedCustomer.setCity(textField_CustomerCity.getText());
-                    selectedCustomer.setPhoneNumber(textField_CustomerPhone.getText());
+
+                    // Setter with phone number validation
+                    try {
+                        selectedCustomer.setPhoneNumber(textField_CustomerPhone.getText());
+                    } catch (InvalidPhoneNumberException ex) {
+                        JOptionPane.showMessageDialog(
+                                CustomerPanel.this,
+                                ex.getMessage(),
+                                "Invalid Phone Number",
+                                JOptionPane.ERROR_MESSAGE
+                        );
+                        return; // Stop further processing
+                    }
+
                     selectedCustomer.setPostalCode(textField_CustomerPostalCode.getText());
                     selectedCustomer.setSocialSecurityNumber(textField_CustomerSocialSecurityNumber.getText());
 
                     // calling the DAO update method
-                    boolean isUpdated = customerDAO.update(selectedCustomer);
+                    boolean isUpdated = false;
+
+                    try {
+
+                        isUpdated = customerDAO.update(selectedCustomer);
+
+                    } catch (EmailAlreadyExistException ex) {
+                        JOptionPane.showMessageDialog(
+                                CustomerPanel.this,
+                                ex.getMessage(),
+                                "Email Already Exists",
+                                JOptionPane.ERROR_MESSAGE
+                        );
+                        return;
+
+                    } catch (EmptyFieldException ex) {
+                        JOptionPane.showMessageDialog(
+                                CustomerPanel.this,
+                                ex.getMessage(),
+                                "Empty Field Error",
+                                JOptionPane.WARNING_MESSAGE
+                        );
+                        return;
+
+                    } catch (InvalidPhoneNumberException | InvalidEmailFormatException ex) {
+                        JOptionPane.showMessageDialog(
+                                CustomerPanel.this,
+                                ex.getMessage(),
+                                "Validation Error",
+                                JOptionPane.ERROR_MESSAGE
+                        );
+                        return;
+                    }
 
                     if (isUpdated) {
 
