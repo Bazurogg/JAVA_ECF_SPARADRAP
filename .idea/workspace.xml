@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c42abba-3d1e-4b84-95b6-6832cb625052" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/CustomerPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/CustomerPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/AddCustomerForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/AddCustomerForm.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,7 +183,7 @@
       <workItem from="1732521739798" duration="19283000" />
       <workItem from="1732604491852" duration="22762000" />
       <workItem from="1732691132304" duration="27662000" />
-      <workItem from="1732779323706" duration="11277000" />
+      <workItem from="1732779323706" duration="12254000" />
     </task>
     <servers />
   </component>

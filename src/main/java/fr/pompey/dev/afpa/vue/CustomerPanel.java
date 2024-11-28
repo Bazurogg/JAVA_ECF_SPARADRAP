@@ -1,7 +1,6 @@
 package fr.pompey.dev.afpa.vue;
 
 import DAO.CustomerDAO;
-import fr.pompey.dev.afpa.model.AddCustomerDialog;
 import fr.pompey.dev.afpa.model.Customer;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -10,7 +9,10 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-
+/**
+ * Panel for managing customers.
+ * Allows listing, adding, updating, and deleting customer records.
+ */
 public class CustomerPanel extends JPanel {
 
     private JPanel panelCustomer;
@@ -27,10 +29,12 @@ public class CustomerPanel extends JPanel {
     private JButton addNewCustomerButton;
     private JButton updateCustomerButton;
     private JButton deleteCustomerButton;
+    private CustomerDAO customerDAO; // DAO instance
 
-    // DAO instance
-    private CustomerDAO customerDAO;
-
+    /**
+     * Constructor for CustomerPanel.
+     * Initializes the panel components and sets up event listeners.
+     */
     public CustomerPanel() {
 
         // initialising customerDAO instance
@@ -92,31 +96,11 @@ public class CustomerPanel extends JPanel {
 
         });
 
-        // Methode JDialog
-//        addNewCustomerButton.addActionListener(new ActionListener() {
-//
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//
-//                JFrame parentFrame = (JFrame) SwingUtilities.getWindowAncestor(CustomerPanel.this);
-//
-//                AddCustomerDialog dialog = new AddCustomerDialog(parentFrame);
-//
-//                dialog.setVisible(true);
-//
-//                // Reload customers list after adding a new customer
-//                reloadCustomers();
-//
-//                clearCustomerDetails();
-//            }
-//
-//        });
-
-
         deleteCustomerButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Récupérer le client sélectionné dans la JComboBox
+
+                // Retrieve the selected client from the JComboBox
                 Customer selectedCustomer = (Customer) comboBox_customerList.getSelectedItem();
 
                 if (selectedCustomer != null) {
@@ -128,24 +112,34 @@ public class CustomerPanel extends JPanel {
                     );
 
                     if (confirm == JOptionPane.YES_OPTION) {
-                        // Supprimer le client via le DAO
+
+                        // delete customer by DAO
                         boolean isDeleted = customerDAO.delete(selectedCustomer);
 
                         if (isDeleted) {
+
                             JOptionPane.showMessageDialog(CustomerPanel.this, "Customer deleted successfully!");
 
-                            // Mettre à jour l'interface utilisateur
+                            // updating user UI
                             comboBox_customerList.removeItem(selectedCustomer);
                             reloadCustomers();
-                            clearCustomerDetails(); // Effacer les champs après suppression
+                            clearCustomerDetails();
+
                         } else {
+
                             JOptionPane.showMessageDialog(CustomerPanel.this, "Failed to delete customer.", "Error", JOptionPane.ERROR_MESSAGE);
+
                         }
                     }
+
                 } else {
+
                     JOptionPane.showMessageDialog(CustomerPanel.this, "Please select a customer to delete.", "Warning", JOptionPane.WARNING_MESSAGE);
+
                 }
+
             }
+
         });
 
         updateCustomerButton.addActionListener(new ActionListener() {
@@ -193,6 +187,9 @@ public class CustomerPanel extends JPanel {
 
     }
 
+    /**
+     * Initializes UI components and performs any required setup.
+     */
     private void initializeComponents() {
 
         // Erase borders for the JTextFields
@@ -200,8 +197,11 @@ public class CustomerPanel extends JPanel {
 
     }
 
-
-    // Method to update the JTextFields with customer's information
+    /**
+     * Updates the customer details displayed in the text fields.
+     *
+     * @param customer The customer whose details are to be displayed.
+     */
     private void updateCustomerDetails(Customer customer) {
 
         textField_CustomerFirstname.setText(customer.getFirstname());
@@ -215,6 +215,9 @@ public class CustomerPanel extends JPanel {
 
     }
 
+    /**
+     * Clears the customer details from the text fields.
+     */
     void clearCustomerDetails() {
         textField_CustomerFirstname.setText("");
         textField_CustomerLastname.setText("");
@@ -226,14 +229,25 @@ public class CustomerPanel extends JPanel {
         textField_CustomerSocialSecurityNumber.setText("");
     }
 
+    /**
+     * Reloads the customer list in the JComboBox by fetching updated data from the database.
+     */
     void reloadCustomers() {
+
         comboBox_customerList.removeAllItems();
+
         List<Customer> customers = customerDAO.findAll();
+
         Collections.sort(customers, Comparator.comparing(Customer::getLastname));
+
         for (Customer customer : customers) {
+
             comboBox_customerList.addItem(customer);
+
         }
+
         comboBox_customerList.setSelectedIndex(-1);
+
     }
 
 }
