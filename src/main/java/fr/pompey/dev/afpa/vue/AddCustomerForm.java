@@ -115,12 +115,19 @@ public class AddCustomerForm extends JFrame {
             // mapping month to a number (1-12)
             String[] months = {"1-January", "2-February", "3-March", "4-April", "5-May", "6-June",
                     "7-July", "8-August", "9-September", "10-October", "11-November", "12-December"};
+
             int monthNumber = -1;
+
             for (int i = 0; i < months.length; i++) {
+
                 if (months[i].equalsIgnoreCase(month)) {
-                    monthNumber = i + 1; // Les indices commencent à 0, donc on ajoute 1
+
+                    monthNumber = i + 1;
+
                     break;
+
                 }
+
             }
 
             if (monthNumber == -1) {
@@ -130,8 +137,6 @@ public class AddCustomerForm extends JFrame {
             // formating the date value to match the DB format (YYYY-MM-DD)
             String formattedDate = String.format("%04d-%02d-%02d", year, monthNumber, day);
 
-            // Afficher ou utiliser la date
-//            System.out.println("Date d'anniversaire formatée : " + formattedDate);
 
             // add the formated date to the DB
              customer.setBirthDate(LocalDate.parse(formattedDate));

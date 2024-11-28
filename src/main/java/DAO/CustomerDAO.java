@@ -229,6 +229,4 @@ public class CustomerDAO extends DAO<Customer> {
         return customers;
     }
 
-
-
 }
