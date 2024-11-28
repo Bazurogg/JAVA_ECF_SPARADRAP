@@ -136,6 +136,7 @@ public class CustomerPanel extends JPanel {
 
                             // Mettre à jour l'interface utilisateur
                             comboBox_customerList.removeItem(selectedCustomer);
+                            reloadCustomers();
                             clearCustomerDetails(); // Effacer les champs après suppression
                         } else {
                             JOptionPane.showMessageDialog(CustomerPanel.this, "Failed to delete customer.", "Error", JOptionPane.ERROR_MESSAGE);
