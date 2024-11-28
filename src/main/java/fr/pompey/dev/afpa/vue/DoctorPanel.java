@@ -12,7 +12,7 @@ import java.util.Comparator;
 public class DoctorPanel extends JPanel {
 
     private JPanel panelDoctor;
-    private JComboBox<Doctor> comboBox1;
+    private JComboBox<Doctor> comboBox_customerList;
     private JButton addNewDoctorButton;
     private JLabel panelDoctorInfo;
     private JTextField textField1;
@@ -42,21 +42,21 @@ public class DoctorPanel extends JPanel {
         // Add doctors to the comboBox
         for (Doctor doctor : doctors) {
 
-            comboBox1.addItem(doctor);
+            comboBox_customerList.addItem(doctor);
 
         }
 
         // no doctor selected by default
-        comboBox1.setSelectedIndex(-1);
+        comboBox_customerList.setSelectedIndex(-1);
 
         // Add an ActionListener to update the fields when a doctor is selected
-        comboBox1.addActionListener(new ActionListener() {
+        comboBox_customerList.addActionListener(new ActionListener() {
 
             @Override
 
             public void actionPerformed(ActionEvent e) {
 
-                Doctor selectedDoctor = (Doctor) comboBox1.getSelectedItem();
+                Doctor selectedDoctor = (Doctor) comboBox_customerList.getSelectedItem();
 
                 if (selectedDoctor != null) {
 

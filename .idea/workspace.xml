@@ -5,18 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c42abba-3d1e-4b84-95b6-6832cb625052" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/AddCustomerForm.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/AddCustomerForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/CustomerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/CustomerDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/model/AddCustomerDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/model/AddCustomerDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/model/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/AddCustomerForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/AddCustomerForm.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/AddCustomerForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/AddCustomerForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/CustomerPanel.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/CustomerPanel.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/CustomerPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/CustomerPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/DAO/CustomerDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/CustomerDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/model/AddCustomerDialog$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/model/AddCustomerDialog$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/model/AddCustomerDialog$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/model/AddCustomerDialog$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/model/AddCustomerDialog.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/model/AddCustomerDialog.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/model/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/model/Person.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/DoctorPanel.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/DoctorPanel.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/DoctorPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/DoctorPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/AddCustomerForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/AddCustomerForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/CustomerPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/CustomerPanel.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +63,7 @@
     &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW&quot;: &quot;true&quot;,
     &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.STATE&quot;: &quot;right&quot;,
     &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH&quot;: &quot;157&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW&quot;: &quot;true&quot;,
     &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.STATE&quot;: &quot;left&quot;,
     &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;432&quot;,
     &quot;git-widget-placeholder&quot;: &quot;maven&quot;,
@@ -190,7 +188,9 @@
       <workItem from="1732172465452" duration="23439000" />
       <workItem from="1732265928376" duration="3908000" />
       <workItem from="1732521739798" duration="19283000" />
-      <workItem from="1732604491852" duration="21779000" />
+      <workItem from="1732604491852" duration="22762000" />
+      <workItem from="1732691132304" duration="27662000" />
+      <workItem from="1732779323706" duration="10919000" />
     </task>
     <servers />
   </component>

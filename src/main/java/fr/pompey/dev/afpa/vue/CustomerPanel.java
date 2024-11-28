@@ -10,6 +10,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+
 public class CustomerPanel extends JPanel {
 
     private JPanel panelCustomer;
@@ -22,7 +23,7 @@ public class CustomerPanel extends JPanel {
     private JTextField textField_CustomerCity;
     private JTextField textField_CustomerEmail;
     private JLabel panelCustomerInfo;
-    private JComboBox<Customer> comboBox1;
+    private JComboBox<Customer> comboBox_customerList;
     private JButton addNewCustomerButton;
     private JButton updateCustomerButton;
     private JButton deleteCustomerButton;
@@ -49,19 +50,19 @@ public class CustomerPanel extends JPanel {
         // adding customers to the JComboBox
         for (Customer customer : customers) {
 
-            comboBox1.addItem(customer);
+            comboBox_customerList.addItem(customer);
 
         }
 
-        comboBox1.setSelectedIndex(-1);
+        comboBox_customerList.setSelectedIndex(-1);
 
         // adding a listener to show selected customer's details
-        comboBox1.addActionListener(new ActionListener() {
+        comboBox_customerList.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                Customer selectedCustomer = (Customer) comboBox1.getSelectedItem();
+                Customer selectedCustomer = (Customer) comboBox_customerList.getSelectedItem();
 
                 if (selectedCustomer != null) {
 
@@ -77,14 +78,18 @@ public class CustomerPanel extends JPanel {
 
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 // Create and display the AddCustomerForm
-                AddCustomerForm addCustomerForm = new AddCustomerForm();
+                AddCustomerForm addCustomerForm = new AddCustomerForm(CustomerPanel.this);
                 addCustomerForm.setVisible(true);
 
                 // Reload customers list after adding a new customer
                 reloadCustomers();
+
                 clearCustomerDetails();
+
             }
+
         });
 
         // Methode JDialog
@@ -112,7 +117,7 @@ public class CustomerPanel extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Récupérer le client sélectionné dans la JComboBox
-                Customer selectedCustomer = (Customer) comboBox1.getSelectedItem();
+                Customer selectedCustomer = (Customer) comboBox_customerList.getSelectedItem();
 
                 if (selectedCustomer != null) {
                     int confirm = JOptionPane.showConfirmDialog(
@@ -130,7 +135,7 @@ public class CustomerPanel extends JPanel {
                             JOptionPane.showMessageDialog(CustomerPanel.this, "Customer deleted successfully!");
 
                             // Mettre à jour l'interface utilisateur
-                            comboBox1.removeItem(selectedCustomer);
+                            comboBox_customerList.removeItem(selectedCustomer);
                             clearCustomerDetails(); // Effacer les champs après suppression
                         } else {
                             JOptionPane.showMessageDialog(CustomerPanel.this, "Failed to delete customer.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -148,7 +153,7 @@ public class CustomerPanel extends JPanel {
             public void actionPerformed(ActionEvent e) {
 
                 // Recovering data of the customer selected in the combobox
-                Customer selectedCustomer = (Customer) comboBox1.getSelectedItem();
+                Customer selectedCustomer = (Customer) comboBox_customerList.getSelectedItem();
 
                 if (selectedCustomer != null) {
 
@@ -209,7 +214,7 @@ public class CustomerPanel extends JPanel {
 
     }
 
-    private void clearCustomerDetails() {
+    void clearCustomerDetails() {
         textField_CustomerFirstname.setText("");
         textField_CustomerLastname.setText("");
         textField_CustomerAddress.setText("");
@@ -220,15 +225,14 @@ public class CustomerPanel extends JPanel {
         textField_CustomerSocialSecurityNumber.setText("");
     }
 
-    private void reloadCustomers() {
-        comboBox1.removeAllItems();
+    void reloadCustomers() {
+        comboBox_customerList.removeAllItems();
         List<Customer> customers = customerDAO.findAll();
         Collections.sort(customers, Comparator.comparing(Customer::getLastname));
         for (Customer customer : customers) {
-            comboBox1.addItem(customer);
+            comboBox_customerList.addItem(customer);
         }
-        comboBox1.setSelectedIndex(-1);
+        comboBox_customerList.setSelectedIndex(-1);
     }
-
 
 }
