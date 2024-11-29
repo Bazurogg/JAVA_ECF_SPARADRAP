@@ -2,13 +2,21 @@ package fr.pompey.dev.afpa.model;
 
 import fr.pompey.dev.afpa.exceptions.InvalidEmailFormatException;
 import fr.pompey.dev.afpa.exceptions.InvalidPhoneNumberException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * Represents a person with basic contact information.
- * This superclass provides common properties such as first name, last name,
- * and contact details that can be inherited by other classes.
+ * includes fields for storing personal details such as name,
+ *  * address, phone number, and email, along with validation for certain fields.
+ *  * and contact details that can be inherited by other classes.
+ *  * <p>
+ *  * Logging is used to track the lifecycle of the class and its methods.
+ *  * </p>
  */
 public class Person {
+
+    public static final Logger logger = LogManager.getLogger(Person.class);
 
     /** The DB id for the person. */
     private Integer id;
@@ -51,6 +59,7 @@ public class Person {
      */
     public Person(Integer id, String firstname, String lastname, String address, String postalCode, String city,
                   String phoneNumber, String email) throws InvalidPhoneNumberException, InvalidEmailFormatException {
+        logger.debug("Initializing a Person object with firstname: {} and lastname: {}", firstname, lastname);
         setFirstname(firstname);
         setLastname(lastname);
         setAddress(address);
@@ -58,6 +67,7 @@ public class Person {
         setCity(city);
         setPhoneNumber(phoneNumber);
         setEmail(email);
+        logger.info("Person object created successfully: {}", this);
     }
 
     /**
@@ -87,7 +97,13 @@ public class Person {
     /**
      * Default constructor for the Person class.
      */
-    public Person() {}
+    public Person() {
+        logger.debug("Default Person constructor called.");
+    }
+
+
+
+    // Getters and setters with logging
 
     /**
      * Gets the database id of the person.
@@ -124,8 +140,10 @@ public class Person {
      */
     public void setFirstname(String firstname) {
         if (firstname == null || firstname.trim().isEmpty()) {
+            logger.error("Invalid firstname provided: {}", firstname);
             throw new IllegalArgumentException("Firstname cannot be null or empty.");
         }
+        logger.info("Setting firstname to {}", firstname);
         this.firstname = firstname;
     }
 
@@ -146,8 +164,10 @@ public class Person {
      */
     public void setLastname(String lastname) {
         if (lastname == null || lastname.trim().isEmpty()) {
+            logger.error("Invalid lastname provided: {}", lastname);
             throw new IllegalArgumentException("Lastname cannot be null or empty.");
         }
+        logger.warn("Setting lastname to {}", lastname);
         this.lastname = lastname.toUpperCase();
     }
 
@@ -168,8 +188,10 @@ public class Person {
      */
     public void setAddress(String address) {
         if (address == null || address.trim().isEmpty()) {
+            logger.error("Invalid address provided: {}", address);
             throw new IllegalArgumentException("Address cannot be null or empty.");
         }
+        logger.info("Setting address to {}", address);
         this.address = address;
     }
 
@@ -190,8 +212,10 @@ public class Person {
      */
     public void setPostalCode(String postalCode) {
         if (postalCode == null || !postalCode.matches("\\d{5}")) {
+            logger.error("Invalid postal code provided: {}", postalCode);
             throw new IllegalArgumentException("Postal code must be a 5-digit number.");
         }
+        logger.info("Setting postal code to {}", postalCode);
         this.postalCode = postalCode;
     }
 
@@ -212,6 +236,7 @@ public class Person {
      */
     public void setCity(String city) {
         if (city == null || city.trim().isEmpty()) {
+            logger.error("Invalid city provided: {}", city);
             throw new IllegalArgumentException("City cannot be null or empty.");
         }
         this.city = city;
@@ -236,10 +261,12 @@ public class Person {
 
         if (phoneNumber == null || !phoneNumber.matches("\\d{10}")) {
 
+            logger.error("Invalid phone number provided: {}", phoneNumber);
             throw new InvalidPhoneNumberException("Phone number must be a valid 10-digit number.");
 
         }
 
+        logger.info("Setting phone number to {}", phoneNumber);
         this.phoneNumber = phoneNumber;
     }
 
@@ -262,10 +289,12 @@ public class Person {
 
         if (email == null || !email.matches("^[\\w.%+-]+@[\\w.-]+\\.[a-zA-Z]{2,6}$")) {
 
+            logger.error("Invalid email provided: {}", email);
             throw new InvalidEmailFormatException("Email is not valid.");
 
         }
 
+        logger.info("Setting email to {}", email);
         this.email = email;
 
     }

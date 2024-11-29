@@ -22,7 +22,7 @@ public class BDDConnectionManager {
     final String PATHCONF = "conf.properties";
 
     /**
-     * Initialize connection.
+     * Initialize connection.(Singleton)
      */
     public void initializeConnection() {
 
@@ -82,6 +82,7 @@ public class BDDConnectionManager {
             dbManager.initializeConnection();
 
             System.out.println("New connection established");
+
         }
 
             // prevents spam connection log when repeated button click

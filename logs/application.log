@@ -1,0 +1,179 @@
+2024-11-29 10:42:19 [AWT-EventQueue-0] INFO  fr.pompey.dev.afpa.model.Person - Setting firstname to Alicia
+2024-11-29 10:42:19 [AWT-EventQueue-0] WARN  fr.pompey.dev.afpa.model.Person - Setting lastname to DUPONT
+2024-11-29 10:42:19 [AWT-EventQueue-0] INFO  fr.pompey.dev.afpa.model.Person - Setting firstname to Bob
+2024-11-29 10:42:19 [AWT-EventQueue-0] WARN  fr.pompey.dev.afpa.model.Person - Setting lastname to Martin
+2024-11-29 10:42:19 [AWT-EventQueue-0] INFO  fr.pompey.dev.afpa.model.Person - Setting firstname to Clara
+2024-11-29 10:42:19 [AWT-EventQueue-0] WARN  fr.pompey.dev.afpa.model.Person - Setting lastname to Durand
+2024-11-29 10:42:19 [AWT-EventQueue-0] INFO  fr.pompey.dev.afpa.model.Person - Setting firstname to David
+2024-11-29 10:42:19 [AWT-EventQueue-0] WARN  fr.pompey.dev.afpa.model.Person - Setting lastname to Moreau
+2024-11-29 10:42:19 [AWT-EventQueue-0] INFO  fr.pompey.dev.afpa.model.Person - Setting firstname to Eva
+2024-11-29 10:42:19 [AWT-EventQueue-0] WARN  fr.pompey.dev.afpa.model.Person - Setting lastname to Lopez
+2024-11-29 10:42:19 [AWT-EventQueue-0] INFO  fr.pompey.dev.afpa.model.Person - Setting firstname to Fabrice
+2024-11-29 10:42:19 [AWT-EventQueue-0] WARN  fr.pompey.dev.afpa.model.Person - Setting lastname to Garnier
+2024-11-29 10:42:19 [AWT-EventQueue-0] INFO  fr.pompey.dev.afpa.model.Person - Setting firstname to Géraldine
+2024-11-29 10:42:19 [AWT-EventQueue-0] WARN  fr.pompey.dev.afpa.model.Person - Setting lastname to Roche
+2024-11-29 10:42:19 [AWT-EventQueue-0] INFO  fr.pompey.dev.afpa.model.Person - Setting firstname to Henri
+2024-11-29 10:42:19 [AWT-EventQueue-0] WARN  fr.pompey.dev.afpa.model.Person - Setting lastname to Lemoine
+2024-11-29 10:42:19 [AWT-EventQueue-0] INFO  fr.pompey.dev.afpa.model.Person - Setting firstname to Isabelle
+2024-11-29 10:42:19 [AWT-EventQueue-0] WARN  fr.pompey.dev.afpa.model.Person - Setting lastname to Morin
+2024-11-29 10:42:19 [AWT-EventQueue-0] INFO  fr.pompey.dev.afpa.model.Person - Setting firstname to Julien
+2024-11-29 10:42:19 [AWT-EventQueue-0] WARN  fr.pompey.dev.afpa.model.Person - Setting lastname to Bernard
+2024-11-29 10:42:19 [AWT-EventQueue-0] INFO  fr.pompey.dev.afpa.model.Person - Setting firstname to Karine
+2024-11-29 10:42:19 [AWT-EventQueue-0] WARN  fr.pompey.dev.afpa.model.Person - Setting lastname to Perrin
+2024-11-29 10:42:19 [AWT-EventQueue-0] INFO  fr.pompey.dev.afpa.model.Person - Setting firstname to Louis
+2024-11-29 10:42:19 [AWT-EventQueue-0] WARN  fr.pompey.dev.afpa.model.Person - Setting lastname to Girard
+2024-11-29 10:42:19 [AWT-EventQueue-0] INFO  fr.pompey.dev.afpa.model.Person - Setting firstname to Marie
+2024-11-29 10:42:19 [AWT-EventQueue-0] WARN  fr.pompey.dev.afpa.model.Person - Setting lastname to Leclerc
+2024-11-29 10:42:19 [AWT-EventQueue-0] INFO  fr.pompey.dev.afpa.model.Person - Setting firstname to Nicolas
+2024-11-29 10:42:19 [AWT-EventQueue-0] WARN  fr.pompey.dev.afpa.model.Person - Setting lastname to Fabre
+2024-11-29 10:42:19 [AWT-EventQueue-0] INFO  fr.pompey.dev.afpa.model.Person - Setting firstname to Olivier
+2024-11-29 10:42:19 [AWT-EventQueue-0] WARN  fr.pompey.dev.afpa.model.Person - Setting lastname to Renaud
+2024-11-29 10:42:19 [AWT-EventQueue-0] INFO  fr.pompey.dev.afpa.model.Person - Setting firstname to Mathieu
+2024-11-29 10:42:19 [AWT-EventQueue-0] WARN  fr.pompey.dev.afpa.model.Person - Setting lastname to HOUSE
+2024-11-29 10:42:19 [AWT-EventQueue-0] INFO  fr.pompey.dev.afpa.model.Person - Setting firstname to Fabien
+2024-11-29 10:42:19 [AWT-EventQueue-0] WARN  fr.pompey.dev.afpa.model.Person - Setting lastname to THEBEST
+2024-11-29 10:42:19 [AWT-EventQueue-0] INFO  fr.pompey.dev.afpa.model.Person - Setting firstname to test
+2024-11-29 10:42:19 [AWT-EventQueue-0] WARN  fr.pompey.dev.afpa.model.Person - Setting lastname to CRUD
+2024-11-29 10:42:19 [AWT-EventQueue-0] INFO  fr.pompey.dev.afpa.model.Person - Setting firstname to Alicia
+2024-11-29 10:42:19 [AWT-EventQueue-0] WARN  fr.pompey.dev.afpa.model.Person - Setting lastname to DUPONT
+2024-11-29 10:42:19 [AWT-EventQueue-0] INFO  fr.pompey.dev.afpa.model.Person - Setting firstname to Bob
+2024-11-29 10:42:19 [AWT-EventQueue-0] WARN  fr.pompey.dev.afpa.model.Person - Setting lastname to Martin
+2024-11-29 10:42:19 [AWT-EventQueue-0] INFO  fr.pompey.dev.afpa.model.Person - Setting firstname to Clara
+2024-11-29 10:42:19 [AWT-EventQueue-0] WARN  fr.pompey.dev.afpa.model.Person - Setting lastname to Durand
+2024-11-29 10:42:19 [AWT-EventQueue-0] INFO  fr.pompey.dev.afpa.model.Person - Setting firstname to David
+2024-11-29 10:42:19 [AWT-EventQueue-0] WARN  fr.pompey.dev.afpa.model.Person - Setting lastname to Moreau
+2024-11-29 10:42:19 [AWT-EventQueue-0] INFO  fr.pompey.dev.afpa.model.Person - Setting firstname to Eva
+2024-11-29 10:42:19 [AWT-EventQueue-0] WARN  fr.pompey.dev.afpa.model.Person - Setting lastname to Lopez
+2024-11-29 10:42:19 [AWT-EventQueue-0] INFO  fr.pompey.dev.afpa.model.Person - Setting firstname to Fabrice
+2024-11-29 10:42:19 [AWT-EventQueue-0] WARN  fr.pompey.dev.afpa.model.Person - Setting lastname to Garnier
+2024-11-29 10:42:19 [AWT-EventQueue-0] INFO  fr.pompey.dev.afpa.model.Person - Setting firstname to Géraldine
+2024-11-29 10:42:19 [AWT-EventQueue-0] WARN  fr.pompey.dev.afpa.model.Person - Setting lastname to Roche
+2024-11-29 10:42:19 [AWT-EventQueue-0] INFO  fr.pompey.dev.afpa.model.Person - Setting firstname to Henri
+2024-11-29 10:42:19 [AWT-EventQueue-0] WARN  fr.pompey.dev.afpa.model.Person - Setting lastname to Lemoine
+2024-11-29 10:42:19 [AWT-EventQueue-0] INFO  fr.pompey.dev.afpa.model.Person - Setting firstname to Isabelle
+2024-11-29 10:42:19 [AWT-EventQueue-0] WARN  fr.pompey.dev.afpa.model.Person - Setting lastname to Morin
+2024-11-29 10:42:19 [AWT-EventQueue-0] INFO  fr.pompey.dev.afpa.model.Person - Setting firstname to Julien
+2024-11-29 10:42:19 [AWT-EventQueue-0] WARN  fr.pompey.dev.afpa.model.Person - Setting lastname to Bernard
+2024-11-29 10:42:19 [AWT-EventQueue-0] INFO  fr.pompey.dev.afpa.model.Person - Setting firstname to Karine
+2024-11-29 10:42:19 [AWT-EventQueue-0] WARN  fr.pompey.dev.afpa.model.Person - Setting lastname to Perrin
+2024-11-29 10:42:19 [AWT-EventQueue-0] INFO  fr.pompey.dev.afpa.model.Person - Setting firstname to Louis
+2024-11-29 10:42:19 [AWT-EventQueue-0] WARN  fr.pompey.dev.afpa.model.Person - Setting lastname to Girard
+2024-11-29 10:42:19 [AWT-EventQueue-0] INFO  fr.pompey.dev.afpa.model.Person - Setting firstname to Marie
+2024-11-29 10:42:19 [AWT-EventQueue-0] WARN  fr.pompey.dev.afpa.model.Person - Setting lastname to Leclerc
+2024-11-29 10:42:19 [AWT-EventQueue-0] INFO  fr.pompey.dev.afpa.model.Person - Setting firstname to Nicolas
+2024-11-29 10:42:19 [AWT-EventQueue-0] WARN  fr.pompey.dev.afpa.model.Person - Setting lastname to Fabre
+2024-11-29 10:42:19 [AWT-EventQueue-0] INFO  fr.pompey.dev.afpa.model.Person - Setting firstname to Olivier
+2024-11-29 10:42:19 [AWT-EventQueue-0] WARN  fr.pompey.dev.afpa.model.Person - Setting lastname to Renaud
+2024-11-29 10:42:19 [AWT-EventQueue-0] INFO  fr.pompey.dev.afpa.model.Person - Setting firstname to Mathieu
+2024-11-29 10:42:19 [AWT-EventQueue-0] WARN  fr.pompey.dev.afpa.model.Person - Setting lastname to HOUSE
+2024-11-29 10:42:19 [AWT-EventQueue-0] INFO  fr.pompey.dev.afpa.model.Person - Setting firstname to Fabien
+2024-11-29 10:42:19 [AWT-EventQueue-0] WARN  fr.pompey.dev.afpa.model.Person - Setting lastname to THEBEST
+2024-11-29 10:42:19 [AWT-EventQueue-0] INFO  fr.pompey.dev.afpa.model.Person - Setting firstname to test
+2024-11-29 10:42:19 [AWT-EventQueue-0] WARN  fr.pompey.dev.afpa.model.Person - Setting lastname to CRUD
+2024-11-29 10:42:46 [AWT-EventQueue-0] INFO  fr.pompey.dev.afpa.model.Person - Setting firstname to Charlotte
+2024-11-29 10:42:46 [AWT-EventQueue-0] WARN  fr.pompey.dev.afpa.model.Person - Setting lastname to DURAND
+2024-11-29 11:08:41 [main] DEBUG fr.pompey.dev.afpa.model.Person - Default Person constructor called.
+2024-11-29 11:08:41 [main] INFO  fr.pompey.dev.afpa.model.Person - Setting postal code to 54100
+2024-11-29 11:08:41 [main] ERROR fr.pompey.dev.afpa.model.Person - Invalid postal code provided: 1234
+2024-11-29 11:08:41 [main] DEBUG fr.pompey.dev.afpa.model.Person - Default Person constructor called.
+2024-11-29 11:08:41 [main] WARN  fr.pompey.dev.afpa.model.Person - Setting lastname to House
+2024-11-29 11:08:41 [main] ERROR fr.pompey.dev.afpa.model.Person - Invalid lastname provided: null
+2024-11-29 11:08:41 [main] DEBUG fr.pompey.dev.afpa.model.Person - Default Person constructor called.
+2024-11-29 11:08:41 [main] INFO  fr.pompey.dev.afpa.model.Person - Setting phone number to 0123456789
+2024-11-29 11:08:41 [main] ERROR fr.pompey.dev.afpa.model.Person - Invalid phone number provided: 1234
+2024-11-29 11:08:41 [main] DEBUG fr.pompey.dev.afpa.model.Person - Default Person constructor called.
+2024-11-29 11:08:41 [main] INFO  fr.pompey.dev.afpa.model.Person - Setting email to example@example.com
+2024-11-29 11:08:41 [main] ERROR fr.pompey.dev.afpa.model.Person - Invalid email provided: invalid-email
+2024-11-29 11:08:41 [main] DEBUG fr.pompey.dev.afpa.model.Person - Default Person constructor called.
+2024-11-29 11:08:41 [main] INFO  fr.pompey.dev.afpa.model.Person - Setting firstname to Matt
+2024-11-29 11:08:41 [main] ERROR fr.pompey.dev.afpa.model.Person - Invalid firstname provided: null
+2024-11-29 11:15:46 [main] DEBUG fr.pompey.dev.afpa.model.Person - Default Person constructor called.
+2024-11-29 11:15:46 [main] INFO  fr.pompey.dev.afpa.model.Person - Setting postal code to 54100
+2024-11-29 11:15:46 [main] ERROR fr.pompey.dev.afpa.model.Person - Invalid postal code provided: 1234
+2024-11-29 11:15:46 [main] DEBUG fr.pompey.dev.afpa.model.Person - Default Person constructor called.
+2024-11-29 11:15:46 [main] WARN  fr.pompey.dev.afpa.model.Person - Setting lastname to House
+2024-11-29 11:15:46 [main] ERROR fr.pompey.dev.afpa.model.Person - Invalid lastname provided: null
+2024-11-29 11:15:46 [main] DEBUG fr.pompey.dev.afpa.model.Person - Default Person constructor called.
+2024-11-29 11:15:46 [main] INFO  fr.pompey.dev.afpa.model.Person - Setting phone number to 0123456789
+2024-11-29 11:15:46 [main] ERROR fr.pompey.dev.afpa.model.Person - Invalid phone number provided: 1234
+2024-11-29 11:15:46 [main] DEBUG fr.pompey.dev.afpa.model.Person - Default Person constructor called.
+2024-11-29 11:15:46 [main] INFO  fr.pompey.dev.afpa.model.Person - Setting email to example@example.com
+2024-11-29 11:15:46 [main] ERROR fr.pompey.dev.afpa.model.Person - Invalid email provided: invalid-email
+2024-11-29 11:15:46 [main] DEBUG fr.pompey.dev.afpa.model.Person - Default Person constructor called.
+2024-11-29 11:15:46 [main] INFO  fr.pompey.dev.afpa.model.Person - Setting firstname to Matt
+2024-11-29 11:15:46 [main] ERROR fr.pompey.dev.afpa.model.Person - Invalid firstname provided: null
+2024-11-29 11:30:25 [main] DEBUG fr.pompey.dev.afpa.model.Person - Default Person constructor called.
+2024-11-29 11:30:25 [main] INFO  fr.pompey.dev.afpa.model.Person - Setting postal code to 54100
+2024-11-29 11:30:25 [main] ERROR fr.pompey.dev.afpa.model.Person - Invalid postal code provided: 1234
+2024-11-29 11:30:25 [main] DEBUG fr.pompey.dev.afpa.model.Person - Default Person constructor called.
+2024-11-29 11:30:25 [main] WARN  fr.pompey.dev.afpa.model.Person - Setting lastname to House
+2024-11-29 11:30:25 [main] ERROR fr.pompey.dev.afpa.model.Person - Invalid lastname provided: null
+2024-11-29 11:30:25 [main] DEBUG fr.pompey.dev.afpa.model.Person - Default Person constructor called.
+2024-11-29 11:30:25 [main] INFO  fr.pompey.dev.afpa.model.Person - Setting phone number to 0123456789
+2024-11-29 11:30:25 [main] ERROR fr.pompey.dev.afpa.model.Person - Invalid phone number provided: 1234
+2024-11-29 11:30:25 [main] DEBUG fr.pompey.dev.afpa.model.Person - Default Person constructor called.
+2024-11-29 11:30:25 [main] INFO  fr.pompey.dev.afpa.model.Person - Setting email to example@example.com
+2024-11-29 11:30:25 [main] ERROR fr.pompey.dev.afpa.model.Person - Invalid email provided: invalid-email
+2024-11-29 11:30:25 [main] DEBUG fr.pompey.dev.afpa.model.Person - Default Person constructor called.
+2024-11-29 11:30:25 [main] INFO  fr.pompey.dev.afpa.model.Person - Setting firstname to Matt
+2024-11-29 11:30:25 [main] ERROR fr.pompey.dev.afpa.model.Person - Invalid firstname provided: null
+2024-11-29 11:30:50 [main] DEBUG fr.pompey.dev.afpa.model.Person - Default Person constructor called.
+2024-11-29 11:30:50 [main] INFO  fr.pompey.dev.afpa.model.Person - Setting postal code to 54100
+2024-11-29 11:30:50 [main] ERROR fr.pompey.dev.afpa.model.Person - Invalid postal code provided: 1234
+2024-11-29 11:30:50 [main] DEBUG fr.pompey.dev.afpa.model.Person - Default Person constructor called.
+2024-11-29 11:30:50 [main] WARN  fr.pompey.dev.afpa.model.Person - Setting lastname to House
+2024-11-29 11:30:50 [main] ERROR fr.pompey.dev.afpa.model.Person - Invalid lastname provided: null
+2024-11-29 11:30:50 [main] DEBUG fr.pompey.dev.afpa.model.Person - Default Person constructor called.
+2024-11-29 11:30:50 [main] INFO  fr.pompey.dev.afpa.model.Person - Setting phone number to 0123456789
+2024-11-29 11:30:50 [main] ERROR fr.pompey.dev.afpa.model.Person - Invalid phone number provided: 1234
+2024-11-29 11:30:50 [main] DEBUG fr.pompey.dev.afpa.model.Person - Default Person constructor called.
+2024-11-29 11:30:50 [main] INFO  fr.pompey.dev.afpa.model.Person - Setting email to example@example.com
+2024-11-29 11:30:50 [main] ERROR fr.pompey.dev.afpa.model.Person - Invalid email provided: invalid-email
+2024-11-29 11:30:50 [main] DEBUG fr.pompey.dev.afpa.model.Person - Default Person constructor called.
+2024-11-29 11:30:50 [main] INFO  fr.pompey.dev.afpa.model.Person - Setting firstname to Matt
+2024-11-29 11:30:50 [main] ERROR fr.pompey.dev.afpa.model.Person - Invalid firstname provided: null
+2024-11-29 11:35:23 [main] DEBUG fr.pompey.dev.afpa.model.Person - Default Person constructor called.
+2024-11-29 11:35:23 [main] INFO  fr.pompey.dev.afpa.model.Person - Setting postal code to 54100
+2024-11-29 11:35:23 [main] ERROR fr.pompey.dev.afpa.model.Person - Invalid postal code provided: 1234
+2024-11-29 11:35:23 [main] DEBUG fr.pompey.dev.afpa.model.Person - Default Person constructor called.
+2024-11-29 11:35:23 [main] WARN  fr.pompey.dev.afpa.model.Person - Setting lastname to House
+2024-11-29 11:35:23 [main] ERROR fr.pompey.dev.afpa.model.Person - Invalid lastname provided: null
+2024-11-29 11:35:23 [main] DEBUG fr.pompey.dev.afpa.model.Person - Default Person constructor called.
+2024-11-29 11:35:23 [main] INFO  fr.pompey.dev.afpa.model.Person - Setting phone number to 0123456789
+2024-11-29 11:35:23 [main] ERROR fr.pompey.dev.afpa.model.Person - Invalid phone number provided: 1234
+2024-11-29 11:35:23 [main] DEBUG fr.pompey.dev.afpa.model.Person - Default Person constructor called.
+2024-11-29 11:35:23 [main] INFO  fr.pompey.dev.afpa.model.Person - Setting email to example@example.com
+2024-11-29 11:35:23 [main] ERROR fr.pompey.dev.afpa.model.Person - Invalid email provided: invalid-email
+2024-11-29 11:35:23 [main] DEBUG fr.pompey.dev.afpa.model.Person - Default Person constructor called.
+2024-11-29 11:35:23 [main] INFO  fr.pompey.dev.afpa.model.Person - Setting firstname to Matt
+2024-11-29 11:35:23 [main] ERROR fr.pompey.dev.afpa.model.Person - Invalid firstname provided: null
+2024-11-29 11:38:21 [main] DEBUG fr.pompey.dev.afpa.model.Person - Default Person constructor called.
+2024-11-29 11:38:21 [main] INFO  fr.pompey.dev.afpa.model.Person - Setting postal code to 54100
+2024-11-29 11:38:21 [main] ERROR fr.pompey.dev.afpa.model.Person - Invalid postal code provided: 1234
+2024-11-29 11:38:21 [main] DEBUG fr.pompey.dev.afpa.model.Person - Default Person constructor called.
+2024-11-29 11:38:21 [main] WARN  fr.pompey.dev.afpa.model.Person - Setting lastname to House
+2024-11-29 11:38:21 [main] ERROR fr.pompey.dev.afpa.model.Person - Invalid lastname provided: null
+2024-11-29 11:38:21 [main] DEBUG fr.pompey.dev.afpa.model.Person - Default Person constructor called.
+2024-11-29 11:38:21 [main] INFO  fr.pompey.dev.afpa.model.Person - Setting phone number to 0123456789
+2024-11-29 11:38:21 [main] ERROR fr.pompey.dev.afpa.model.Person - Invalid phone number provided: 1234
+2024-11-29 11:38:21 [main] DEBUG fr.pompey.dev.afpa.model.Person - Default Person constructor called.
+2024-11-29 11:38:21 [main] INFO  fr.pompey.dev.afpa.model.Person - Setting email to example@example.com
+2024-11-29 11:38:21 [main] ERROR fr.pompey.dev.afpa.model.Person - Invalid email provided: invalid-email
+2024-11-29 11:38:21 [main] DEBUG fr.pompey.dev.afpa.model.Person - Default Person constructor called.
+2024-11-29 11:38:21 [main] INFO  fr.pompey.dev.afpa.model.Person - Setting firstname to Matt
+2024-11-29 11:38:21 [main] ERROR fr.pompey.dev.afpa.model.Person - Invalid firstname provided: null
+2024-11-29 11:41:07 [main] DEBUG fr.pompey.dev.afpa.model.Person - Default Person constructor called.
+2024-11-29 11:41:07 [main] INFO  fr.pompey.dev.afpa.model.Person - Setting postal code to 54100
+2024-11-29 11:41:07 [main] ERROR fr.pompey.dev.afpa.model.Person - Invalid postal code provided: 1234
+2024-11-29 11:41:07 [main] DEBUG fr.pompey.dev.afpa.model.Person - Default Person constructor called.
+2024-11-29 11:41:07 [main] WARN  fr.pompey.dev.afpa.model.Person - Setting lastname to House
+2024-11-29 11:41:07 [main] ERROR fr.pompey.dev.afpa.model.Person - Invalid lastname provided: null
+2024-11-29 11:41:07 [main] DEBUG fr.pompey.dev.afpa.model.Person - Default Person constructor called.
+2024-11-29 11:41:07 [main] INFO  fr.pompey.dev.afpa.model.Person - Setting phone number to 0123456789
+2024-11-29 11:41:07 [main] ERROR fr.pompey.dev.afpa.model.Person - Invalid phone number provided: 1234
+2024-11-29 11:41:07 [main] DEBUG fr.pompey.dev.afpa.model.Person - Default Person constructor called.
+2024-11-29 11:41:07 [main] INFO  fr.pompey.dev.afpa.model.Person - Setting email to example@example.com
+2024-11-29 11:41:07 [main] ERROR fr.pompey.dev.afpa.model.Person - Invalid email provided: invalid-email
+2024-11-29 11:41:07 [main] DEBUG fr.pompey.dev.afpa.model.Person - Default Person constructor called.
+2024-11-29 11:41:07 [main] INFO  fr.pompey.dev.afpa.model.Person - Setting firstname to Matt
+2024-11-29 11:41:07 [main] ERROR fr.pompey.dev.afpa.model.Person - Invalid firstname provided: null

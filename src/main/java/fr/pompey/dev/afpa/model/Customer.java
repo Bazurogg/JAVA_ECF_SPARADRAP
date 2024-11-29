@@ -6,6 +6,8 @@ import fr.pompey.dev.afpa.exceptions.InvalidPhoneNumberException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * Represents a customer of the drugstore.
@@ -77,6 +79,7 @@ public class Customer extends Person {
      * @param socialSecurityNumber the social security number
      */
     public void setSocialSecurityNumber(String socialSecurityNumber) {
+        logger.info("Setting SS id to {}", socialSecurityNumber);
         this.socialSecurityNumber = socialSecurityNumber;
     }
 
@@ -95,6 +98,7 @@ public class Customer extends Person {
      * @param birthDate the birthdate
      */
     public void setBirthDate(LocalDate birthDate) {
+        logger.info("Setting Birthdate to {}", birthDate);
         this.birthDate = birthDate;
     }
 

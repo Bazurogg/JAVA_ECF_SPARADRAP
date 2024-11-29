@@ -5,18 +5,172 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c42abba-3d1e-4b84-95b6-6832cb625052" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/test/PersonTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/CustomerDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/CustomerDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/DAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/DoctorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/DoctorDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/controller/BDDConnectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/controller/BDDConnectionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/exceptions/InvalidEmailFormatException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/exceptions/InvalidEmailFormatException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/model/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/model/Doctor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/model/Doctor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/model/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/model/Specialist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/model/Specialist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/CustomerPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/CustomerPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/CustomerDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/CustomerDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/DAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/DAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/DoctorDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/DoctorDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/HealthInsuranceDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/HealthInsuranceDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/controller/BDDConnectionManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/controller/BDDConnectionManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/controller/CustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/controller/CustomerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/controller/DoctorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/controller/DoctorController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/controller/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/controller/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/controller/MedicineController$MedicineManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/controller/MedicineController$MedicineManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/controller/MedicineController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/controller/MedicineController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/controller/PurchaseManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/controller/PurchaseManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/exceptions/EmailAlreadyExistException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/exceptions/EmailAlreadyExistException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/exceptions/EmptyFieldException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/exceptions/EmptyFieldException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/exceptions/InvalidEmailFormatException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/exceptions/InvalidEmailFormatException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/exceptions/InvalidPhoneNumberException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/exceptions/InvalidPhoneNumberException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/exceptions/ValidateInputsException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/exceptions/ValidateInputsException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/model/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/model/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/model/DirectPurchase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/model/DirectPurchase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/model/Doctor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/model/Doctor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/model/HealthInsurance.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/model/HealthInsurance.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/model/Medicine$MedicineCategory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/model/Medicine$MedicineCategory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/model/Medicine.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/model/Medicine.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/model/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/model/Person.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/model/Purchase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/model/Purchase.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/model/PurchaseByPrescription.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/model/PurchaseByPrescription.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/model/Specialist.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/model/Specialist.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/model/table/AllPurchasesTableModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/model/table/AllPurchasesTableModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/model/table/DoctorTableModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/model/table/DoctorTableModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/model/table/MedicinePurchaseTableModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/model/table/MedicinePurchaseTableModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/model/table/MedicineShopTableModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/model/table/MedicineShopTableModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/model/table/PurchaseTableModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/model/table/PurchaseTableModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/utilities/RoundedBorder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/utilities/RoundedBorder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/utilities/RoundedPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/utilities/RoundedPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/AddCustomerForm$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/AddCustomerForm$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/AddCustomerForm$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/AddCustomerForm$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/AddCustomerForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/AddCustomerForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/CustomerPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/CustomerPanel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/CustomerPanel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/CustomerPanel$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/CustomerPanel$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/CustomerPanel$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/CustomerPanel$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/CustomerPanel$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/CustomerPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/CustomerPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/DirectPurchasePanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/DirectPurchasePanel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/DirectPurchasePanel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/DirectPurchasePanel$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/DirectPurchasePanel$ActionButtonRenderer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/DirectPurchasePanel$ActionButtonRenderer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/DirectPurchasePanel$ButtonRenderer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/DirectPurchasePanel$ButtonRenderer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/DirectPurchasePanel$MedicineButtonEditor$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/DirectPurchasePanel$MedicineButtonEditor$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/DirectPurchasePanel$MedicineButtonEditor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/DirectPurchasePanel$MedicineButtonEditor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/DirectPurchasePanel$PurchaseButtonEditor$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/DirectPurchasePanel$PurchaseButtonEditor$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/DirectPurchasePanel$PurchaseButtonEditor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/DirectPurchasePanel$PurchaseButtonEditor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/DirectPurchasePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/DirectPurchasePanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/DoctorPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/DoctorPanel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/DoctorPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/DoctorPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/MenuHome$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/MenuHome$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/MenuHome$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/MenuHome$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/MenuHome$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/MenuHome$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/MenuHome$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/MenuHome$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/MenuHome.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/MenuHome.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/PurchaseChoicePanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/PurchaseChoicePanel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/PurchaseChoicePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/PurchaseChoicePanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/PurchaseHistoryPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/PurchaseHistoryPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/TEST02.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/TEST02.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/bdd_files/sparadrap_bdd.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/HD/cash-on-delivery.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/HD/delete.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/HD/delete02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/HD/drugstore.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/HD/euro.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/HD/exit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/HD/exit.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/HD/exit_02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/HD/home_drugstore.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/HD/home_drugstore_02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/HD/idCustomer_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/HD/minus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/HD/more.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/HD/online-pharmacy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/HD/recycle-bin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/HD/shopping-list.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/HD/trash.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/HD/treatment.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/arrows.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/back-arrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/dentification-card.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/directPurchase_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/doctor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/drugstore.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/euro_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/exit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/group.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/home_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/id.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/idCustomer_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/idCustomer_icon.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/idDoctor.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/idDoctor_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/login.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/medical-team.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/medical.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/medicine.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/medicine_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/minus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/minus_more_icon.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/more.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/people_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/purchasePrescription_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/purchase_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/salesHistoric_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/shopping-cart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/trash.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Logo-Pharmacie.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Logo-Pharmacie_retail.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/Logo-Pharmacie_retail_02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/add-friend.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/add-to-cart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/add-to-cart_02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/add-to-cart_02.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/add-to-cart_02_test.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/add-user (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/add-user_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/add-user_2_sparadrap.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/add-user_sparadrap.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/close.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/close_sparadrap.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/customer_deleteUpdate.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/delete (3).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/delete-user.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/delete-user02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/employee.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/home-icon-silhouette.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/home-icon-silhouette_02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/minus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/more.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/profile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/refresh (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/renew.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/sign.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/trash.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/update.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/user (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/user-delete.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/user-pen.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/user-xmark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/user-xmark.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/user.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/user_delete.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Logos_/user_udpate.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Refs_/1_HkhX6aj_9dKwdBhuLhXFNg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Refs_/1_YKbwwEA84V3st8fIIfU0Hw.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Refs_/registration-form-template-with-flat-design_23-2147978006-3970640563.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Refs_/s_BF6A1C0144AD5FDE43C5CD123099EEB2FBB77615D772FB1C2C052ABA6956289A_1623159762207_file-853x640.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Refs_/web-design-formulaire.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/Assets/Sparadra1.0.fig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/MCD/SparadrapV2_MCD.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/MCD/Sparadrap_MCD.lo1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/MCD/Sparadrap_MCD.loo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/UML/ECF_SPARADRAP_UML.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/Conception/UML/ECF_SPARADRAP_UML.vpd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/conf.properties" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +181,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -58,38 +213,57 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MenuHome.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW&quot;: &quot;true&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.STATE&quot;: &quot;right&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH&quot;: &quot;157&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW&quot;: &quot;true&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.STATE&quot;: &quot;left&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;432&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;maven&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Application.MenuHome.executor": "Run",
+    "JUnit.PersonTest.executor": "Run",
+    "Maven.JAVA_ECF_SPARADRAP [clean].executor": "Run",
+    "Maven.JAVA_ECF_SPARADRAP [compile].executor": "Run",
+    "Maven.JAVA_ECF_SPARADRAP [deploy].executor": "Run",
+    "Maven.JAVA_ECF_SPARADRAP [install].executor": "Run",
+    "Maven.JAVA_ECF_SPARADRAP [package].executor": "Run",
+    "Maven.JAVA_ECF_SPARADRAP [test].executor": "Run",
+    "Maven.JAVA_ECF_SPARADRAP [validate].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "true",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.STATE": "right",
+    "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "157",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "true",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.STATE": "left",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "432",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "maven",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Fabulous\GitHub\JAVA_ECF_SPARADRAP\src\main\resources\Conception\Maquette\Logos_" />
       <recent name="C:\Users\Fabulous\GitHub\JAVA_ECF_SPARADRAP\src" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="test" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="test" />
+    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.PersonTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="fr.pompey.dev.afpa.controller.Main" />
       <module name="JAVA_ECF_SPARADRAP" />
@@ -103,8 +277,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PersonTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JAVA_ECF_SPARADRAP" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="test.PersonTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PersonTest" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -193,7 +383,10 @@
       <workItem from="1732521739798" duration="19283000" />
       <workItem from="1732604491852" duration="22762000" />
       <workItem from="1732691132304" duration="27662000" />
-      <workItem from="1732779323706" duration="25862000" />
+      <workItem from="1732779323706" duration="27392000" />
+      <workItem from="1732809645765" duration="2000" />
+      <workItem from="1732864070716" duration="5275000" />
+      <workItem from="1732870144835" duration="6815000" />
     </task>
     <servers />
   </component>
