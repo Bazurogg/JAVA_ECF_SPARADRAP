@@ -1,14 +1,40 @@
 package DAO;
 
+import fr.pompey.dev.afpa.controller.BDDConnectionManager;
 import fr.pompey.dev.afpa.exceptions.InvalidEmailFormatException;
 import fr.pompey.dev.afpa.exceptions.InvalidPhoneNumberException;
 import fr.pompey.dev.afpa.model.Doctor;
+
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class DoctorDAO extends DAO<Doctor> {
+
+    private static DoctorDAO instance;
+
+    private Connection connection;
+
+    public DoctorDAO() {
+
+        this.connection = BDDConnectionManager.getInstanceDB();
+
+    }
+
+    public static synchronized DoctorDAO getInstance() {
+
+        if (instance == null) {
+
+            instance = new DoctorDAO();
+
+        }
+
+        return instance;
+
+    }
+
 
     @Override
     public int create(Doctor obj) {

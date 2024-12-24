@@ -35,8 +35,8 @@
             <properties>
               <enabled value="true"/>
               <horizontalAlignment value="0"/>
-              <horizontalTextPosition value="11"/>
-              <icon value="Conception/Assets/Logos_/add-user_2_sparadrap.png"/>
+              <horizontalTextPosition value="0"/>
+              <icon value="Conception/Assets/Logos_/add_pat02.png"/>
               <preferredSize width="94" height="70"/>
               <text value=""/>
             </properties>

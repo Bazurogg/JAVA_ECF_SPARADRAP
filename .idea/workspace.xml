@@ -4,7 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8c42abba-3d1e-4b84-95b6-6832cb625052" name="Changes" comment="" />
+    <list default="true" id="8c42abba-3d1e-4b84-95b6-6832cb625052" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/AddDoctorForm.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/AddDoctorForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/application.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/application.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/DoctorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/DoctorDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/controller/DoctorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/controller/DoctorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/AddCustomerForm.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/AddCustomerForm.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/CustomerPanel.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/CustomerPanel.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/DoctorPanel.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/DoctorPanel.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/DoctorPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/DoctorPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/MenuHome.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/MenuHome.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/MenuHome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/MenuHome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/TEST02.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/pompey/dev/afpa/vue/TEST02.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Conception/Assets/Logos_/Icone_menuSideBar/medical-team.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Conception/Assets/Logos_/Icone_menuSideBar/medical-team.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DAO/DoctorDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DAO/DoctorDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/controller/DoctorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/controller/DoctorController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/AddCustomerForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/AddCustomerForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/CustomerPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/CustomerPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/DoctorPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/DoctorPanel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/DoctorPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/DoctorPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/MenuHome$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/MenuHome$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/MenuHome$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/MenuHome$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/MenuHome.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/pompey/dev/afpa/vue/TEST02.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/test/PersonTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/test/PersonTest.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,8 +43,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -46,41 +76,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Application.MenuHome.executor": "Run",
-    "JUnit.PersonTest.executor": "Run",
-    "Maven.JAVA_ECF_SPARADRAP [clean].executor": "Run",
-    "Maven.JAVA_ECF_SPARADRAP [compile].executor": "Run",
-    "Maven.JAVA_ECF_SPARADRAP [deploy].executor": "Run",
-    "Maven.JAVA_ECF_SPARADRAP [install].executor": "Run",
-    "Maven.JAVA_ECF_SPARADRAP [package].executor": "Run",
-    "Maven.JAVA_ECF_SPARADRAP [test].executor": "Run",
-    "Maven.JAVA_ECF_SPARADRAP [validate].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW": "true",
-    "UI_DESIGNER_EDITOR_MODE.PaletteManager.STATE": "right",
-    "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "157",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW": "true",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.STATE": "left",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "432",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "maven",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MenuHome.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PersonTest.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.JAVA_ECF_SPARADRAP [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.JAVA_ECF_SPARADRAP [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.JAVA_ECF_SPARADRAP [deploy].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.JAVA_ECF_SPARADRAP [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.JAVA_ECF_SPARADRAP [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.JAVA_ECF_SPARADRAP [test].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.JAVA_ECF_SPARADRAP [validate].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.SHOW&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.STATE&quot;: &quot;right&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH&quot;: &quot;157&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.STATE&quot;: &quot;left&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;432&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;maven&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Fabulous\GitHub\JAVA_ECF_SPARADRAP\src\main\resources\Conception\Maquette\Logos_" />
@@ -96,7 +126,7 @@
       <recent name="test" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PersonTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="fr.pompey.dev.afpa.controller.Main" />
       <module name="JAVA_ECF_SPARADRAP" />
@@ -127,8 +157,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PersonTest" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.PersonTest" />
       </list>
     </recent_temporary>
   </component>
@@ -219,7 +249,31 @@
       <workItem from="1732779323706" duration="27392000" />
       <workItem from="1732809645765" duration="2000" />
       <workItem from="1732864070716" duration="5275000" />
-      <workItem from="1732870144835" duration="7335000" />
+      <workItem from="1732870144835" duration="7921000" />
+      <workItem from="1733127053187" duration="2819000" />
+      <workItem from="1733144830341" duration="49000" />
+      <workItem from="1733149799175" duration="3000" />
+      <workItem from="1733210136902" duration="8186000" />
+      <workItem from="1733222180013" duration="39000" />
+      <workItem from="1733222321908" duration="279000" />
+      <workItem from="1733222953534" duration="258000" />
+      <workItem from="1733228623485" duration="2358000" />
+      <workItem from="1733231510502" duration="1000000" />
+      <workItem from="1733232864457" duration="337000" />
+      <workItem from="1733233830330" duration="1814000" />
+      <workItem from="1733239026765" duration="306000" />
+      <workItem from="1733239476197" duration="2468000" />
+      <workItem from="1733299241968" duration="283000" />
+      <workItem from="1733304066589" duration="596000" />
+      <workItem from="1733387396767" duration="5000" />
+      <workItem from="1733388137353" duration="596000" />
+      <workItem from="1733398212806" duration="19000" />
+      <workItem from="1733400163839" duration="4000" />
+      <workItem from="1733470284609" duration="10000" />
+      <workItem from="1734338142385" duration="1000" />
+      <workItem from="1734420809218" duration="26000" />
+      <workItem from="1735032828302" duration="70000" />
+      <workItem from="1735032922845" duration="139000" />
     </task>
     <servers />
   </component>

@@ -228,7 +228,8 @@
                 <properties>
                   <background color="-1118482"/>
                   <editable value="true"/>
-                  <focusable value="false"/>
+                  <enabled value="true"/>
+                  <focusable value="true"/>
                   <font name="Source Code Pro" size="36" style="2"/>
                   <foreground color="-16777216"/>
                   <text value=""/>

@@ -86,32 +86,10 @@
                       <font name="Fira Code"/>
                       <foreground color="-1"/>
                       <horizontalTextPosition value="0"/>
-                      <icon value="Conception/Assets/Logos_/Icone_menuSideBar/doctor.png"/>
+                      <icon value="Conception/Assets/Logos_/Icone_menuSideBar/doctors_grp.png"/>
                       <label value="doctors"/>
                       <text value="doctors"/>
                       <toolTipText value="Check doctor detail"/>
-                      <verticalTextPosition value="3"/>
-                    </properties>
-                  </component>
-                  <component id="651ea" class="javax.swing.JButton" binding="customersButton">
-                    <constraints>
-                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
-                        <minimum-size width="100" height="-1"/>
-                        <preferred-size width="200" height="200"/>
-                        <maximum-size width="100" height="100"/>
-                      </grid>
-                    </constraints>
-                    <properties>
-                      <actionCommand value=""/>
-                      <background color="-11510149"/>
-                      <focusable value="false"/>
-                      <font name="Fira Code"/>
-                      <foreground color="-1"/>
-                      <horizontalTextPosition value="0"/>
-                      <icon value="Conception/Assets/Logos_/Icone_menuSideBar/group.png"/>
-                      <label value="customers"/>
-                      <text value="customers"/>
-                      <toolTipText value="Check customer details."/>
                       <verticalTextPosition value="3"/>
                     </properties>
                   </component>
@@ -130,10 +108,32 @@
                       <font name="Fira Code"/>
                       <foreground color="-1"/>
                       <horizontalTextPosition value="0"/>
-                      <icon value="Conception/Assets/Logos_/Icone_menuSideBar/medical-team.png"/>
+                      <icon value="Conception/Assets/Logos_/Icone_menuSideBar/spec_team.png"/>
                       <label value="specialists"/>
                       <text value="specialists"/>
                       <toolTipText value="Check specialists details"/>
+                      <verticalTextPosition value="3"/>
+                    </properties>
+                  </component>
+                  <component id="651ea" class="javax.swing.JButton" binding="customersButton">
+                    <constraints>
+                      <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+                        <minimum-size width="100" height="-1"/>
+                        <preferred-size width="200" height="200"/>
+                        <maximum-size width="100" height="100"/>
+                      </grid>
+                    </constraints>
+                    <properties>
+                      <actionCommand value=""/>
+                      <background color="-11510149"/>
+                      <focusable value="false"/>
+                      <font name="Fira Code"/>
+                      <foreground color="-1"/>
+                      <horizontalTextPosition value="0"/>
+                      <icon value="Conception/Assets/Logos_/Icone_menuSideBar/patients_group.png"/>
+                      <label value="customers"/>
+                      <text value="customers"/>
+                      <toolTipText value="Check customer details."/>
                       <verticalTextPosition value="3"/>
                     </properties>
                   </component>

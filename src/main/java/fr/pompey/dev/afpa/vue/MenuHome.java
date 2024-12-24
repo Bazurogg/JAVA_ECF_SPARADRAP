@@ -111,7 +111,16 @@ public class MenuHome extends JFrame {
         });
     }
 
-    // Méthods to swipe the displayPanel with another  swing GUI panel class
+
+
+    // [----------------------------------- **** ----------------------------------------] //
+    //                                                                                     //
+    //                                                                                     //
+    //      Méthods to swipe the displayPanel with another swing GUI panel class           //
+    //                                                                                     //
+    //                                                                                     //
+    // [----------------------------------- **** ----------------------------------------] //
+
     // Doctor Panel
     private void showDoctorPanel() {
 
